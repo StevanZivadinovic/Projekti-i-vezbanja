@@ -7,7 +7,7 @@ function functionOne(x){//ovo mu izgleda dodje callback funkcija
     alert(x);
 };
 
-functionOne(2);
+functionOne(2); 
  
  
 function functionTwo(var1,callback){
