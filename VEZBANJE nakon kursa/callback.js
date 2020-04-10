@@ -42,3 +42,22 @@ function greeting(name) {
 
   
   processUserInput(greeting);
+
+
+
+  let pokreni=(callback)=>{
+
+    if(callback){
+
+      callback();
+    }
+
+
+  };
+
+
+  function ispis(){
+    console.log(`cao ja sam callback funkcija`);
+  }
+
+  pokreni(ispis);
