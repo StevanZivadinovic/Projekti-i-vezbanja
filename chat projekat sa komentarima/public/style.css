@@ -1,0 +1,152 @@
+
+
+
+body{
+    text-align: center;
+    color: purple;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+     
+}
+
+.btn{
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    background-color: purple;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: rebeccapurple;
+    cursor: pointer;
+}
+
+form{
+    margin: 15px;
+}
+
+input, textarea, select{
+    width: 500px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+input:focus, textarea:focus, select:focus{
+    border: 3px purple solid;
+}
+
+input:focus, .btn:focus, textarea:focus, select:focus{
+    outline-width: 0;
+}
+
+
+#dateStart, #dateEnd{
+    width: 250px;
+}
+
+::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.username{
+    font-weight: bold;
+}
+
+.date{
+    color: grey;
+}
+
+#ulMessages{
+    list-style-type: none;
+    font-size: 20px;
+
+    /* Poyicioniranje centralno ispod top sekcije */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    bottom: 30%;
+    overflow: hidden;
+
+    /* ul centralno postavljena, ali tekst levo poravnat */
+    text-align: left;
+    width: 700px;
+    margin: 0 auto;
+
+    /* dodamo skrolovanje poruka */
+    overflow-y: auto;
+
+    /* prelom bilo koje reči bez razmaka */
+    word-wrap: break-word;
+
+}
+
+#ulMessages>li{
+    width: 60%;
+    background-color: thistle;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    padding: 20px;
+    border-radius: 0px 20px 20px 20px;
+}
+
+.me{
+    margin-left: auto;
+    background-color: bisque !important;
+    border-radius: 20px 0px 20px 20px !important;
+}
+
+.img-delete{
+    opacity: 0.3;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+}
+
+#top{
+    position: absolute;
+    height: 25%;
+
+    /* Postaviti centralno */
+    left: 0;
+    right: 0;
+    top: 0;
+
+    overflow: hidden;
+}
+
+#bottom{
+    position: absolute;
+    height: 30%;
+
+    /* Postaviti centralno */
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow: scroll;
+}
+
+#divUpdatedUsername{/*ovde se ispisuje tekst pri promeni username-a*/
+    font-size: 20px;
+}
+
+#spanNewUsername{
+    font-weight: bold;
+}
+
+.btn-selected{
+    background-color: rgb(50, 10, 50);
+    color: bisque;
+}
+
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITBootcamp Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Naslov četa -->
+    <div id="top">
+        <header>
+            <h1>ITBootcamp Chat</h1>
+            <h2>Choose a chatroom</h2>
+        </header>
+
+        <!-- Dugmad za sobe (chatrooms) -->
+        <nav>
+            <button id="general" class="btn">#general</button>
+            <button id="js" class="btn">#js</button>
+            <button id="homeworks" class="btn">#homeworks</button>
+            <button id="tests" class="btn">#tests</button>
+        </nav>
+    </div>
+
+    <!-- Prostor za poruke -->
+    <section>
+        <ul id="ulMessages">
+            <!-- Ovde će se nalaziti poruke -->
+        </ul>
+    </section>
+
+    <div id="bottom">
+        <!-- Forma za unos boje -->
+        <form id="formColor">
+            <input type="color" value="#ffffff" id="inputColor">
+            <input type="submit" value="Update color" id="btnColor" class="btn">
+        </form>
+
+        <!-- Forma za unos datuma -->
+        <form id="formDate">
+            <input type="datetime-local" id="dateStart">
+            <input type="datetime-local" id="dateEnd">
+            <input type="submit" value="Set dates" id="btnSetDates" class="btn">
+        </form>
+
+        <!-- Forma za unos poruke -->
+        <form id="formMessage">
+            <textarea placeholder="Your message..." id="inputMessage"></textarea>
+            <input type="submit" value="Send" id="btnSend" class="btn">
+        </form>
+
+        <!-- Forma za promenu korisničkog imena -->
+        <form id="formUsername">
+            <input type="text" placeholder="Update username" id="inputUsername">
+            <input type="submit" value="Update" id="btnUpdate" class="btn">
+        </form>
+
+        <div id="divUpdatedUsername">
+        </div><!--u ovom divu bi trebalo da se ispise da je izvrsena promena username-a
+        kada promenimo username, medjutim meni se iz nekog razloga ne vidi-->
+    </div>
+
+    
+       <!--Za ovaj kod kad si u firestore bazi ides u Project Overview pa , pa na dugme 1 app, pa 
+na tockic kliknes-->
+    
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script><!--ovaj
+red se naknadno dodaje, iskopiras gornji red i izmenis samo sta treba-->
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCmgbNtMXDI8XZH0mfSQiKbLzAGdKpFgow",
+    authDomain: "chat-web-d1e43.firebaseapp.com",
+    databaseURL: "https://chat-web-d1e43.firebaseio.com",
+    projectId: "chat-web-d1e43",
+    storageBucket: "chat-web-d1e43.appspot.com",
+    messagingSenderId: "787396342760",
+    appId: "1:787396342760:web:d27648caee1f7f3250aa5d",
+    measurementId: "G-4TCVG7P0KE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  let db=firebase.firestore();
+</script>
+    <!-- Povezivanje sa eksternim js fajlovima -->
+    <script src="app.js" type="module"></script><!--ovo prvo unosis jer ovo je fajl koji sluzi kao spojnica-->
+    <script src="chat.js" type="module"></script>
+    <script src="ui.js" type="module"></script>
+</body>
+</html>

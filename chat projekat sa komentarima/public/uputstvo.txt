@@ -1,0 +1,20 @@
+1. Kreili smo osnovni dizajn stranice (osnovni HTML i CSS stranice)
+2. Konekcija sa Firestore bazom podataka
+3. Kreiranje chat.js i uključen u .html dokument
+    - Kreirali smo klasu Chatroom sa konstruktorom, geterima i seterima za username, room i chats
+    - Kreiranje asinhrone funkcije addChat kojoj prosleđujemo poruku koju želimo da upišemo u novojkreirani dokument
+    - Kreiramo metod getChats koji ima ulogu u tome da "osluškuje" promene koje se dese u bazi i kada se nešto doda kolekciji 'chats' da okine funkciju
+    - Kreiranje metoda updateUsername koji ima ulogu da lokalno postavi vrednost promenljive username
+    - Kreiranje metoda updateRoom koji ima ulogu da "promeni sobu" i to ako je ranije postavljena soba, onda da "resetuje osluškivač" kako bi osluškivao za novopostavljenu sobu. U suprotnom ako nije nikada postavljena soba, onda nema potrebe za resetovanjem osluškivača i može se bez problema po prvi put dodati. 
+4. Kreiranje app.js fajla - Služi kao "spojnica" za klase
+    - Instance (objekti) klasa
+    - DOM elementi 
+    - Provera username
+    - Promena username
+    - Dodavanje nove poruke u čet
+    - Promena sobe (kada je u navigacionoj sekciji kliknuto na BUTTON)
+5. Kreiranje ui.js fajla - Služi korisničkom interfejsu
+    - Prikaz elemenata na stranici
+    - Formatiranje prikaza LI elemenata
+    - Formatiranje datuma za prikaz na stranici
+    - Formiranje metoda clear koji služi za brisanje ul liste sa stranice    
