@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("../images/europe_map.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#nav {
+  background-color: #555555;
+  opacity: 50%;
+  border-bottom: 2px solid #ffffff;
+}
+
+#menu {
+  padding: 0;
+}
+
+#menu ul {
+  list-style-type: none;
+  margin: 0 0 0 100px;
+  padding: 40px 0 40px 0;
+}
+
+#menu ul li {
+  display: inline;
+}
+
+#menu ul li a {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+#terms {
+  padding-left: 50px;
+}
+
+#hi {
+  position: relative;
+  display: inline-block;
+  top: 40px;
+  color: #ffffff;
+}
+
+#user_logo {
+  position: relative;
+  top: 40px;
+  padding-left: 10px;
+  display: inline;
+  font-size: 16px;
+}
+
+#formTerm {
+  padding-top: 60%;
+  text-align: center;
+}
+
+#formTerm select,
+input[type="text"] {
+  width: 80%;
+  background-color: #555555;
+  opacity: 0.5;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 5px 0;
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+#formTerm input[type="submit"] {
+  width: 80%;
+  background-color: #555555;
+  opacity: 0.5;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 5px 0;
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+#formTerm input[type="text"]::placeholder {
+  color: #ffffff;
+  padding-left: 11%;
+}
+
+#info {
+  font-size: 16px;
+  color: #ffffff;
+}

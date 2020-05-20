@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Početna strana</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="nav" class="row">
+        <div id="menu" class="col-sm-9">
+          <ul>
+            <li>
+              <a id="home_page" href="#">POČETNA STRANA</a>
+            </li>
+            <li>
+              <a id="terms" href="terms.html">PREDLOG POJMOVA</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <div id="hi"></div>
+          <img src="images/User.png" id="user_logo" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <form id="formUsername">
+            <input
+              type="text"
+              id="inputUsername"
+              placeholder="Unesi korisničko ime..."
+            />
+            <input type="submit" id="submitUsername" value="Potvrdi" />
+          </form>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBdfSBzzi_NWkKgJX7pIbxCCLf-AfFvtSA",
+        authDomain: "zgeografija-1ac68.firebaseapp.com",
+        databaseURL: "https://zgeografija-1ac68.firebaseio.com",
+        projectId: "zgeografija-1ac68",
+        storageBucket: "zgeografija-1ac68.appspot.com",
+        messagingSenderId: "485744891691",
+        appId: "1:485744891691:web:6479080206b8bd5b8d176e",
+        measurementId: "G-90BMYYQG4V",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      let db = firebase.firestore();
+    </script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
