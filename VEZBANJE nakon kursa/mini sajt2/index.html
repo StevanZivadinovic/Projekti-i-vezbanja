@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VEZBANJA MOJA</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        #name {
+            margin-left: 40px;
+        }
+
+        #surname,
+        #email {
+            margin-left: 12px;
+        }
+
+        input[type=text] {
+            color: blue;
+
+
+        }
+
+        input[type=text]:focus {
+
+            outline-width: 0px;
+            /*gubi se plavi border koji se vidi ispod tvog bordera kad se klikne
+            na polje*/
+            width: 80%;
+            background-color: saddlebrown;
+        }
+
+        input[type=text], input[type=number], input[type=password] {
+            -webkit-appearance: none;
+            /*uklanja border koji je po difoltu prisutan kod inputa, ali pravi problem kod radio
+            buttona, zato ovo ne smes da primenjujes na sve inpute */
+            border: 1px solid grey;
+            background-color: snow;
+
+
+        }
+
+        input:focus {
+            border: 3px solid green;
+            outline-width: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="https://www.youtube.com/" target="_blank">
+        <fieldset>
+            <legend>Informacije</legend>
+
+            <label for="name">Ime:</label><input type="text" name="name" id="name"><br>
+            <label for="surname">Prezime:</label><input type="text" name="surname" id="surname"><br>
+            <label>E - mail:</label><input type="email" id="email"><br>
+            <label>Password</label> <input style="margin-left: 3px;" type="password"><br>
+            <label>Koliko imate godina?</label><input type="number" min='18' value='18'><br>
+            <label>Vreme i mesto rodjenja?</label><input type="datetime-local" value="1994-03-05T15:25:33" name="rodjenje">
+            <input type="text" list="rodjenje" name="rodjenje" value="Nis">
+            <datalist id="rodjenje" >
+                <option>Nis</option>
+                <option>Novi Sad</option>
+                <option>Beograd</option>
+                <option>Zajecar</option>
+                <option>Cacak</option>
+                <option>Banja Koviljaca</option>
+                <option>Subotica</option>
+            </datalist><br>
+            <label>Odaberite Pol</label><input list="Pol" name="Pol"><br>
+            <!--ovaj name odavde i id iz datalist moraju da se poklapaju-->
+            <datalist id="Pol">
+                <option>Muski</option>
+                <option>Zenski</option>
+            </datalist>
+            <label>Odaberite kurs</label>
+            <input type="radio" name="kurs" value="js" checked>JS
+            <input type="radio" name="kurs" value="qa">QA<br>
+            <label>Odaberite programski jezik</label>
+            <input type="checkbox" name="jezik" checked>HTML 
+            <input type="checkbox" name="jezik">CSS
+            <input type="checkbox" name="jezik">JavaScript<br>
+            <label>CV: </label><input type="file"><br>
+            <label>Stepen obrazovanja:</label>
+            
+            <select>
+                <optgroup label="Srednja skola">
+                    <option>treci stepen</option>
+                    <option>cetvrti stepen</option>
+                  </optgroup>
+                <optgroup label="Visa ili visoka skola">
+                    <option>peti stepen</option>
+                    <option>sesti stepen</option>
+                    <option>sedmi stepen</option>
+                    <option>osmi stepen</option>
+                </optgroup>
+
+            </select>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>O meni</legend>
+            <label>Omiljena boja</label><input type="color" value="#ffff00">
+        </fieldset>
+
+        <input id="klikni" type="button" value="klikni" >
+        <br>
+         <input type="submit" value="Potvrdi" >
+        <br>
+        <input type="reset" value="Resetuj">
+       
+
+
+
+    </form>
+
+<script>
+    let ime = document.querySelector('#name');
+    let klikni = document.querySelector('#klikni');
+
+    klikni.addEventListener('click', (e) =>{
+        alert(`Zdravo ${ime.value}`);
+    });
+
+    console.log(`haj`);
+</script>
+</body>
+
+</html>
