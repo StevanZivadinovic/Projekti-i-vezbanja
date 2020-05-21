@@ -1,5 +1,5 @@
 import {Korisnik} from './korisnik.js';
-
+import {Termini} from './termini.js';
 /*
 
 
@@ -33,3 +33,50 @@ let checkUser2 = () =>{
     checkUser2();
 
    
+//validacija 
+
+
+
+    let validFunc = (str) => {
+        let regExp1 = /[\s]/gi;
+        let regExp2 = /[^\w]/gi;
+        let regExp3 = /[_]/g;
+        let edF = str
+          .replace(regExp1, "")
+          .toLowerCase()
+          .replace(regExp2, "")
+          .replace(regExp3, "");
+        let final = edF.charAt(0).toUpperCase() + edF.slice(1);
+        return final;
+      };
+      
+
+
+
+      
+      let unosTermina = document.querySelector('#unosTermina');
+      let formTermini = document.querySelector('#formTermini');
+      let selectKategorija = document.querySelector('#selectKategorija');
+     
+      let info = document.querySelector('#info');
+
+
+      if (formTermini) {
+        formTermini.addEventListener("submit", (e) => {
+          e.preventDefault();
+          let kategorija = selectKategorija.value;
+          let trm = new Termini(username(), kategorija);
+          let textTerm = unosTermina.value;
+          textTerm = validFunc(textTerm);
+      
+          if (trm.checkAddTerms(textTerm, kategorija)) {
+            info.innerHTML = "Pojam vec postoji!";
+          } else {
+           
+      
+            setInterval(() => {
+              info.innerHTML = "";
+            }, 3000);
+          }
+        });
+      }
