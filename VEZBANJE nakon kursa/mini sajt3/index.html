@@ -149,75 +149,81 @@
              
         }
 
+     
+
 
     </style>
 </head>
 
 <body>
-    <h1>Responsive forma</h1>
-    <p>Promenite sirinu prozora kako bi ste videli efekat forme.Kada je ekran manji od 600px, formu kreirati tako da se
-        njeni elementi
-        nalaze jedni ispod drugih</p>
-    <form id="form" class="col-12" >
-
-        <div class="row">
-            <label class="col-4">Ime i prezime</label><input id="imePrezime" class="col-8" type="text"
-                placeholder="Unesite svoje ime i prezime">
-
-        </div>
-
-       
-      
-        <div class="row">
-            <label class="col-4">Pretrazite</label><input id="image" class="col-4" type="search"
-                placeholder=" Pretrazite">
-
-        </div>
-       
-       
-        <div class="row">
-            <label class="col-4">Zemlja</label><select style="border-radius: 5px; border: 2px solid black;"
-                class="col-8">
-                <option>Srbija</option>
-                <option>Italija</option>
-                <option>Rusija </option>
-
-            </select>
-
-        </div>
-
-        <div class="row">
-            <label class="col-4">Napisite nesto o sebi</label><textarea id="text" onkeyup="check_val()" class="col-8"
-                placeholder="Napisite neki tekst" rows='15'></textarea>
-
-        </div>
-        <p id="bad_notice" style="text-align: center; color: red;"></p>
-        <input id="dugme" type="submit" style=" background-color: chartreuse; padding:10px; 
-        border-radius: 5px; border-bottom: 2px solid black;  margin-right: 5px;" value="Potvrdite">
-    </form>
-
-   
+    <div id="pozadina">
+        <h1>Responsive forma</h1>
+        <p>Promenite sirinu prozora kako bi ste videli efekat forme.Kada je ekran manji od 600px, formu kreirati tako da se
+            njeni elementi
+            nalaze jedni ispod drugih</p>
+        <form id="form" class="col-12" >
     
-
+            <div class="row">
+                <label class="col-4">Ime i prezime</label><input id="imePrezime" class="col-8" type="text"
+                    placeholder="Unesite svoje ime i prezime">
+    
+            </div>
+    
+           
+          
+            <div class="row">
+                <label class="col-4">Pretrazite</label><input id="image" class="col-4" type="search"
+                    placeholder=" Pretrazite">
+    
+            </div>
+           
+           
+            <div class="row">
+                <label class="col-4">Zemlja</label><select style="border-radius: 5px; border: 2px solid black;"
+                    class="col-8">
+                    <option>Srbija</option>
+                    <option>Italija</option>
+                    <option>Rusija </option>
+    
+                </select>
+    
+            </div>
+    
+            <div class="row">
+                <label class="col-4">Napisite nesto o sebi</label><textarea id="text" onkeyup="check_val()" class="col-8"
+                    placeholder="Napisite neki tekst" rows='15'></textarea>
+    
+            </div>
+            <p id="bad_notice" style="text-align: center; color: red;"></p>
+            <input id="dugme" type="submit" style=" background-color: chartreuse; padding:10px; 
+            border-radius: 5px; border-bottom: 2px solid black;  margin-right: 5px;" value="Potvrdite">
+        </form>
+    
        
+        
+    
+           
+    
+        <div id="ispisImena" style="text-align: center; font-size: 50px; font-style: oblique; color: rgb( 12, 70, 150);">
+    
+        </div> 
+    
+    
+        <center><form action="https://google.com/search" target="_blank" type="GET">
+    
+            <label>
+                Google search: 
+               <input type="search" name="q">
+             </label>
+          
+            <input type="submit" value="Search">
+          
+          </form></center>
+    
+          <img src="./cvet.jfif" style="width: 30px; height: 30px; ">
 
-    <div id="ispisImena" style="text-align: center; font-size: 50px; font-style: oblique; color: rgb( 12, 70, 150);">
-
-    </div> 
-
-
-    <center><form action="https://google.com/search" target="_blank" type="GET">
-
-        <label>
-            Google search: 
-           <input type="search" name="q">
-         </label>
-      
-        <input type="submit" value="Search">
-      
-      </form></center>
-
-      <img src="./cvet.jfif" style="width: 30px; height: 30px; ">
+    </div>
+   
 
       <div id="ispisPodataka">
        
@@ -239,16 +245,19 @@
             e.preventDefault();
             let imePrezime = document.querySelector('#imePrezime');
             let text = document.querySelector('#text');
-            let body1= document.querySelector('body');
-
-
+            let pozadina = document.querySelector('#pozadina');
+           
+            
 
             let vreme3 = setTimeout(() => {
 
                 ispisPodataka.style.display = 'block';
-
+              
+                
                 let ime1 = imePrezime.value;
-                ispisPodataka.innerHTML=`Ime i prezime: ${ime1}` + `<br>`;
+                ispisPodataka.innerHTML = `Vasi podaci su: ` + `<br>`;
+                ispisPodataka.innerHTML+=
+                `Ime i prezime: ${ime1}` + `<br>`;
 
                 let drzava = select.value;
                 ispisPodataka.innerHTML+=`Drzava: ${drzava}` + `<br>`;
@@ -256,26 +265,33 @@
                 let text1 = text.value;
                 ispisPodataka.innerHTML+=`O meni: ${text1}`;
 
-               // ispisPodataka.style.backgroundColor = `red`;
-                //ispisPodataka.style.transform = `rotate(360deg)`;
-                //ispisPodataka.style.transition=`all 2s`;
+                
+                
                 ispisPodataka.style = `width: 400px; height:200px`;
-                ispisPodataka.style.border = `2px solid black`;
+                ispisPodataka.style.border = `2px solid red`;
                 ispisPodataka.style.position = `absolute`;
                 ispisPodataka.style.top = `200px`;
                 ispisPodataka.style.right = `300px`;
                 ispisPodataka.style.color = `black`;
                 ispisPodataka.style.fontSize = `29px`;
                 ispisPodataka.style.textAlign = `center`;
+                ispisPodataka.style.zIndex = "1";
+                ispisPodataka.style.setProperty('background-color','red','important');
                 
-                body1.style.opacity = `0.2`;
+                ispisPodataka.style.transform = `scale(1.5)`;
+                ispisPodataka.style.transition=`transform 2s`;
+                
+               
+               
+               
                // ispisPodataka.style.opacity = `1`; !important;
 
 
 
             }, 7000);
 
-
+          
+            
 
 
             let vreme = setTimeout(() => {
@@ -297,7 +313,24 @@
 
             }, 6000);
 
+            let vreme4 = setTimeout(() => {
+               
+                ispisPodataka.style.setProperty('opacity', '1','undifined'); 
+                pozadina.style.setProperty('opacity', '0.2','important');
+                //ispisPodataka.parentElement.style.setProperty('opacity','.2','important');
+                //body1.style.setProperty('opacity', '','important');
 
+                
+
+            }, 9000);
+
+            let vreme5 = setTimeout(() => {
+                ispisPodataka.style.display = 'none';
+                pozadina.style.setProperty('opacity', '1','important');
+               
+
+            }, 20000);
+           
 
         });
 
