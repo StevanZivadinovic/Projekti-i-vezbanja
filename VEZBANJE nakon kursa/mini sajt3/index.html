@@ -137,7 +137,7 @@
             border-radius: 50px;
             position: absolute;
             right: 90px;
-           transition:  color 2s, transform 0.3s 2s;/*promena izmedju ovog stila definisanog u dugme u stil dugme:hover traje 0.3s,
+           transition:  color .5s, transform 0.3s .5s;/*promena izmedju ovog stila definisanog u dugme u stil dugme:hover traje 0.3s,
            a boja se menja za 2 s. Prvo stavljas sve propertije koje imas pa tek na kraju transform. Ova druga brojka kod transform
            ovo 2s, je deley, odnosno odlaganje za 2s, da se prvo izvrsi promena boje pa tek onda transformacija*/
 
@@ -147,6 +147,10 @@
             transform: rotatez(360deg) scale(3) translateX(0px);
             color: red;
              
+        }
+
+        #ispisPodataka{
+            transition: transform 3s ease-in-out;
         }
 
      
@@ -236,9 +240,10 @@
         let search = document.querySelector("input[type=search]");
         let text = document.querySelector('#text');
         let ispisPodataka = document.querySelector('#ispisPodataka');
+        
         let body1= document.querySelector('body');
         ispisPodataka.style.display = 'none';
-
+        
 
 
         form.addEventListener('submit', (e) => {
@@ -246,16 +251,16 @@
             let imePrezime = document.querySelector('#imePrezime');
             let text = document.querySelector('#text');
             let pozadina = document.querySelector('#pozadina');
-           
+            let x = document.createElement('div');
             
 
             let vreme3 = setTimeout(() => {
 
                 ispisPodataka.style.display = 'block';
-              
+             
                 
                 let ime1 = imePrezime.value;
-                ispisPodataka.innerHTML = `Vasi podaci su: ` + `<br>`;
+                ispisPodataka.innerHTML = `<u><i>Vasi podaci su<i><u> ` + `<br><br>`;
                 ispisPodataka.innerHTML+=
                 `Ime i prezime: ${ime1}` + `<br>`;
 
@@ -278,21 +283,34 @@
                 ispisPodataka.style.zIndex = "1";
                 ispisPodataka.style.setProperty('background-color','red','important');
                 
-                ispisPodataka.style.transform = `scale(1.5)`;
-                ispisPodataka.style.transition=`transform 2s`;
+               
+                ispisPodataka.appendChild(x);
+                x.innerHTML = `x`;
+                x.style.position = 'absolute';
+                x.style.top = '0px';
+                x.style.right = '0px';
+                x.style.border = '1px solid black';
+
+                x.addEventListener('click',e=>{
+                    ispisPodataka.style.display = 'none';
+                    //ispisPodataka.style.hover.cursor = 'pointer';
+
+                });
+               
                 
-               
-               
-               
-               // ispisPodataka.style.opacity = `1`; !important;
+            }, 4000);
+
+         
 
 
+                let v = setTimeout(()=>{
+                    let ispisPodataka = document.querySelector('#ispisPodataka');
 
-            }, 7000);
-
-          
+                    ispisPodataka.style.transform = `scale(1.5)`;
+                },4000)
             
-
+          
+           
 
             let vreme = setTimeout(() => {
                 let ime = imePrezime.value;
@@ -301,7 +319,7 @@
                 let vrednost = select.value;
                 ispisImena.innerHTML += ` ${vrednost}`;
 
-            }, 3000);
+            }, 1000);
 
 
             let vreme1 = setTimeout(() => {
@@ -311,7 +329,7 @@
                 ispisImena.innerHTML = ``;
                // imePrezime.value = ''; ovo mora u sledeci setTimeout, ne moze u isti
 
-            }, 6000);
+            }, 3000);
 
             let vreme4 = setTimeout(() => {
                
@@ -322,14 +340,14 @@
 
                 
 
-            }, 9000);
+            }, 4000);
 
             let vreme5 = setTimeout(() => {
                 ispisPodataka.style.display = 'none';
                 pozadina.style.setProperty('opacity', '1','important');
                
 
-            }, 20000);
+            }, 30000);
            
 
         });
