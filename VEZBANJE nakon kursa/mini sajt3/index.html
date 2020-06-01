@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VEZBANJA MOJA</title>
 
-    <link rel="stylesheet" href="style.css" />
+
 
     <style>
         * {
@@ -131,107 +131,109 @@
             border-radius: 5px;
         }
 
-        #dugme{
-            
+        #dugme {
+
             transform: rotatey(0deg) translateX(0px) scale(1);
             border-radius: 50px;
             position: absolute;
             right: 90px;
-           transition:  color .5s, transform 0.3s .5s;/*promena izmedju ovog stila definisanog u dugme u stil dugme:hover traje 0.3s,
+            transition: color .5s, transform 0.3s .5s;
+            /*promena izmedju ovog stila definisanog u dugme u stil dugme:hover traje 0.3s,
            a boja se menja za 2 s. Prvo stavljas sve propertije koje imas pa tek na kraju transform. Ova druga brojka kod transform
            ovo 2s, je deley, odnosno odlaganje za 2s, da se prvo izvrsi promena boje pa tek onda transformacija*/
 
-            
+
         }
-       #dugme:hover{
+
+        #dugme:hover {
             transform: rotatez(360deg) scale(3) translateX(0px);
             color: red;
-             
+
         }
 
-        #ispisPodataka{
+        #ispisPodataka {
             transition: transform 3s ease-in-out;
         }
-
-     
-
-
     </style>
 </head>
 
 <body>
     <div id="pozadina">
         <h1>Responsive forma</h1>
-        <p>Promenite sirinu prozora kako bi ste videli efekat forme.Kada je ekran manji od 600px, formu kreirati tako da se
+        <p>Promenite sirinu prozora kako bi ste videli efekat forme.Kada je ekran manji od 600px, formu kreirati tako da
+            se
             njeni elementi
             nalaze jedni ispod drugih</p>
-        <form id="form" class="col-12" >
-    
+        <form id="form" class="col-12">
+
             <div class="row">
                 <label class="col-4">Ime i prezime</label><input id="imePrezime" class="col-8" type="text"
                     placeholder="Unesite svoje ime i prezime">
-    
+
             </div>
-    
-           
-          
+
+
+
             <div class="row">
                 <label class="col-4">Pretrazite</label><input id="image" class="col-4" type="search"
                     placeholder=" Pretrazite">
-    
+
             </div>
-           
-           
+
+
             <div class="row">
                 <label class="col-4">Zemlja</label><select style="border-radius: 5px; border: 2px solid black;"
                     class="col-8">
                     <option>Srbija</option>
                     <option>Italija</option>
                     <option>Rusija </option>
-    
+
                 </select>
-    
+
             </div>
-    
+
             <div class="row">
-                <label class="col-4">Napisite nesto o sebi</label><textarea id="text" onkeyup="check_val()" class="col-8"
-                    placeholder="Napisite neki tekst" rows='15'></textarea>
-    
+                <label class="col-4">Napisite nesto o sebi</label><textarea id="text" onkeyup="check_val()"
+                    class="col-8" placeholder="Napisite neki tekst" rows='15'></textarea>
+
             </div>
             <p id="bad_notice" style="text-align: center; color: red;"></p>
             <input id="dugme" type="submit" style=" background-color: chartreuse; padding:10px; 
             border-radius: 5px; border-bottom: 2px solid black;  margin-right: 5px;" value="Potvrdite">
         </form>
-    
-       
-        
-    
-           
-    
-        <div id="ispisImena" style="text-align: center; font-size: 50px; font-style: oblique; color: rgb( 12, 70, 150);">
-    
-        </div> 
-    
-    
-        <center><form action="https://google.com/search" target="_blank" type="GET">
-    
-            <label>
-                Google search: 
-               <input type="search" name="q">
-             </label>
-          
-            <input type="submit" value="Search">
-          
-          </form></center>
-    
-          <img src="./cvet.jfif" style="width: 30px; height: 30px; ">
+
+
+
+
+
+
+        <div id="ispisImena"
+            style="text-align: center; font-size: 50px; font-style: oblique; color: rgb( 12, 70, 150);">
+
+        </div>
+
+
+        <center>
+            <form action="https://google.com/search" target="_blank" type="GET">
+
+                <label>
+                    Google search:
+                    <input type="search" name="q">
+                </label>
+
+                <input type="submit" value="Search">
+
+            </form>
+        </center>
+
+        <img src="./cvet.jfif" style="width: 30px; height: 30px; ">
 
     </div>
-   
 
-      <div id="ispisPodataka">
-       
-      </div>
+
+    <div id="ispisPodataka">
+
+    </div>
     <script>
         let imePrezime = document.querySelector('#imePrezime');
         let ispisImena = document.querySelector('#ispisImena');
@@ -240,10 +242,10 @@
         let search = document.querySelector("input[type=search]");
         let text = document.querySelector('#text');
         let ispisPodataka = document.querySelector('#ispisPodataka');
-        
-        let body1= document.querySelector('body');
+
+        let body1 = document.querySelector('body');
         ispisPodataka.style.display = 'none';
-        
+
 
 
         form.addEventListener('submit', (e) => {
@@ -252,26 +254,26 @@
             let text = document.querySelector('#text');
             let pozadina = document.querySelector('#pozadina');
             let x = document.createElement('div');
-            
+
 
             let vreme3 = setTimeout(() => {
 
                 ispisPodataka.style.display = 'block';
-             
-                
+
+
                 let ime1 = imePrezime.value;
                 ispisPodataka.innerHTML = `<u><i>Vasi podaci su<i><u> ` + `<br><br>`;
-                ispisPodataka.innerHTML+=
-                `Ime i prezime: ${ime1}` + `<br>`;
+                ispisPodataka.innerHTML +=
+                    `Ime i prezime: ${ime1}` + `<br>`;
 
                 let drzava = select.value;
-                ispisPodataka.innerHTML+=`Drzava: ${drzava}` + `<br>`;
+                ispisPodataka.innerHTML += `Drzava: ${drzava}` + `<br>`;
 
                 let text1 = text.value;
-                ispisPodataka.innerHTML+=`O meni: ${text1}`;
+                ispisPodataka.innerHTML += `O meni: ${text1}`;
 
-                
-                
+
+
                 ispisPodataka.style = `width: 400px; height:200px`;
                 ispisPodataka.style.border = `2px solid red`;
                 ispisPodataka.style.position = `absolute`;
@@ -281,41 +283,50 @@
                 ispisPodataka.style.fontSize = `29px`;
                 ispisPodataka.style.textAlign = `center`;
                 ispisPodataka.style.zIndex = "1";
-                ispisPodataka.style.setProperty('background-color','red','important');
-                
-               
+                ispisPodataka.style.setProperty('background-color', 'red', 'important');
+
+
                 ispisPodataka.appendChild(x);
                 x.innerHTML = `x`;
                 x.style.position = 'absolute';
                 x.style.top = '0px';
                 x.style.right = '0px';
                 x.style.border = '1px solid black';
+                x.style.hover = 'cursor: pointer';
 
-                x.addEventListener('click',e=>{
+                x.addEventListener('click', e => {
+                    let body1 = document.querySelector('body');
                     ispisPodataka.style.display = 'none';
-                    //ispisPodataka.style.hover.cursor = 'pointer';
+                    pozadina.style.setProperty('opacity', '1', 'important');
 
                 });
-               
-                
+
+
             }, 4000);
 
-         
+
+            x.addEventListener('mouseenter', e => {
+                x.style.cursor = 'pointer';
+            });
 
 
-                let v = setTimeout(()=>{
-                    let ispisPodataka = document.querySelector('#ispisPodataka');
 
-                    ispisPodataka.style.transform = `scale(1.5)`;
-                },4000)
-            
-          
-           
+
+
+
+            let v = setTimeout(() => {
+                let ispisPodataka = document.querySelector('#ispisPodataka');
+
+                ispisPodataka.style.transform = `scale(1.5)`;
+            }, 4000)
+
+
+
 
             let vreme = setTimeout(() => {
                 let ime = imePrezime.value;
 
-                ispisImena.innerHTML = `Zdravo ${ime}`  + '<br>';
+                ispisImena.innerHTML = `Zdravo ${ime}` + '<br>';
                 let vrednost = select.value;
                 ispisImena.innerHTML += ` ${vrednost}`;
 
@@ -327,54 +338,64 @@
 
                 let vrednost = select.value;
                 ispisImena.innerHTML = ``;
-               // imePrezime.value = ''; ovo mora u sledeci setTimeout, ne moze u isti
+                // imePrezime.value = ''; ovo mora u sledeci setTimeout, ne moze u isti
 
             }, 3000);
 
             let vreme4 = setTimeout(() => {
-               
-                ispisPodataka.style.setProperty('opacity', '1','undifined'); 
-                pozadina.style.setProperty('opacity', '0.2','important');
+
+                ispisPodataka.style.setProperty('opacity', '1', 'undifined');
+                pozadina.style.setProperty('opacity', '0.2', 'important');
                 //ispisPodataka.parentElement.style.setProperty('opacity','.2','important');
                 //body1.style.setProperty('opacity', '','important');
 
-                
+
 
             }, 4000);
 
             let vreme5 = setTimeout(() => {
                 ispisPodataka.style.display = 'none';
-                pozadina.style.setProperty('opacity', '1','important');
-               
+                pozadina.style.setProperty('opacity', '1', 'important');
+
+
+
 
             }, 30000);
-           
+
+
+
+
+
+
 
         });
 
         //provera reci nedozvoljenih
 
-        let check_val =() =>{
-			let bad_words = new Array('facebook', 'twitter');
-			let check_text = document.getElementById("text").value;
-			let error = 0;
-			for (let i = 0; i < bad_words.length; i++) {
-				let val = bad_words[i];
+        let check_val = () => {
+            let bad_words = new Array('facebook', 'twitter');
+            let check_text = document.getElementById("text").value;
+            let error = 0;
+            for (let i = 0; i < bad_words.length; i++) {
+                let val = bad_words[i];
                 if ((check_text.toLowerCase()).indexOf(val.toString()) > -1) {//indexOf pita na kom mestu u check_text se nalazi val
                     //koji je pomocu toString prebacen u string, mada ovde je vec string, ali u slucaju da se unese nesto drugo sto
                     //nije string stavlja se za svaki slucaj, u pricipu stavljeno je -1, zato sto je to nemoguce, odnosno, cim bude 
                     //veca pozicija od -1, odmah je greska, tj, ne sme uopste nedozovljena rec da se javi na bilo kom mestu)
-					error = error + 1;
-				}
-			}
+                    error = error + 1;
+                }
+            }
 
-			if (error > 0) {
-				document.getElementById("bad_notice").innerHTML = "WARNING: Some Bad Words In Your Text";
-			}
-			else {
-				document.getElementById("bad_notice").innerHTML = "";
-			}
-		}
+            if (error > 0) {
+                document.getElementById("bad_notice").innerHTML = "WARNING: Some Bad Words In Your Text";
+            }
+            else {
+                document.getElementById("bad_notice").innerHTML = "";
+            }
+        }
+
+
+
 
 
 
