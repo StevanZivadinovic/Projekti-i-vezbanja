@@ -154,6 +154,9 @@
         #ispisPodataka {
             transition: transform 3s ease-in-out;
         }
+        .error{
+            cursor: disabled !important;
+        }
     </style>
 </head>
 
@@ -242,10 +245,33 @@
         let search = document.querySelector("input[type=search]");
         let text = document.querySelector('#text');
         let ispisPodataka = document.querySelector('#ispisPodataka');
+        let dugme = document.querySelector('#dugme');
 
         let body1 = document.querySelector('body');
         ispisPodataka.style.display = 'none';
 
+        let patternUsername=/^[a-zA-Z]{3,15}$/;
+        imePrezime.addEventListener('keyup',e=>{//ovde umesto e moze i prazne zagrade. umesto inputUsername moglo
+	//je da se pise form.username, ovo vazi samo za id-jeve.!!!!!!!!!!mnogo dobra caka
+
+	if (patternUsername.test(imePrezime.value))
+
+	 {
+	 	
+	 	console.log(":)");
+	 }
+
+	 else
+
+
+	 {
+        let dugme = document.querySelector('#dugme');
+        dugme.setAttribute('class','error');
+	 	console.log(":(");
+	 }
+
+
+});
 
 
         form.addEventListener('submit', (e) => {
@@ -287,31 +313,57 @@
 
 
                 ispisPodataka.appendChild(x);
-                x.innerHTML = `x`;
+                //x.innerHTML = `x`;
                 x.style.position = 'absolute';
                 x.style.top = '0px';
                 x.style.right = '0px';
-                x.style.border = '1px solid black';
-                x.style.hover = 'cursor: pointer';
+              
 
-                x.addEventListener('click', e => {
-                    let body1 = document.querySelector('body');
-                    ispisPodataka.style.display = 'none';
-                    pozadina.style.setProperty('opacity', '1', 'important');
+                let brojac = 5;
+
+                let odbrojavanje = () => {
+                        clock = setInterval(() => {
+                           if (brojac>0){
+                                 brojac--;
+                            x.innerHTML = brojac;
+                            x.style.border = '1px solid black';
+                            x.style.setProperty('cursor','disabled','important');
+                            }
+                            else{
+                                x.innerHTML = `x`;
+                                x.style.border = '1px solid black';
+                                
+                                x.style.cursor = 'pointer';
+                                x.addEventListener('click', e => {
+                                let body1 = document.querySelector('body');
+                                ispisPodataka.style.display = 'none';
+                                pozadina.style.setProperty('opacity', '1', 'important');
+                                
 
                 });
+                               
+                                //x.style.setProperty('cursor','pointer','important');
+                            }
+                            
+                           
+                           
 
+                        }, 1000);
+                    
+
+
+                }
+                odbrojavanje();
+                
+       
 
             }, 4000);
 
-
+            /*
             x.addEventListener('mouseenter', e => {
-                x.style.cursor = 'pointer';
-            });
-
-
-
-
+                                x.style.cursor = 'pointer';
+                                });
+                                */
 
 
             let v = setTimeout(() => {
@@ -361,9 +413,6 @@
 
 
             }, 30000);
-
-
-
 
 
 
