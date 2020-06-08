@@ -161,8 +161,25 @@
 
         .cvet1{
 
-            transform: rotatey(0deg) translateX(0px) scale(3);
-            transition: color .5s, transform 0.9s ;
+            animation: imeAnimacija 8s infinite linear;
+            display: inline-block;
+            
+            
+        }
+
+        @keyframes imeAnimacija {
+                0% {
+                    transform: rotatey(0deg);
+                }
+                100% {
+                    transform: rotatey(359deg);
+                }
+                0% {
+                    color:yellow;
+                }
+                100% {
+                    color: red;
+                }
 
         }
         
@@ -171,7 +188,7 @@
 
 <body>
     <div id="pozadina">
-        <h1>Responsive forma</h1>
+        <center><h1 class="cvet1">Responsive forma</h1></center>
         <p>Promenite sirinu prozora kako bi ste videli efekat forme.Kada je ekran manji od 600px, formu kreirati tako da
             se
             njeni elementi
@@ -238,7 +255,7 @@
             </form>
         </center>
 
-      <center><img src="./cvet.jfif" style="width: 30px; height: 30px;  " id="cvet" ></center>  
+      
 
     </div>
 
