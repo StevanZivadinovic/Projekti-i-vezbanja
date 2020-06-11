@@ -79,8 +79,9 @@
             color: white;
             font: italic 30px "Times New Roman";
             text-align: center;
-            color: red;
+            text-shadow: 3px 3px 3px lightblue;
             padding: 30px;
+            animation: imeAnimacija1 3s infinite linear;
             
 
         }
@@ -91,18 +92,59 @@
             position: absolute;
             right: 50px;
             top: 100px;
-            animation: imeAnimacija 8s infinite linear;
+            animation: imeAnimacija 3s infinite linear;
         }
 
         @keyframes imeAnimacija {
                 0% {
                     transform: translatey(0px);
                 }
-                100% {
-                    transform: translatey(20px);
+                50% {
+                    transform: translatey(5px);
                 }
-             
+                75%{
+                    transform: translatey(3px);
+                }
+                100%{
+                    transform: translatey(0px);
+                }
+        }    
+
+        aside{
+            margin-left: 20px;
+            width: 20%;
+            float: left;
         }
+        .bok li{
+        display: block;
+        clear: both;
+        width: 100%;
+        
+        }
+
+        .bok li a{
+            padding: 5px 0;
+            background-color: lightblue;
+            margin: 3px;
+        }
+
+        .bok li a:hover{
+            background-color: lightseagreen;
+            border-left:30px solid black;
+        }
+        section{
+            width: 70%;
+            float: left;
+            border: 1px solid black;
+            
+   
+        }
+        section ul li img{
+            margin-left:10px;
+            padding: 10px;
+        }
+       
+               
     </style>
 </head>
 
@@ -111,7 +153,7 @@
         <ul class="top">
             <li><a href="#">Pocetna</a></li>
             <li><a href="#">Nasa misija</a></li>
-            <li><a href="#">Nasi sastojci</a></li>
+            <li><a href="#">Nasa ponuda</a></li>
             <li><a href="#">Zadovoljne musterije</a></li>
 
         </ul>
@@ -121,7 +163,7 @@
 
         <div class="text1">
 
-            Dobrodosli na nas sajt
+            Dobrodosli na pizza sajt
             <img id="pica" src="./1.png">
         </div>
     </header>
@@ -136,6 +178,29 @@
         </ul>
     </nav>
 
+
+
+    <div>
+
+
+        <aside>
+            <h2>Nadjite nas na netu</h2>
+
+            <ul class="bok">
+                <li><a href="#">twitter</a></li>
+                <li ><a href="#">facebook</a></li>
+                <li ><a href="#">blog</a></li>
+            </ul>
+        </aside>
+
+        <section>
+            <ul>
+                <li><img src="./oliveoil.jpg"></li>
+                <li><img src="./pasta.jpg"></li>
+                <li><img src="./pizza.jpg"></li>
+            </ul>
+        </section>
+    </div>
 
     <script></script>
 
