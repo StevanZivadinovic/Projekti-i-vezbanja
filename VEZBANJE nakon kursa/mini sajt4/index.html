@@ -13,6 +13,10 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            background-image: url('./pizza.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+           
         }
 
         ul {
@@ -136,6 +140,7 @@
             width: 70%;
             float: left;
             border: 1px solid black;
+           padding-left: 40px;
             
    
         }
@@ -144,7 +149,21 @@
             padding: 10px;
         }
        
+               table tr th{
+                   font-size: 30px;
+               }
+               img{
+                   width: 250px;
+                   height: 231px;
+               }
+               #padajuci1  li{
+                   clear:left;
+                   width: 100%;
+                   background-color: green;
+                   padding: 10px;
+               }
                
+
     </style>
 </head>
 
@@ -154,7 +173,11 @@
             <li><a href="#">Pocetna</a></li>
             <li><a href="#">Nasa misija</a></li>
             <li><a href="#">Nasa ponuda</a></li>
-            <li><a href="#">Zadovoljne musterije</a></li>
+            <li><a href="#" id="padajuci">Zadovoljne musterije</a><ul id="padajuci1" >
+                <li>Mika Mikic</li>
+                <li>Pera Peric</li>
+                <li>Laza Lazic</li>
+            </ul></li>
 
         </ul>
     </nav>
@@ -196,9 +219,9 @@
         <section>
             <table style="width:100%; padding-left: 30px;">
                 <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Age</th>
+                  <th>Pravimo maslinovo<br> ulje!</th>
+                  <th>Neko, pasta?</th>
+                  <th>Imamo picu!</th>
                 </tr>
                 <tr>
                   <td><img src="./oliveoil.jpg"></td>
@@ -206,9 +229,32 @@
                   <td><img src="./pizza.jpg"></td>
                 </tr>
                 <tr>
-                  <td>Eve</td>
-                  <td>Jackson</td>
-                  <td>94</td>
+                  <td><center>Originalno maslinovo ulje <br>
+                sa padina Pelopeneza!</center></td>
+                  <td><center>Sa nasom pastom oseticete <br>
+                duh starih rimljana!</center></td>
+                  <td><center>Pica sa ukusom mediterana!</center></td>
+                </tr>
+              </table>
+
+
+              <table style="width:100%; padding-left: 30px;">
+                <tr>
+                  <th>Pravimo maslinovo<br> ulje!</th>
+                  <th>Neko, pasta?</th>
+                  <th>Imamo picu!</th>
+                </tr>
+                <tr>
+                  <td><img src="./oliveoil.jpg"></td>
+                  <td><img src="./pasta.jpg"></td>
+                  <td><img src="./pizza.jpg"></td>
+                </tr>
+                <tr>
+                  <td><center>Originalno maslinovo ulje <br>
+                sa padina Pelopeneza!</center></td>
+                  <td><center>Sa nasom pastom oseticete <br>
+                duh starih rimljana!</center></td>
+                  <td><center>Pica sa ukusom mediterana!</center></td>
                 </tr>
               </table>
             
