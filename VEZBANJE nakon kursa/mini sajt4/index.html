@@ -119,6 +119,10 @@
             width: 20%;
             float: left;
         }
+        .bok{
+            margin-bottom: 30px;
+            position: relative;
+        }
         .bok li{
         display: block;
         clear: both;
@@ -169,11 +173,49 @@
                }
                #padajuci:hover #padajuci1{
                     display: block;
-                    position: absolute;
+                    position: absolute;/*kad stavis absolute taj element se vise ne racuna, tj njegova
+                    pozicija ne ometa druge elemente, tj sad dolazi do preklapanja*/
                     width: 100%;
                    
                
                }
+               .padajuci1 li{
+                   padding: 10px;
+               }
+
+               .padajuci .padajuci1{
+                   display: none;
+                   background-color: blue;
+                   
+                   
+               }
+               img {
+                    transition: transform 1s ease;
+                    cursor: zoom-in;
+                }
+
+                img:active {
+                   
+                    transform: scale(2);
+                    cursor: zoom-out;
+                }
+
+               .padajuci:hover .padajuci1{
+                    display: block;
+                    position: absolute;/*parent elementu stavljeno position relative, sto znaci da
+                    se ovaj element pozicionira u odnosu na parenta. ako stavis samo absolute
+                    nekom elementu, a ne stavis parentu position relative, automatski body postaje parent
+                    Druga stvar je, kad stavis position absolute nekom elementu, taj poprima sirinu svog parenta
+                    odnosno, ako mu stavis width 100% posatje sirok kolko i parent*/
+                    left: 250px;
+                    width: 100%;
+                    top: 3px;
+
+                   
+               
+               }
+
+
               
               
               
@@ -230,6 +272,29 @@
                 <li><a href="#">twitter</a></li>
                 <li ><a href="#">facebook</a></li>
                 <li ><a href="#">blog</a></li>
+            </ul>
+
+            <ul class="bok">
+                <li class="padajuci"><a href="#">pice</a>
+                <ul class="padajuci1">
+                    <li>kapricoza</li>
+                    <li>margarita</li>
+                    <li>quattro stagioni</li>
+                </ul></li>
+                <li class="padajuci"><a href="#">paste</a>
+                    <ul class="padajuci1">
+                        <li>kapricoza</li>
+                        <li>margarita</li>
+                        <li>quattro stagioni</li>
+                    </ul>
+                </li>
+                <li class="padajuci"><a href="#">ulja</a>
+                    <ul class="padajuci1">
+                        <li>kapricoza</li>
+                        <li>margarita</li>
+                        <li>quattro stagioni</li>
+                    </ul>
+                </li>
             </ul>
         </aside>
 
