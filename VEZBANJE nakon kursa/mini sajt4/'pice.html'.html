@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pizza</title>
+    <link rel="stylesheet" type="text/css" href="./lightbox.css">
+    <link rel="stylesheet" type="text/css" href="./lightbox.min.css">
+    <script type="text/javascript" src="./lightbox-plus-jquery.min.js"></script>
+    
+
+    <style>
+
+            body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-image: url('./pizza.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+        }
+        table tr th{
+            text-align: center;
+            padding-left: 0;
+            border: 1px solid black;
+        }
+        table{
+            margin-left: 0;
+            padding: 0;
+        }
+       
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-image: url('./pizza.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        ul::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+
+        li {
+            float: left;
+            width: 25%;
+
+
+
+
+        }
+
+        li a:hover {
+            background-color: red;
+        }
+
+        li a {
+            text-decoration: none;
+            display: block;
+            border-left: 2px solid rgb(12, 50, 50);
+            background-color: grey;
+            text-align: center;
+            padding: 14px 0;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+
+
+        }
+        .tabela{
+            width: 100%;
+            margin:0;
+        }
+       
+        img{
+          
+            padding-left: 10px;
+            width: 400px;
+            height: 300px;
+            
+            
+        }
+        img:hover{
+            
+            transform: scale(1.1);
+        }
+        button{
+            width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+
+ 
+        <nav>
+            <ul class="bottom">
+                <li><a href="#">Kompanija</a></li>
+                <li><a href="#">O nama</a></li>
+                <li><a href="#">Karijera</a></li>
+                <li><a href="#">Kontakt</a></li>
+
+            </ul>
+        </nav>
+   
+
+
+
+
+    <table style="width:100%; ;">
+        <tr>
+         <th>MALA<br> 15cm</th>
+          <th>SREDNJA <br> 20cm</th>
+          <th>VELIKA <br>25cm</th>
+        </tr>
+        <tr>
+            <!--Proveriti u css fajlovima koje si skinuo sa lightbox-a kako je unesena putanja do slike da bi pravilno povezao 
+            strelice i znak iks za navigaciju na kraju-->
+          <td><a href="./kapricoza.jpg" data-lightbox="mygallery" data-title='mala'><img src="./kapricoza.jpg"></a></td>
+          <td><a href="./capricoza-pica.jpg" data-lightbox="mygallery"  data-title='srednja'><img src="./capricoza-pica.jpg"></a></td>
+          <td><a href="./popaj-kapricoza.jpg" data-lightbox="mygallery"  data-title='velika'><img src="./popaj-kapricoza.jpg"></a></td>
+        </tr>
+        <tr>
+          <td><button>Naruci</button> <br>
+        </td>
+          <td><button>Naruci</button></td>
+          <td><button>Naruci</button></td>
+        </tr>
+      </table>
+
+    
+</body>
+</html>
