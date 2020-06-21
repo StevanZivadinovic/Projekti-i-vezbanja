@@ -15,9 +15,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-image: url('./pizza.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
+           
            
         }
         table tr th{
@@ -30,15 +28,6 @@
             padding: 0;
         }
        
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            background-image: url('./pizza.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-           
-        }
 
         ul {
             list-style-type: none;
@@ -133,10 +122,23 @@
             padding-left: 50px;
             
         }
+
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
      
     </style>
 </head>
 <body>
+
+   
 
  
         <nav>
@@ -188,6 +190,11 @@
           <td><button>Naruci</button></td>
         </tr>
       </table>
+
+      <video id="myVideo" autoplay muted loop >
+        <source src="videoPozadina.mp4" type="video/mp4">
+       
+      </video>
 
       <script src="https://kit.fontawesome.com/8203228926.js" crossorigin="anonymous"></script>
 
