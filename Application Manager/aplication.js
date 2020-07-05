@@ -66,7 +66,6 @@ prikaz.addEventListener("click", (a) => {
 
 divPri.addEventListener("click", (e) => {
   if (e.target === doc.data().name) {
-    
     let id = data().id;
     console.log(id);
 
