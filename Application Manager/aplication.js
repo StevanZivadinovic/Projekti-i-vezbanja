@@ -51,10 +51,17 @@ prikaz.addEventListener("click", (a) => {
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
         console.log(doc.id, " => ", doc.data());
+        divPri.setAttribute("data-id", doc.id);
 
-        divPri.innerHTML += `<div style='cursor:pointer'>Name: ${
+        divPri.innerHTML += `<div style='cursor:pointer; display:inline'>Name: ${
           doc.data().name
-        }</div>`;
+        }</div><span class='krstic' style='float:right; cursor:pointer;' >x</span>
+       
+        <br>Email: ${
+            doc.data().email
+          }
+        
+        <hr style="height:1px;border:1px solid black;color:#333;background-color:red;">`;
       });
     })
     .catch((error) => {
@@ -63,10 +70,11 @@ prikaz.addEventListener("click", (a) => {
 });
 
 //delete document
+let cross = document.querySelectorAll(".krstic");
 
-divPri.addEventListener("click", (e) => {
-  if (e.target === doc.data().name) {
-    let id = data().id;
+cross.forEach((a) => {
+  a.addEventListener("click", (e) => {
+    let id = e.target.parentElement.getAttribut("data-id");
     console.log(id);
 
     db.collection("podaci")
@@ -78,5 +86,5 @@ divPri.addEventListener("click", (e) => {
       .catch((error) => {
         console.log(`Nemoguce obrisati dokument: ${error}`);
       });
-  }
+  });
 });
