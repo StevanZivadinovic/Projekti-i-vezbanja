@@ -98,7 +98,7 @@ db.collection("podaci")
     });
   });
 
-//update
+//update, prekopirano sve skoro odozgo u event Listener za dugme update
 
 update.addEventListener('click',e=>{
   let divPri = document.querySelector("#prikazDiv");
@@ -144,8 +144,7 @@ let dodeljivanjeId = (doc) => {
   });
 };
 
-//dodeljujes id svakom elementu preko funkcije za dodeljivanje id-a, to je funkcija dodeljivanjeId.
-//ovde prolazis kroz svaki dokument i ubacujes ga u gunkciju za dodeljivanje id koju si iznad definisao
+
 
 db.collection("podaci")
   .get()
