@@ -19,6 +19,10 @@
         body {
             background-color: lightgreen;
         }
+
+        li:hover{
+            background-color: cadetblue;
+        }
     </style>
 </head>
 
@@ -27,10 +31,10 @@
         <h1>Application Manager</h1>
     </center>
 
-    <form name="application">
+    <form id='mojaForma' name="application">
         <div class="form-group">
             <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="usr" required>
+            <input type="text" class="form-control" id="usr" value="" placeholder="Type your name.." required>
             <p>Name is required</p>
         </div>
         <div class="form-group">

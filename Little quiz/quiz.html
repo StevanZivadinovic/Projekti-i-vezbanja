@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    
+    <style>
+        .intro, .finish {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.text {
+    width: 90%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.text h2 {
+    color: blue;
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.quiz {
+    padding: 10px 0;
+    background-color: #005ce6;
+}
+
+.question {
+    margin: 50px 0;
+}
+
+.question p {
+    margin: 10px 20px;
+    color: gainsboro;
+    font-size: 2.2em;
+}
+
+.check {
+    margin: 20px 40px;
+    color: gainsboro;
+    font-size: 1.6em;
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="intro">
+        <div class="text">
+            <h2>Koliko je Linux za tebe?</h2>
+        </div>
+    </div>
+
+    <div class="quiz">
+        <div class="text">
+            <form>
+                <div class="question">
+                    <p>1. Koju lampu bi najradije koristio
+                        u svojoj kancelariji?
+                    </p>
+                    <div class="check">
+                        <input type="radio" name="q1" value="A" checked>
+                        <label>Stona lampa</label>
+                    </div>
+                    <div class="check">
+                        <input type="radio" name="q1" value="B">
+                        <label>Dovoljna je sijalica u sobi</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. Više voliš desktop ili laptop računare?
+                    </p>
+                    <div class="check">
+                        <input type="radio" name="q2" value="A" checked>
+                        <label>Desktop</label>
+                    </div>
+                    <div class="check">
+                        <input type="radio" name="q2" value="B">
+                        <label>Laptop</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. Koliko često otklanjaš tehničke 
+                        probleme rodbini i drugarima?
+                    </p>
+                    <div class="check">
+                        <input type="radio" name="q3" value="A" checked>
+                        <label>Jako retko, kada me baš zamole, 
+                            ne volim to</label>
+                    </div>
+                    <div class="check">
+                        <input type="radio" name="q3" value="B">
+                        <label>Nemam vremena za takve gluposti</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. Gde skidaš muziku?
+                    </p>
+                    <div class="check">
+                        <input type="radio" name="q4" value="A" checked>
+                        <label>Spotify</label>
+                    </div>
+                    <div class="check">
+                        <input type="radio" name="q4" value="B">
+                        <label>The Pirate Bay</label>
+                    </div>
+                </div>
+                
+
+                <div class="finish">
+                    <input type="submit" class="submit" value="Pošalji">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
