@@ -7,8 +7,12 @@ let pitanje2 = form.q2.value;
 let pitanje3 = form.q3.value;
 let pitanje4 = form.q4.value;
 console.log(pitanje1);
+let ispis = document.createElement("h2");
+let div=document.querySelector('.finish');
+div.appendChild(ispis);
 
 dugme.addEventListener("click", (e) => {
+  e.preventDefault();
   let q1 = form.q1.value; //ovo probaj da iskoristis kod aplikacije nazvane 'aplication.html'
   let q2 = form.q2.value;
   let q3 = form.q3.value;
@@ -16,22 +20,25 @@ dugme.addEventListener("click", (e) => {
   console.log(q1);
   let odgovori = [q1, q2, q3, q4];
   let tacniOdgovori = ["A", "B", "A", "B"];
+ 
 
   let rezultat = 0;
-
+  
   odgovori.forEach((a, i) => {
     if (a == tacniOdgovori[i]) {
       rezultat += 25;
     }
-    setTimeout(function () {
-      if (rezultat <= rezultat) {
-        rezultat++;
-      }
-    }, 100);
   });
-
-  let ispis = document.querySelector(".finish");
-  e.preventDefault();
-  console.log("haj");
-  ispis.textContent = rezultat;
+  
+  // scrollTo(0, 0);
+  let broj = 0;
+    let clock = setInterval(() => {
+        ispis.textContent = `Vaš odgovor je: ${broj}%`;
+        if(broj < rezultat) {
+            broj++;
+        }
+        else {
+            clearInterval(clock);
+        }
+    }, 10);
 });
