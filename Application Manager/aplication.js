@@ -50,7 +50,16 @@ divPri.style.margin = "5px 0 0 0";
 divPri.style.listStyleType = "none";
 divPri.style.padding = 0;
 let dodeljivanjeId = (doc) => {
- 
+  let name = document.querySelector("#usr").value;
+  let email = document.querySelector("#pwd").value;
+  let age = document.querySelector("#Age").value;
+  let phone = document.querySelector("#phd").value;
+  let communication = document.querySelector(".form-check-input").value;
+  let english = document.querySelector("#sel1").value;
+  let start = document.querySelector("#aa").value;
+  let tehnical = document.querySelector("#aaa").value;
+  let presentation = document.querySelector("#aaa1").value;
+  let home = document.querySelector("#home").value;
 
   let li = document.createElement("li");
 
@@ -158,3 +167,116 @@ update.addEventListener("click", (e) => {
       });
     });
 });
+
+//izmena
+
+let forma1 = document.querySelector("#mojaForma1");
+forma1.style.display = "none";
+
+let prepoznavanje = (doc) => {
+  let li = document.querySelectorAll("li");
+  li.forEach((a) => {
+    a.addEventListener("dblclick", (e) => {
+      let forma = document.querySelector("#mojaForma");
+
+      forma.style.display = "none";
+      forma1.style.display = "block";
+      let prikaz = document.querySelector("#prikazDiv");
+      prikaz.style.display = "none";
+
+      let name = (forma1.ime.value = doc.data().name);
+      let email = (forma1.email.value = doc.data().email);
+      let age = (forma1.age.value = doc.data().age);
+      let phone = (forma1.phone.value = doc.data().PhoneNumber);
+      let optradio = (forma1.optradio.value = doc.data().PreferredWayofCommunication);
+      let english = (forma1.english.value = doc.data().EnglishLevel);
+      let date = (forma1.date.value = doc.data().AvailableToStart);
+      let skills = (forma1.skills.value = doc.data().TechnicalSkillsAndCourses);
+      let presonal = (forma1.personal.value = doc.data().ShortPersonalPresentation);
+      let study = (forma1.study.value = doc.data().StudyFromHome);
+
+      //ovo isood je prekopirano
+      update.addEventListener("click", (e) => {
+        let divPri = document.querySelector("#prikazDiv");
+        divPri.innerHTML = ``;
+
+        divPri.style.backgroundColor = "lightblue";
+        divPri.style.border = "2px solid black";
+        divPri.style.borderRadius = "6px";
+        divPri.style.margin = "5px 0 0 0";
+        divPri.style.listStyleType = "none";
+        divPri.style.padding = 0;
+        let dodeljivanjeId = (doc) => {
+          let li = document.createElement("li");
+
+          li.setAttribute("data-id", doc.id);
+          li.style.hover = "background-color:red";
+
+          let x = document.createElement("div");
+
+          x.textContent = `x`;
+          x.style.float = "right";
+          x.style.backgroundColor = "white";
+          x.style.padding = "3px 3px";
+          li.appendChild(x);
+          li.innerHTML += `${doc.data().name}<br>`;
+
+          li.innerHTML += `${doc.data().email}<hr>`;
+
+          let a = li.firstChild; //ovo je u stvari x znak, samo sam ga ovako dogvatio, posto je prvo dete li-a
+          li.style.cursor = "pointer";
+
+          divPri.appendChild(li);
+
+          a.addEventListener("click", (e) => {
+            e.stopPropagation();
+            let r = confirm("Da li želite da trajno obrišete poruku?");
+            if (r) {
+              let id = e.target.parentElement.getAttribute("data-id");
+              db.collection("podaci").doc(id).delete();
+            }
+          });
+        };
+
+        db.collection("podaci")
+          .get()
+          .then((snapshot) => {
+            console.log(snapshot.docs); //dobijes sva dokumenta u nizu, ali ne vidis njihov sadrzaj
+            snapshot.docs.forEach((doc) => {
+              // console.log(doc); //dobijes sve dokumente, svaki pojedinacno, ali opet ne vidis sadrzaj
+              // console.log(doc.data()); //ovde tek vidis sazdraj!!!
+              // console.log(doc.data().name);
+              console.log(doc.id);
+
+              dodeljivanjeId(doc);
+            });
+          });
+      });
+
+      console.log("haj");
+    });
+  });
+
+  let change = document.querySelector("#change");
+  //ovo ispod je iskopirano osim change addEvent-a
+
+  change.addEventListener("click", (a) => {
+    a.preventDefault();
+  });
+
+  //dovde
+};
+
+db.collection("podaci")
+  .get()
+  .then((snapshot) => {
+    console.log(snapshot.docs); //dobijes sva dokumenta u nizu, ali ne vidis njihov sadrzaj
+    snapshot.docs.forEach((doc) => {
+      // console.log(doc); //dobijes sve dokumente, svaki pojedinacno, ali opet ne vidis sadrzaj
+      // console.log(doc.data()); //ovde tek vidis sazdraj!!!
+      // console.log(doc.data().name);
+      console.log(doc.id);
+
+      prepoznavanje(doc);
+    });
+  });
