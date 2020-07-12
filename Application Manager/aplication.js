@@ -286,7 +286,8 @@ db.collection("podaci")
         let id1 = doc.id;
 
         console.log(id);
-        if (id === id1) {
+        if (id === id1) {//kad duplo kliknem na neko ime da mi otvori bas to ime sa podacima
+          //za to ime, a ne neko bezveze
           prepoznavanje(doc);
         }
       });
