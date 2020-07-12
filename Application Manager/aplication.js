@@ -153,6 +153,9 @@ update.addEventListener("click", (e) => {
     });
   };
 
+
+ 
+
   //kad izbrises nekog korisnika i odes na update ispise ti preostale podatke koje ispise iz baze
   db.collection("podaci")
     .get()
@@ -167,6 +170,7 @@ update.addEventListener("click", (e) => {
         dodeljivanjeId(doc);
       });
     });
+
 });
 
 //izmena
@@ -213,11 +217,61 @@ let prepoznavanje = (doc) => {
   let change = document.querySelector("#change");
   //ovo ispod je iskopirano osim change addEvent-a
 
-  change.addEventListener("click", (a) => {
-    a.preventDefault();
+  change.addEventListener("click", (e) => {
 
-    
+    e.preventDefault();
+
+  let name = forma1.ime.value;
+  //console.log(name);
+  let email = forma1.email.value;
+  let age = forma1.age.value;
+  let phone = forma1.phone.value;
+  let optradio = forma1.optradio.value;
+  let english = forma1.english.value;
+  let date = forma1.date.value;
+  let skills = forma1.skills.value;
+  let presonal = forma1.personal.value;
+  let study = forma1.study.value;
+
+
+  let id = doc.id;
+  //console.log(id);
+  db.collection("podaci")
+  .doc(id)
+  .update({
+    name: name,
+    email: email,
+    age: age,
+    PhoneNumber: phone,
+    PreferredWayofCommunication: optradio,
+    EnglishLevel: english,
+    AvailableToStart: date,
+    TechnicalSkillsAndCourses: skills,
+    ShortPersonalPresentation: presonal,
+    StudyFromHome: study,
+
+  })
+
+   name = forma1.ime.value='';
+  //console.log(name);
+   email = forma1.email.value='';
+   age = forma1.age.value='';
+   phone = forma1.phone.value='';
+   optradio = forma1.optradio.value='';
+   english = forma1.english.value='';
+   date = forma1.date.value='';
+   skills = forma1.skills.value='';
+   presonal = forma1.personal.value='';
+   study = forma1.study.value='';
+
+  
   });
+
+
+
+
+
+  
 
   //dovde
 };
