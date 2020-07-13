@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VEZBANJA MOJA</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+
+    <style>
+
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: linear-gradient(120deg, #f6d365, #fda085);
+            color: white;
+            font-family: 'Poppins', sans-serif;/*popins familiju smo dodali tako sto smo unbacili i link za taj stil fonta, 
+            gore na pocetku, preuzet kod sa googla, kucas google fonts, ponude ti se razni fontovi, i ti uymes html kod za odredjeni stil
+            koji ti se svidja */
+            min-height: 100vh;
+
+             
+        }
+        header{
+            font-size: 1.5rem;
+        }
+
+        header, form{
+            min-height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form input,
+        form button{
+            padding: 0.5rem;
+             font-size: 2rem;
+             border: none;
+             background: white;
+            
+        }
+        form button{
+            color: #d88771;
+            background: white;
+            cursor: pointer;
+            transition: all 3s ease;
+        }
+
+        form button:hover{
+            background: #d88771;
+            color: white;
+        }
+      
+    </style>
+</head>
+
+<body>
+   <header>
+        <h1>Stevan's Todo List</h1>
+   </header>
+
+   <form>
+       <input type="text" class="todo-input">
+       <button class="todo-button" type="submit">
+           <i class="fas fa-plus-square"></i>
+       </button>
+   </form>
+   <div class="todo-container">
+       <ul class="todo-list">
+            
+       </ul>
+   </div>
+   
+
+    <script src="vezbanje.js"></script>
+
+</body>
+
+</html>
