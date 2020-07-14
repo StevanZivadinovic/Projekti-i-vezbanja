@@ -67,9 +67,7 @@ const todoList=document.querySelector('.todo-list');
 
 //Event listeners
 
-todoButton.addEventListener('click',addTodo){
-
-}
+todoButton.addEventListener('click',addTodo);
 
 let addTodo=e=>{
   e.preventDafault()
@@ -92,7 +90,7 @@ let addTodo=e=>{
   trashButton.classList.add('complete-btn');
   todoDiv.appendChild(trashButton );  
 
-  
+
 }
 
 //Functions
