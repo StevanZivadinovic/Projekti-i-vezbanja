@@ -52,6 +52,7 @@ let App = () => {
           Search
         </button>
       </form>
+      <div className='recipes'>
       {recepies.map((recipe) => (
         <Recipe
           key={recipe.recipe.label}
@@ -63,7 +64,8 @@ let App = () => {
 
         /> //recipe je ova promenljiva prva, drugo recipe je iz konyole, sa sajta preuzeto, label isto, iz konzole
       ))}
-      ;
+      </div>
+      
     </div>
   );
 };
