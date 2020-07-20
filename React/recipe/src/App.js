@@ -21,7 +21,7 @@ let App = () => {
     let response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free`
     );
-    let data = await response.json();
+    let data = await response.json();//ovo radimo samo da bi podatke koje preuymemo (fetch-ujemo), imali u normalnom obliku a ne nekom mutavom
 
     setRecepies(data.hits); //ovo hits je iz konzole, preuzeto sa sajta. Ovde postavljamo spisak recepata;
     console.log(data.hits); //dohvatamo samo recepte
