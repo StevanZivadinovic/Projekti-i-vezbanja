@@ -13,7 +13,7 @@ let App = () => {
   useEffect(() => {
     console.log("Effect has been run");
     getRecipes(); //ovde poyivamo funkciju odozdo
-  }, [query]); //kad smo dodali ovo [], tada se samo jednom ispisuje ovaj tekst u konyoli, inace se ispisuje svaki put kad nesto odradimo na sajtu,a mi hocemo samo
+  }, [query]); //kad smo dodali ovo [], tada s  inace se ispisuje svaki put kad nesto odradimo na sajtu,a mi hocemo samo
   //prvi put kad se ucita sajt da se useEffect izvrsi/ Ako stavimo nesto u [], npr, brojac, ynaci samo ako se desi promena na brojacu onda dolazi do ponovnog aktiviranja useEffect-a,
   //tj samo mu tad doyvoljavamo da se aktivira, ako stoji prazno [], znaci sme samo na pocetku da se aktivira
 
