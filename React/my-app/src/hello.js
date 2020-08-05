@@ -17,14 +17,16 @@ function Hello(props) {
   };
 
   return (
-    <div className="tweet">
-      <h3>{props.name}</h3>
-      <p>{props.message}</p>
+    <div>
+      <div className="tweet">
+        <h3>{props.name}</h3>
+        <p>{props.message}</p>
 
-      <h3>{pocetnaVrednost}</h3>
-      <button onClick={povecaj}>Like</button>
-      <h1 className={bojaPozadine ? "red" : ""}>Promeni mi boju</h1>
-      <button onClick={promeniBoju}>promeni boju textu</button>
+        <h3>{pocetnaVrednost}</h3>
+        <button onClick={povecaj}>Like</button>
+        <h1 className={bojaPozadine ? "red" : ""}>Promeni mi boju</h1>
+        <button onClick={promeniBoju}>promeni boju textu</button>
+      </div>
     </div>
   );
 }
