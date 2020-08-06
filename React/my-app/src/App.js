@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Hello from "./hello.js";
 import Form from "./component/form";
-import firebase from "./config/config.js";
+
 
 
 function App() {

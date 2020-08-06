@@ -28,17 +28,19 @@ class Form extends Component {
     
     localStorage.setItem("ime", this.state.name);
     localStorage.setItem("poruka", this.state.message);
+    let name=document.querySelector('#ime')
 
+    
     firebase
       .firestore()
       .collection("korisnici")
       .set({
-        ime: this.state.name,
+        ime: name.value,
         poruka: this.state.message,
       })
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
-          let id1 = doc.data();
+          
           console.log(doc);
         });
       });
@@ -50,6 +52,7 @@ class Form extends Component {
         <div className="forma">
           <form>
             <input
+              id='ime'
               value={this.state.name}
               type="text"
               placeholder="unesi ime.."
