@@ -63,8 +63,11 @@ let neka = (params) => {
           spans.forEach((a,i)=>{
             let position = parseInt(a.style.left)
             console.log(position);
-            if(position > 850 ){
+            if(position > 825 ){//trebalo bi da stavim 850 ali se nesto ne uklapa
                 clearAllIntervals();
+            }
+            else if(position >700 && position <710){
+              a.classList.add('danger');
             }
           });
   },100)
