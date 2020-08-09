@@ -1,20 +1,62 @@
 let neka = (params) => {
   let start = document.querySelector(".startBtn");
-  let mainInout = document.querySelector(".main-input");
+  let mainInput = document.querySelector(".main-input");
   let allLines = document.querySelectorAll(".line");
+  let allText = [];
+
+  let textLenght = 3;
+  let typingWords = words.filter((word) => word.length == textLenght);
+  let speed = 5; //brzina kretanja reci u px
+  lvl = 6;
 
   let startGame = () => {
     start.hidden = true;
+    mainInput.focus(); //cim udjes u igricu odmah postavi cursor na input polje
+/*
+    let speedUp = setInterval(() => {
+      textLenght++;
+      let typingWords = words.filter((word) => word.length == textLenght);
+    }, 20000);
+    */
+    let checkInputTyping = () => {
+      let inputVal = mainInput.value;
+      console.log(inputVal);
+      let self = $(this);
+      console.log(self);
+      console.log(allText);
+
+      if (allText.includes(inputVal)) {
+        let spans = document.querySelectorAll("span");
+
+        spans.forEach((a) => {
+          console.log(typeof a.firstChild);
+          if (a.firstChild.textContent === inputVal) {
+            a.style.background = "blue";
+            a.remove();
+            mainInput.value = ""; //prazni input nakon uspesno otkucane reci
+          }
+        });
+        console.log(typeof spans);
+
+        /*
+        //ovo iznad ovako izgleda u jquery
+        $('span').filter(function(){
+          console.log(typeof($(this).text()))
+
+          return $(this).text() == inputVal;
+        }).css(
+          'background', 'blue'
+        )
+        */
+      }
+    };
+
+    mainInput.addEventListener("keyup", checkInputTyping);
   };
+
   startGame();
 
-  let speed = 5; //brzina kretanja reci u px
-  let textLenght = 3;
-
-  let typingWords = words.filter((word) => word.length == textLenght);
-  //console.log(typingWords);
-  lvl = 6;
-
+ 
   //insert spans
 
   let chooseText = () => {
@@ -37,46 +79,76 @@ let neka = (params) => {
       //math.random()*20 vraca random brojeve izmedju 0 i 19
       if (rand <= lvl) {
         let text = chooseText();
+        allText.push(text);
         let span = document.createElement("span");
 
         span.innerText = text;
         allLines[i].append(span); //selektuje liniju i doda joj rec
+
       }
+
     }
+    
   };
   insertSpans();
+  
+
 
   //animacija spanova
 
-  let moveAll = setInterval(()=>{
-      let spans = document.querySelectorAll('span');
-      
+  let moveAll = setInterval(() => {
+    let spans = document.querySelectorAll("span");
 
-      spans.forEach((e)=>{
+    spans.forEach((e) => {
       //  console.log(e);
-          e.style.left= '+' + speed +'px';
-      })
-          
-          speed+=20;
+      e.style.left = "+" + speed + "px";
+    });
 
-          //testiranje
-          spans.forEach((a,i)=>{
-            let position = parseInt(a.style.left)
-            console.log(position);
-            if(position > 825 ){//trebalo bi da stavim 850 ali se nesto ne uklapa
-                clearAllIntervals();
-            }
-            else if(position >700 && position <710){
-              a.classList.add('danger');
-            }
-          });
-  },100)
+    speed += 1;
+
+    //testiranje
+    spans.forEach((a, i) => {
+      let position = parseInt(a.style.left);
+      console.log(position);
+      if (position > 825) {
+        //trebalo bi da stavim 850 ali se nesto ne uklapa
+        clearAllIntervals();
+      } else if (position > 700 && position < 710) {
+        a.classList.add("danger");
+      }
+    });
+  }, 100);
+
+
+  let moveAll1 = setInterval(() => {
+    let spans = document.querySelectorAll("span");
+
+    spans.forEach((e) => {
+      //  console.log(e);
+      e.style.left = "+" + speed + "px";
+    });
+
+    speed += 1;
+
+    //testiranje
+    spans.forEach((a, i) => {
+      let position = parseInt(a.style.left);
       
-  let clearAllIntervals = () =>{
-      clearInterval(moveAll);
-  }
-
-
+      console.log(position);
+      if (position > 825) {
+        //trebalo bi da stavim 850 ali se nesto ne uklapa
+        clearAllIntervals();
+      } else if (position > 700 && position < 710) {
+        a.classList.add("danger");
+      }
+    });
+  }, 100);
+  setInterval(insertSpans, 7000)
+  setInterval(moveAll, 7000)
+  
+  let clearAllIntervals = () => {
+    clearInterval(moveAll);
+  };
 };
 
 console.log(typeof parseInt("5"));
