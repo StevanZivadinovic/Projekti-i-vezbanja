@@ -6,8 +6,22 @@ let neka = (params) => {
 
   let textLenght = 3;
   let typingWords = words.filter((word) => word.length == textLenght);
-  let speed = 5; //brzina kretanja reci u px
+  let speed = 1; //brzina kretanja reci u px
   lvl = 6;
+  let score = 0;
+  let prikaziRezultat = document.querySelector('.prikaziRezultat');
+
+
+
+  
+
+      let speedUp = () =>{
+         textLenght++;
+      let typingWords = words.filter((word) => word.length == textLenght);
+      }
+  setInterval(speedUp, 20000);
+  
+
 
   let startGame = () => {
     start.hidden = true;
@@ -18,6 +32,8 @@ let neka = (params) => {
       let typingWords = words.filter((word) => word.length == textLenght);
     }, 20000);
     */
+   
+
     let checkInputTyping = () => {
       let inputVal = mainInput.value;
       console.log(inputVal);
@@ -27,13 +43,17 @@ let neka = (params) => {
 
       if (allText.includes(inputVal)) {
         let spans = document.querySelectorAll("span");
-
+        let index = allText.indexOf(inputVal);
+        allText.splice(index,1);
         spans.forEach((a) => {
           console.log(typeof a.firstChild);
           if (a.firstChild.textContent === inputVal) {
+            
             a.style.background = "blue";
             a.remove();
             mainInput.value = ""; //prazni input nakon uspesno otkucane reci
+            score++;
+            prikaziRezultat.innerText=score;
           }
         });
         console.log(typeof spans);
@@ -73,7 +93,9 @@ let neka = (params) => {
   };
   chooseText();
 
-  let insertSpans = () => {
+  let insertSpans = ()=>{
+
+  
     for (let i = 0; i < allLines.length; i++) {
       let rand = Math.floor(Math.random() * 20); //floor zaokruzuje brojeve na najblizi donji
       //math.random()*20 vraca random brojeve izmedju 0 i 19
@@ -88,9 +110,11 @@ let neka = (params) => {
       }
 
     }
-    
-  };
+  }
   insertSpans();
+  let ab = setInterval(insertSpans, 7000)
+  
+  
   
 
 
@@ -98,42 +122,35 @@ let neka = (params) => {
 
   let moveAll = setInterval(() => {
     let spans = document.querySelectorAll("span");
+    let allSpans = $('span');
+    let konvertovano = allSpans.get();//konvertovano iz Jquery u javascript
+   // console.log(typeof(spans), typeof(allSpans));
+   konvertovano1=$(document.querySelectorAll("span"));
+    console.log(konvertovano, allSpans);
 
-    spans.forEach((e) => {
-      //  console.log(e);
-      e.style.left = "+" + speed + "px";
-    });
-
-    speed += 1;
-
-    //testiranje
-    spans.forEach((a, i) => {
-      let position = parseInt(a.style.left);
-      console.log(position);
-      if (position > 825) {
-        //trebalo bi da stavim 850 ali se nesto ne uklapa
-        clearAllIntervals();
-      } else if (position > 700 && position < 710) {
-        a.classList.add("danger");
-      }
-    });
-  }, 100);
-
-
-  let moveAll1 = setInterval(() => {
-    let spans = document.querySelectorAll("span");
-
-    spans.forEach((e) => {
-      //  console.log(e);
-      e.style.left = "+" + speed + "px";
-    });
-
-    speed += 1;
-
-    //testiranje
-    spans.forEach((a, i) => {
-      let position = parseInt(a.style.left);
+    
+      allSpans.css({
+        left:'+='+speed
+      })
       
+     /*
+     for (var i=0; i<konvertovano.length; i++) {
+        konvertovano[i].style.left = "+" + speed + "px";
+     }
+     speed +=5;
+*/
+     /*
+     konvertovano.forEach((e) => {
+      //  console.log(e);
+      e.style.left = "+" + speed + "px";
+    });
+    
+    speed += 5;
+  */
+
+    //testiranje
+    spans.forEach((a, i) => {
+      let position = parseInt(a.style.left);
       console.log(position);
       if (position > 825) {
         //trebalo bi da stavim 850 ali se nesto ne uklapa
@@ -143,11 +160,16 @@ let neka = (params) => {
       }
     });
   }, 100);
-  setInterval(insertSpans, 7000)
-  setInterval(moveAll, 7000)
+
+  
+
+  
   
   let clearAllIntervals = () => {
     clearInterval(moveAll);
+    clearInterval(ab);
+
+    
   };
 };
 
