@@ -38,7 +38,6 @@ for (let i = 0; i < allLinks.length; i++) {
   allLinks[i].addEventListener("click", showView);
 }
 
-
 let showView = (e) => {
   for (let i = 0; i < views.length; i++) {
     views[i].style.display = "none";
@@ -49,7 +48,6 @@ let showView = (e) => {
     document.querySelector(id).style.display = "block";
   } else {
     document.querySelector(e).style.display = "block";
-  
   }
 };
 
@@ -84,28 +82,31 @@ function createAccountsTable() {
   }
   console.log(htmlAccounts);
   accountsTableBody.innerHTML = htmlAccounts;
-  let allDeleteBtns = document.querySelectorAll('delete-btn btn-sm btn-danger form');
-  let allEditBtns = document.querySelectorAll('edit-btn');  
+  let allDeleteBtns = document.querySelectorAll(".delete-btn");
+  let allEditBtns = document.querySelectorAll(".edit-btn");
 
   console.log(allDeleteBtns);
 
- 
-  allDeleteBtns.forEach((e,i) => {
-        e.addEventListener('click',deleteAccount);
-        allEditBtns.addEventListener('click',editAccount);
+  
 
-    });
-        
+  for (let i = 0; i < allDeleteBtns.length; i++) {
+    let deleteAccount = () => {
+      let id = allDeleteBtns[i].getAttribute("data-id");
+      console.log(id);
+    };
+    let editAccount = () => {
+      let id = allEditBtns[i].getAttribute("data-id");
+      console.log(id);
+    };
+    allDeleteBtns[i].addEventListener("click", deleteAccount);
+    allEditBtns[i].addEventListener("click", editAccount);
+  }
+}
 
-    
-}
-let deleteAccount = () =>{
-    let id = this.getAttribute('data-id');
-    console.log(id);
-}
-let editAccount = () =>{
-    let id = this.getAttribute('data-id');
-    console.log(id);
-}
+
+let editAccount = () => {
+  let id = this.getAttribute("data-id");
+  console.log(id);
+};
 
 createAccountsTable();
