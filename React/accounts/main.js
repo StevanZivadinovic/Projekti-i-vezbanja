@@ -93,6 +93,8 @@ function createAccountsTable() {
     let deleteAccount = () => {
       let id = allDeleteBtns[i].getAttribute("data-id");
       console.log(id);
+      db.splice(id,1);
+      createAccountsTable();
     };
     let editAccount = () => {
       let id = allEditBtns[i].getAttribute("data-id");
