@@ -157,13 +157,14 @@ function createAccountsTable() {
 
 createAccountsTable();
 
-/*
+
 let save = () =>{
-  localStorage.db = JSON.stringify(db);
+  //localStorage.db = JSON.stringify(db);
+localStorage.setItem('db', JSON.stringify(db));
 }
 
 window.addEventListener('beforeunload', save);
-*/
+
 
 
 
