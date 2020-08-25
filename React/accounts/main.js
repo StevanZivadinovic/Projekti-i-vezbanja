@@ -1,3 +1,5 @@
+
+
 let accountsTableBody = document.querySelector("#accounts-table-body");
 let allLinks = document.querySelector(".nav-link");
 let accountViewBtn = document.querySelector('[href="accounts-view"]');
@@ -18,17 +20,21 @@ let eEmail = document.querySelector('.eEmail');
 let ePhone = document.querySelector('.ePhone');
 
 let editBtn = document.querySelector('#edit');
+let id; 
 
 
 let saveEditedAccount = () =>{
-  const editAccount = {
+  const editedAccount = {
     id : eId.value,
     name : eName.value,
     lastName: eLastName.value,
     email: eEmail.value,
     phone: ePhone.value
   }
-  console.log(editAccount)
+  console.log(editedAccount);
+  db[id] = editedAccount;
+  createAccountsTable();
+  showView('#accounts-view');
   
 
 }
@@ -130,7 +136,7 @@ function createAccountsTable() {
 
     let editAccount = () => {
  
-      let id = allEditBtns[i].getAttribute("data-id");
+       id = allEditBtns[i].getAttribute("data-id");
       console.log(id);
       let selectedAccount = db[id];
       eId.value = selectedAccount.id;
@@ -147,17 +153,19 @@ function createAccountsTable() {
   }
 }
 
-let editAccount = () => {
- 
-  let id = dugmeEdit.getAttribute("data-id");
-  console.log(id);
-  let selectedAccount = db[id];
-  eId.value = selectedAccount.id;
-  eName.value = selectedAccount.name;
-  eLastName.value = selectedAccount.lastName;
-  eEmail.value = selectedAccount.email;
-  ePhone.value = selectedAccount.phone;
-  showView('edit-account-view');
-};
+
 
 createAccountsTable();
+
+/*
+let save = () =>{
+  localStorage.db = JSON.stringify(db);
+}
+
+window.addEventListener('beforeunload', save);
+*/
+
+
+
+
+
