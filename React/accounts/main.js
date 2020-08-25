@@ -11,7 +11,28 @@ let lastNameInput = document.querySelector('[placeholder="last name"]');
 let emailInput = document.querySelector('[placeholder="email"]');
 let phoneInput = document.querySelector('[placeholder="phone"]');
 let btnSave = document.querySelector("#save");
+let eId = document.querySelector('.eId');
+let eName = document.querySelector('.eName');
+let eLastName = document.querySelector('.eLastName');
+let eEmail = document.querySelector('.eEmail');
+let ePhone = document.querySelector('.ePhone');
 
+let editBtn = document.querySelector('#edit');
+
+
+let saveEditedAccount = () =>{
+  const editAccount = {
+    id : eId.value,
+    name : eName.value,
+    lastName: eLastName.value,
+    email: eEmail.value,
+    phone: ePhone.value
+  }
+  console.log(editAccount)
+  
+
+}
+editBtn.addEventListener('click',saveEditedAccount);
 let saveAccount = () => {
   let newAccount = {
     id: idInput.value,
@@ -40,16 +61,24 @@ for (let i = 0; i < allLinks.length; i++) {
 
 let showView = (e) => {
   for (let i = 0; i < views.length; i++) {
-    views[i].style.display = "none";
+    views[i].style.display = 'none';
   }
   if (e instanceof Event) {
     e.preventDefault();
-    let id = `#${this.getAttribute("href")}`;
-    document.querySelector(id).style.display = "block";
-  } else {
-    document.querySelector(e).style.display = "block";
+    let id = `#${this.getAttribute('href')}`;
+    document.querySelector(id).style.display = 'block';
+  } 
+  else {
+  
+
+    let e1 = document.querySelector(e);
+    console.log(e1);
+    e1.style.display = 'block';
   }
 };
+
+
+
 
 addAccountViewBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -86,6 +115,7 @@ function createAccountsTable() {
   let allEditBtns = document.querySelectorAll(".edit-btn");
 
   console.log(allDeleteBtns);
+  console.log(allEditBtns);
 
   
 
@@ -95,20 +125,39 @@ function createAccountsTable() {
       console.log(id);
       db.splice(id,1);
       createAccountsTable();
+      showView('#accounts-view');
     };
+
     let editAccount = () => {
+ 
       let id = allEditBtns[i].getAttribute("data-id");
       console.log(id);
+      let selectedAccount = db[id];
+      eId.value = selectedAccount.id;
+      eName.value = selectedAccount.name;
+      eLastName.value = selectedAccount.lastName;
+      eEmail.value = selectedAccount.email;
+      ePhone.value = selectedAccount.phone;
+      showView('#edit-account-view');
     };
+
+   
     allDeleteBtns[i].addEventListener("click", deleteAccount);
     allEditBtns[i].addEventListener("click", editAccount);
   }
 }
 
-
 let editAccount = () => {
-  let id = this.getAttribute("data-id");
+ 
+  let id = dugmeEdit.getAttribute("data-id");
   console.log(id);
+  let selectedAccount = db[id];
+  eId.value = selectedAccount.id;
+  eName.value = selectedAccount.name;
+  eLastName.value = selectedAccount.lastName;
+  eEmail.value = selectedAccount.email;
+  ePhone.value = selectedAccount.phone;
+  showView('edit-account-view');
 };
 
 createAccountsTable();
