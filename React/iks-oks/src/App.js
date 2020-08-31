@@ -19,15 +19,19 @@ function App() {
     setMatrix(tempMatrix);
   }, []);
 
+  let squerClick = () =>{
+    alert('hi');
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <div>
           {
           matrix.map((val, c) => (
-            <div className='c'>
+            <div  className='c'>
             {val.map(()=>( 
-              <div className='r'>hi</div>
+              <div  onClick={squerClick} className='r'></div>
             ))}
              
               

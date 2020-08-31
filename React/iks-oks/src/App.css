@@ -44,8 +44,16 @@
 .style2  {
   background-color: green;
 }
+.c{
+  font-size: 0px;/*ovo brise prayan prostor izmedju redova*/
+}
 .r{
   display: inline-block;
   border: 1px solid grey;
-  font-size: 48px;
+  font-size: 90px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  box-sizing: border-box;
 }
