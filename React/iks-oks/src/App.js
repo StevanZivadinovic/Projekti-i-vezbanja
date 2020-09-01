@@ -26,7 +26,11 @@ function App() {
   }, []);
 
   let squerClick = (r,c) =>{
-    if(!matrix[r][c]){
+    if(!matrix[r][c] && !winner){
+      console.log(!matrix[r][c]);
+      setSelC(c)
+      setSelR(r)
+
       let nextPlayer = currentPlayer === 'x' ? 'o' :'x';
       setCurrentPlayer(nextPlayer);
       const matrixCopy = [...matrix];
@@ -36,7 +40,32 @@ function App() {
   }
 
 let isWinner = () =>{
-  alert('ahahha')
+  let vertical = true;
+  let horizontal = true;
+  let d1 = true;
+  let d2 = true;
+
+  if(selC === null || selR === null){
+    return;
+  }
+  for(let i=0; i<matrixSize; i++){
+    if(matrix[i][selC] !== currentPlayer){
+      vertical =false;
+    }
+    if(matrix[selR][i] !== currentPlayer){
+      horizontal =false;
+    }
+    if(matrix[i][i] !== currentPlayer){
+      d1 =false;
+    }
+    if(matrix[i][matrixSize - i - 1 ] !== currentPlayer){
+      d2 = false;
+    }
+   
+  }
+  if(vertical || horizontal || d1 || d2){
+    setWinner(true);
+  }
 }
 
 
@@ -47,11 +76,16 @@ let isWinner = () =>{
     }
   
   })
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
 
   return (
     <div className="App">
       <header className="App-header">
         <div>
+        <button onClick={refreshPage}>Click to reload!</button>
           {
           matrix.map((val, c) => (
             <div  className='c'>
@@ -68,6 +102,7 @@ let isWinner = () =>{
             </div>
           ))}
         </div>
+            <h1>{winner ?`The player ${currentPlayer} is winner` : ""}</h1>
       </header>
     </div>
   );
