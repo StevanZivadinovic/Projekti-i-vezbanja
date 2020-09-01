@@ -46,6 +46,8 @@
 }
 .c{
   font-size: 0px;/*ovo brise prayan prostor izmedju redova*/
+  min-width: 300px;/*da se ne smanjuje polje pri smanjivanju ekrana, ovo je najmanja moguca
+  sirina polja, ako se ekran smanji na manje polje ostane ove sirine*/
 }
 .r{
   display: inline-block;
@@ -56,4 +58,5 @@
   text-align: center;
   line-height: 100px;
   box-sizing: border-box;
+  vertical-align: middle;
 }

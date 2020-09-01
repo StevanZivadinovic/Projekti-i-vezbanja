@@ -7,6 +7,12 @@ function App() {
   const [matrix, setMatrix] = useState(initMatrix);
   const [matrixSize, setMatrixSize] = useState(3);
   const [currentPlayer, setCurrentPlayer] = useState("o");
+  const [selR, setSelR] = useState(null);
+  const [selC, setSelC] = useState(null);
+  const [winner, setWinner] = useState(null);
+
+
+  
 
   useEffect(() => {
     const row = new Array(matrixSize).fill(null);
@@ -19,9 +25,28 @@ function App() {
     setMatrix(tempMatrix);
   }, []);
 
-  let squerClick = () =>{
-    alert('hi');
+  let squerClick = (r,c) =>{
+    if(!matrix[r][c]){
+      let nextPlayer = currentPlayer === 'x' ? 'o' :'x';
+      setCurrentPlayer(nextPlayer);
+      const matrixCopy = [...matrix];
+      matrixCopy[r][c] = nextPlayer;
+    }
+    console.log(r,c);
   }
+
+let isWinner = () =>{
+  alert('ahahha')
+}
+
+
+
+  useEffect(() => {
+    if(!winner){
+      isWinner();
+    }
+  
+  })
 
   return (
     <div className="App">
@@ -30,8 +55,10 @@ function App() {
           {
           matrix.map((val, c) => (
             <div  className='c'>
-            {val.map(()=>( 
-              <div  onClick={squerClick} className='r'></div>
+            {val.map((val1,r)=>( 
+              <div  onClick={()=>{squerClick(r,c)}} className='r'>
+                {matrix[r][c]}
+              </div>
             ))}
              
               
