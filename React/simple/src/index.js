@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.render(
  
   <React.StrictMode>
+    {/*ovaj link dole je za poveyivajne sa bootstrapom za react */}
      <link
   rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"

@@ -2,21 +2,35 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './components/home';
+import About from './components/about';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 function App() {
   
   return (
+  <Router>{/*Router, tj BrowserRouter koji je ovde preimenovan u Router se stavlja na pocetku i na kraju
+  da bi cela aplikacija bila 'sposobna za ruterovanje' */}
     <div className="App">
       <header className="App-header">
-    <Router>
+    
       <div>
-        <Route exact path='/' component={Home}></Route>
+        <Route exact path='/' component={Home}></Route>{/**kad hoces komponentu da ubacis. exact oznacava
+         * , tj omogucava da se ovaj route ucita ako je path bas taj koji je naveden a ne neki slican, koji sadrzi ovaj u sebi
+         */}
+
+         <Route exact path='/about' component={About}></Route>
+        <Route exact path='/' render={()=>{{/*ovo je kad hoces neku funkciju da odradis unutar routa */}
+          return(<h1>Renderovano</h1>
+
+          )}}></Route>
+      
+
       </div>
-    </Router>
+    
       </header>
     </div>
+    </Router>
   );
 }
 
