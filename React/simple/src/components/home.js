@@ -11,8 +11,8 @@ export default class Home extends Component {
                <Jumbotron>
                    <h1>Haj</h1>
                </Jumbotron>
-               <Link to= '/about'>
-                   <Button btnStyle='primary'>About</Button>
+               <Link to = '/about'>
+                   <Button variant="flat" size="xxl" style={{backgroundColor:'red'}}>About</Button>
                </Link>
            </Container>
         )
