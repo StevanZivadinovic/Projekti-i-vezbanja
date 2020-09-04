@@ -7,13 +7,17 @@ export default class Home extends Component {
     render() {
         return (
            <Container>
-               
-               <Jumbotron>
-                   <h1>Haj</h1>
+               <Jumbotron >
+                   <h1>Haj haj haj haj haj haj</h1>
+                   <p>This is how to buiild website with React, react-bootstrap</p>
                </Jumbotron>
                <Link to = '/about'>
-                   <Button variant="flat" size="xxl" style={{backgroundColor:'red'}}>About</Button>
+                   <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>About</Button>
                </Link>
+               <Link to = '/news'>
+                   <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>News</Button>
+               </Link>
+
            </Container>
         )
     }
