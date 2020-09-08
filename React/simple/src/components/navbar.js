@@ -19,6 +19,7 @@ class Navbar1 extends Component {
             <Navbar.Collapse>
                 <Nav className='ml-auto'>
                   <Nav.Item><Nav.Link eventKey={1} component={Home} href='/' to='/'>Home</Nav.Link></Nav.Item>
+                  
                     
                     <Nav.Item><Nav.Link eventKey={2} component={Link} href='/about' to='/about'>About</Nav.Link></Nav.Item>
                     
