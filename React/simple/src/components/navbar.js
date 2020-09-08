@@ -18,11 +18,12 @@ class Navbar1 extends Component {
            
             <Navbar.Collapse>
                 <Nav className='ml-auto'>
-                    <Nav.Link eventKey={1} component={Home} to='/'>Home</Nav.Link>
-
-                    <Nav.Link eventKey={2} component={Link} to='/about'>About</Nav.Link>
-
-                    <Nav.Link eventKey={3} component={Link} to='/news'>News</Nav.Link>
+                  <Nav.Item><Nav.Link eventKey={1} component={Home} href='/' to='/'>Home</Nav.Link></Nav.Item>
+                    
+                    <Nav.Item><Nav.Link eventKey={2} component={Link} href='/about' to='/about'>About</Nav.Link></Nav.Item>
+                    
+                    <Nav.Item><Nav.Link eventKey={3} component={Link} href='/news' to='/news'>News</Nav.Link></Nav.Item>
+                    
 
                 </Nav>
             </Navbar.Collapse>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import {Jumbotron, Container, Row, Col, Image, Button} from 'react-bootstrap'//boorstrap klase
 import './home.css';
+import priroda from "./priroda.jpg";
 
 
 export default class Home extends Component {
@@ -18,12 +19,26 @@ export default class Home extends Component {
                    <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>News</Button>
                </Link>
                </Jumbotron>
-               <Row className='show-grid text-center'></Row>
+               <Row className='show-grid text-center'>
               <Col xs={12} sm={4} className='person-wrapper'>
-              <Image src="./priroda.jpg" circle className='profile-pic'/>
+              <Image src={priroda} roundedCircle  className='profile-pic'/>
+              
               <h3>Frank</h3>
               <p>sldjasjdlajsd;kl lkdjskljdlajd jdskjskljdlasjdjla</p>   
                 </Col>
+                <Col xs={12} sm={4} className='person-wrapper'>
+              <Image src={priroda} roundedCircle  className='profile-pic'/>
+              
+              <h3>Frank</h3>
+              <p>sldjasjdlajsd;kl lkdjskljdlajd jdskjskljdlasjdjla</p>   
+                </Col> 
+                <Col xs={12} sm={4} className='person-wrapper'>
+              <Image src={priroda} roundedCircle  className='profile-pic'/>
+              
+              <h3>Frank</h3>
+              <p>sldjasjdlajsd;kl lkdjskljdlajd jdskjskljdlasjdjla</p>   
+                </Col>
+                </Row>
            </Container>
         )
     }
