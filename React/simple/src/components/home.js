@@ -11,7 +11,7 @@ export default class Home extends Component {
         return (
            <Container>
                <Jumbotron >
-                   <h1>Haj haj haj haj haj haj</h1>
+                   <h1>Sasvim prirodno</h1>
                    <p>This is how to buiild website with React, react-bootstrap</p>
                    <Link to = '/about'>
                    <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>About</Button>
