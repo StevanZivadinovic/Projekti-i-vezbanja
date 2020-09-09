@@ -2,9 +2,10 @@ import React from "react";
 import Home from "./components/home";
 import About from "./components/about";
 import News from "./components/news";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {Jumbotron, Container, Row, Col, Image, Button} from 'react-bootstrap'//boorstrap klase
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import Navbar1 from './components/navbar';
+import './App.css'
+
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
                 {
                   /*ovo je kad hoces neku funkciju da odradis unutar routa */
                 }
-                return <h1>Renderovano</h1>;
+                return <center><h1>Renderovano</h1></center>;
               }}
             ></Route>
                           

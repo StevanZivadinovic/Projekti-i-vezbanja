@@ -13,17 +13,17 @@ class Navbar1 extends Component {
         <Navbar deafult collapseOnSelect>
        
             <Navbar.Brand>
-             <Link to='/'>CodeLife</Link>
+             <Link to='/' style={{color:'white', textDecoration:'none'}}>CodeLife</Link>
             </Navbar.Brand>
            
             <Navbar.Collapse>
                 <Nav className='ml-auto'>
-                  <Nav.Item><Nav.Link eventKey={1} component={Home} href='/' to='/'>Home</Nav.Link></Nav.Item>
+                  <Nav.Item><Nav.Link eventKey={1} component={Home} href='/' to='/' style={{color:'white'}}>Home</Nav.Link></Nav.Item>
                   
                     
-                    <Nav.Item><Nav.Link eventKey={2} component={Link} href='/about' to='/about'>About</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey={2} component={Link} href='/about' to='/about' style={{color:'white'}}>Klen</Nav.Link></Nav.Item>
                     
-                    <Nav.Item><Nav.Link eventKey={3} component={Link} href='/news' to='/news'>News</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link eventKey={3} component={Link} href='/news' to='/news' style={{color:'white'}}>Golubovi</Nav.Link></Nav.Item>
                     
 
                 </Nav>
