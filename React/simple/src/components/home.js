@@ -14,10 +14,10 @@ export default class Home extends Component {
                    <h1>Sasvim prirodno</h1>
                    <p>This is how to buiild website with React, react-bootstrap</p>
                    <Link to = '/about'>
-                   <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>About</Button>
+                   <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>Klen</Button>
                </Link>
                <Link to = '/news'>
-                   <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>News</Button>
+                   <Button variant="flat" size="xxl" style={{backgroundColor:'blue'}}>Golubovi</Button>
                </Link>
                </Jumbotron>
                <Row className='show-grid text-center'>
