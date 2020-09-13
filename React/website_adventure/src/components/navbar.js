@@ -3,7 +3,17 @@ import {Link} from 'react-router-dom'
 
 export default function Navbar() {
 
-    const [click, setClick] = useState();
+    const [click, setClick] = useState(false);
+    let handleClick = () =>{
+        if(click==false){
+            setClick(true);
+        }
+        else{
+            setClick(false);
+        }
+        
+    }
+
 
     return (
         <div>
