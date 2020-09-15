@@ -12,7 +12,7 @@ function HeroSection() {
             <h1>ADWENTURE AWAITS</h1>
             <p>What are you waiting for?</p>
             <div className='hero-btns'>
-                <p>text</p>
+              <p>text1</p>
                 <Button 
                 className='btns'
                 buttonStyle='btn--outline'
