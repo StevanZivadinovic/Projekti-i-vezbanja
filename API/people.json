@@ -1,0 +1,17 @@
+{ 
+"niz": [
+    {
+      "name":"Paula",
+      "age":25
+    },
+    {
+      "name":"Ross",
+      "age":32
+    },
+    {
+      "name":"Andrew",
+      "age":42
+    }
+  ]
+
+}
