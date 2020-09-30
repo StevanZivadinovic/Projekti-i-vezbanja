@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API, AJAX, fetch</title>
+    <style>
+        .korisnik{
+            display: flex;
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .users1 ul{
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
     <input  type='text' placeholder="Unesi grad.." value=""></input>
@@ -17,8 +28,16 @@
    <button id="dugme">Zahtev 1</button>
    <button id="dugme1">Zahtev 2</button>
    <p id="text"></p>
-
+   <button id="user">Get User</button>
+   <p id="text1"></p>
+   <button id="users">Get Users</button>
+   <p id="text2"></p>
    
+
+   <button id="button">Load GitHub users</button>
+   <br>
+   <h1>Github users</h1>
+   <div id="users1"></div>
 
 
     <script src="./fetch.js"></script>
