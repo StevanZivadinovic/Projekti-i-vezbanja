@@ -1,0 +1,57 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    margin: 50px 0 30px 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+header p{
+    font: 20px;
+}
+.pads{
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+}
+
+.pads > div {
+    height: 100px;
+    width: 100px;
+    
+}
+
+.pad1{
+    background-color:#60d394 ;
+}
+.pad2{
+    background-color:#d36060 ;
+}
+.pad3{
+    background-color:#c060d3 ;
+}
+.pad4{
+    background-color:#d3d160 ;
+}
+.pad5{
+    background-color: #6860d3 ;
+}
+.pad6{
+    background-color:#60b2d3 ;
+}
