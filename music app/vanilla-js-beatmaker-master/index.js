@@ -13,7 +13,8 @@ window.addEventListener("load", () => {
 
   pads.forEach((pad, index) => {
     pad.addEventListener("click", function() {
-      sounds[index].currentTime = 0;
+      sounds[index].currentTime = 0;//omogucava da vise puta klikces isto dugme uzastopce a da ne
+      //cekas da ceo ton odsvira
       sounds[index].play();
       createBubble(index);
     });
