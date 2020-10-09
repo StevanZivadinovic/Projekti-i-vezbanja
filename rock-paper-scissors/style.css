@@ -1,5 +1,7 @@
 .player-hand{
     -webkit-transform: scaleX(-1);/*dobijes sliku u ogledalu*/
+    -moz-transform: scaleX(-1);/*dobijes sliku u ogledalu*/
+
     /*transform:rotateY(180deg), moze i tako*/
 }
 
@@ -39,7 +41,8 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    opacity: 0;
+    transition: opacity 0.5s ease;
+
 }
 
 .intro h1{
@@ -63,6 +66,8 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+transition: opacity 0.5s ease .5s;/*ovo drugo 0.5 je odlaganje za 0.5s*/
+
 
 }
 
@@ -78,12 +83,12 @@ font-size: 50px;
     align-items: center;
 }
 
-div.fadeOut{
+.fadeOut{
     opacity: 0;
     pointer-events: none;
 }
 
-div.fadeIn{
+.fadeIn{
     opacity: 1;
     pointer-events: all;
 }
