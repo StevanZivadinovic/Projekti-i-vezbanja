@@ -21,12 +21,25 @@ let game = ()=>{
 
         //Computer options
         let computerOptions = ['rock', 'paper', 'scissors'];
-        let computerNamber = Math.floor(Math.random() * 3);
-        console.log(computerNamber);
 
+        options.forEach(option=>{
+            option.addEventListener('click',function(){
+                console.log(this); //daje ti element na koji si kliknuo (samo iz promenljive options),
+                //ali u Listeneru moras da koristis function(), a ne ()=>
+                //ovim se this povezuje sa option
 
+                //Computer Choise
+                let computerNamber = Math.floor(Math.random() * 3);
+                console.log(computerNamber); 
+                let computerChoise = computerOptions[computerNamber];
+                console.log(computerChoise);
+        
+            })
+        })
+    }
 
-
+    const comareHands = (playerChoise, computerChoise)=>{
+        
     }
     startGame();
     startMatch();
