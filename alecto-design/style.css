@@ -79,7 +79,6 @@
 
   .slideshow-container{
       color: white;
-     border: 1px solid black;
       width: 50%;
       margin:auto;
       text-align: center;
@@ -92,7 +91,7 @@
   .dotDiv{
       text-align: center;
       position: relative;
-      top: 300px;
+      top: 200px;
   }
 
   .prev, .next {
@@ -104,8 +103,26 @@
   .next {
     position: relative;
     right: 0;
-    border-radius: 3px 0 0 3px;
+   color: rgb(88, 112, 39);
+    font-size: 30px;
+    font-weight: 100;
+    top: 40px;
   }
+
+  .prev{
+    top: 40px;
+
+    position: relative;
+    right: 0;
+    width: 30px;
+    height: 40px;
+    color: rgb(88, 112, 39);
+    font-size: 30px;
+    font-weight: 100;
+    
+  }
+
+  
 
   .numbertext{
     font-family: 'Raleway', sans-serif;
@@ -120,7 +137,6 @@
 
   .mySlides{
     width: 600px;
-    border: 1px solid red;
     display: flex;
     font-size: 2rem;
   }
@@ -134,7 +150,32 @@
 
   .text{
     font-family: 'Raleway', sans-serif;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 0.75rem;
     margin-top: 10px;
+  }
+
+  .button{
+    background-color: lightseagreen;
+    padding: 8px 35px;
+    color: white;
+    border-radius: 15px;
+    margin-top: 40px;
+    font-size: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    border: none;
+    outline: none;
+  }
+
+  .down{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    width: 100%;
+    margin: auto;
+    color: rgb(88, 112, 39);
+
   }
