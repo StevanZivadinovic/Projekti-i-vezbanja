@@ -179,3 +179,12 @@
     color: rgb(88, 112, 39);
 
   }
+  .aboutAs{
+    min-height: 100vh;
+    background-color: white;
+  }
+
+  .aboutAs1{
+    font-family: 'Raleway', sans-serif;
+
+  }
