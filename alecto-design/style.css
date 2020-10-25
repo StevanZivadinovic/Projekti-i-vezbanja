@@ -211,7 +211,7 @@
   color: grey;
 }
 
-#aboutAs{
+#aboutAs {
   min-height: 300px;
   width: 800px;
   border: 1px solid black;
@@ -222,22 +222,22 @@
   justify-content: space-around;
 }
 
-.item{
+.item {
   width: 200px;
   height: 300px;
   border: 1px solid black;
 }
 
-.img{
+.img {
   height: 100px;
   width: 100px;
-  background-color: grey;
+  background-color: lightgrey;
   margin: auto;
   position: relative;
   top: 20px;
   border-radius: 50%;
 }
-.firstText{
+.firstText {
   width: 150px;
   margin: auto;
   text-align: center;
@@ -247,7 +247,7 @@
   font-weight: 400;
 }
 
-.description{
+.description {
   font-size: 10px;
   width: 200px;
   margin: auto;
@@ -255,34 +255,105 @@
   position: relative;
   top: 80px;
   font-family: "Raleway", sans-serif;
-font-weight: 200px;
-color: grey;
-display: grid;
-grid-template-rows: 20px 20px 20px;
+  font-weight: 200px;
+  color: grey;
+  display: grid;
+  grid-template-rows: 20px 20px 20px;
 }
 
-.space{
+.space {
   width: 50px;
   position: absolute;
-  top:30px;
+  top: 30px;
   left: 30px;
 }
 
-.atom{
+.atom {
   width: 50px;
   position: absolute;
-  top:25px;
-  left: 25px; 
+  top: 25px;
+  left: 25px;
 }
-.fan{
+.fan {
   width: 50px;
   position: absolute;
-  top:25px;
-  left: 25px; 
+  top: 25px;
+  left: 25px;
 }
-.cloud{
+.cloud {
   width: 50px;
   position: absolute;
-  top:25px;
-  left: 20px; 
+  top: 25px;
+  left: 20px;
 }
+
+.img:hover {
+  background-color: rgb(88, 112, 39);
+}
+
+.button1 {
+  background-color: rgb(88, 112, 39);
+  padding: 8px 35px;
+  color: white;
+  border-radius: 15px;
+  margin: auto;
+  font-size: 8px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 300px;
+  left: 43%;
+  cursor: pointer;
+}
+.image1 {
+  width: 100%;
+  min-height: 400px;
+  background-color: lightgrey;
+  position: relative;
+  top: -100px;
+}
+
+.image1 {
+  display: flex;
+  justify-content: space-between;
+}
+.image1A {
+  width: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image1Ab {
+  width: 400px;
+}
+
+.image1B{
+  width: 50%;
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  
+
+  
+}
+
+
+
+.image1B h1{
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200px;
+  
+  
+
+
+ 
+}
+
