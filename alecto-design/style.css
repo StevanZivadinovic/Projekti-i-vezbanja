@@ -161,6 +161,7 @@
   font-weight: 600;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .down {
@@ -185,7 +186,6 @@
   font-family: "Raleway", sans-serif;
   width: 700px;
   margin: auto;
-  border: 1px solid black;
   text-align: center;
 }
 
@@ -214,7 +214,6 @@
 #aboutAs {
   min-height: 300px;
   width: 800px;
-  border: 1px solid black;
   margin: auto;
   position: relative;
   top: 100px;
@@ -225,7 +224,6 @@
 .item {
   width: 200px;
   height: 300px;
-  border: 1px solid black;
 }
 
 .img {
@@ -310,7 +308,7 @@
 .image1 {
   width: 100%;
   min-height: 400px;
-  background-color: lightgrey;
+  background-color: rgb(248, 244, 244);
   position: relative;
   top: -100px;
 }
@@ -321,39 +319,97 @@
 }
 .image1A {
   width: 50%;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .image1Ab {
   width: 400px;
+  border-radius: 30px;
+}
+.image1B {
+  display: flex;
 }
 
-.image1B{
-  width: 50%;
+.position {
+  width: 100%;
   text-align: left;
   font-family: "Raleway", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: 1px solid black;
-  
+  justify-content: space-around;
+  height: 300px;
+  margin-top: 50px;
+}
 
-  
+.position h1,
+.position2 h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.position p,
+.position2 p {
+color: grey;
+
 }
 
 
 
-.image1B h1{
+.button2 {
+  background-color: rgb(88, 112, 39);
+  padding: 8px 35px;
+  color: white;
+  border-radius: 15px;
+  margin: auto;
+  font-size: 8px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#second {
+  flex-direction: row-reverse;
+}
+.image1B2{
+ display: flex;
+}
+.position2 {
+  width: 504px;
   text-align: left;
   font-family: "Raleway", sans-serif;
-  font-weight: 200px;
-  
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+  margin-top: 50px;
 
-
- 
 }
 
+.button22 {
+  background-color: rgb(88, 112, 39);
+  padding: 8px 35px;
+  color: white;
+  border-radius: 15px;
+  margin: auto;
+  font-size: 8px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.image2{
+  
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    top: -100px;
+    display: flex;
+   
+}
