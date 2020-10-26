@@ -454,22 +454,20 @@
   .navbar__item:hover{
     background-color: rgb(65, 190, 65);
   }
+  .slideshow-container{
+    color: grey;
+  }
   
-  .slideshow-container {
-    height: 0;
-    display: none;
-  }
-  .dotDiv{
-    display: none;
-    height: 0;
-  }
-  .aboutAs, #aboutAs{
+  
+  .aboutAs, #aboutAs, .image1, #second, .position2, .position, #button1, .slideshow-container{
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
     justify-self: center;
     margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
 }
