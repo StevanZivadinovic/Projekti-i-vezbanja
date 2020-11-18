@@ -1,0 +1,273 @@
+$underline: none;
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+nav{
+    position: sticky;
+    top: 0;
+}
+
+.navbar__container{
+    background-color: rgb(11, 97, 100);
+    height: 10vh;
+    
+}
+
+a{
+    text-decoration: $underline;
+    color: white;
+}
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+   justify-content: space-between;
+   align-self: center;
+   list-style-type: none;
+   text-decoration: none;
+   width: 30%;
+   font-size: 12px;
+   
+
+   li{
+       text-decoration: none;
+       
+       
+           &:hover{
+               font-size: 15px;
+           
+       }
+   }
+}
+#search{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    width: 6%;
+    text-align: center;
+    padding: 3.5vh 0;
+    margin-right: 20px;
+    img{
+        width: 15px;
+        
+    }
+}
+#navbar__logo{
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+    padding: 3.5vh 0;
+}
+
+// Connect
+.connect{
+    padding: 0 20px;
+    height: 80vh;
+    color: rgb(11, 97, 100);
+
+    h1{
+       
+        text-align: center;
+    }
+}
+.mainContact{
+    display: flex;
+    justify-content: space-between;
+}
+.mainLeft{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// adventure
+
+.adventure{
+    background-image: url('./../images/img-bg-adventure.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  
+    background-position: center;
+    position: relative;
+    display: flex;
+    
+    
+    
+    &::before{
+        content: " ";
+        background: linear-gradient(460deg, rgb(22, 172, 177) 10%, rgb(231, 230, 230) 100%);
+        width: 100%;
+        opacity: 0.7;
+    }
+    
+    .adventureChild{
+        position:absolute;
+        left: 0;
+        right: 0;
+        h1{
+            align-self: center;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .boxes{
+            display: flex;
+            justify-content: space-between;
+            margin: 90px 30px 0px 30px ;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            padding: 25px 10px;
+            text-align: center;
+            background-color: white;
+
+            p{
+            width: 200px;
+            text-align: center;
+            align-self: center;
+            }
+        }
+    }
+
+    
+}
+
+// popular
+.popular{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(224, 235, 203);
+    margin-top: 0;
+    padding: 0;
+    h1{
+        align-self: center;
+        text-align: center;
+    }
+    .dugme{
+        display: flex;
+        justify-content: center;
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin-top: 30px;
+            padding: 20px 30px;
+            background: linear-gradient(460deg, rgb(13, 122, 126) 10%, rgb(194, 219, 218) 100%);
+            border-radius: 25px;
+            color: white;
+            outline: none;
+            border: none;
+            
+        }
+    }
+}
+.boxesPopular{
+    display: flex;
+    width: 100%;
+    
+    justify-content: center;
+    align-self: center;
+    color: rgb(11, 97, 100);
+  
+    
+    #white{
+        background-color: blanchedalmond;
+    }
+    #blue{
+        background-color: rgb(11, 97, 100);
+        p{
+            color: white !important;
+            border-bottom: 1px solid white;
+        }
+    }
+
+    .boxPopular{
+        width: 300px;
+       
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+        position: relative;
+        margin: 0 20px;
+
+        img{
+           width: 300px;
+           position: absolute;
+           top: 0;
+           
+        }
+
+        h4{
+            margin-top: 230px;
+        }
+        .popularUl{
+        padding-bottom: 30px;
+        
+
+        p{
+          border-bottom: 1px solid  rgb(11, 97, 100);   
+          padding: 10px 20px;
+          margin: 0px 20px;
+          cursor: pointer;
+        }
+        }
+        
+    }
+   
+  
+}
+
+// footer
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    background-color:  rgb(11, 97, 100);
+    height:20vh;
+
+    .footerDrugiRed{
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        align-self: center;
+        padding-top: 20px;
+        
+        cursor: pointer;
+        
+            img{
+                padding-left: 20px;
+            }
+        
+    }
+}
+#search11{
+    width: 15%;
+    padding:3.5vh;
+}
+
+
+        #footer3{
+            background-color:  rgb(4, 23, 24);
+  
+        }
+    
+
+
+
+

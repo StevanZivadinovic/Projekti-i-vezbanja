@@ -1,0 +1,331 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.navbar__container {
+  background-color: #0b6164;
+  height: 10vh;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: center;
+      align-self: center;
+  list-style-type: none;
+  text-decoration: none;
+  width: 30%;
+  font-size: 12px;
+}
+
+ul li {
+  text-decoration: none;
+}
+
+ul li:hover {
+  font-size: 15px;
+}
+
+#search {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 6%;
+  text-align: center;
+  padding: 3.5vh 0;
+  margin-right: 20px;
+}
+
+#search img {
+  width: 15px;
+}
+
+#navbar__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 15%;
+  padding: 3.5vh 0;
+}
+
+.connect {
+  padding: 0 20px;
+  height: 80vh;
+  color: #0b6164;
+}
+
+.connect h1 {
+  text-align: center;
+}
+
+.mainContact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainLeft {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.adventure {
+  background-image: url("./../images/img-bg-adventure.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.adventure::before {
+  content: " ";
+  background: linear-gradient(460deg, #16acb1 10%, #e7e6e6 100%);
+  width: 100%;
+  opacity: 0.7;
+}
+
+.adventure .adventureChild {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.adventure .adventureChild h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.adventure .adventureChild .boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 90px 30px 0px 30px;
+}
+
+.adventure .adventureChild .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 250px;
+  padding: 25px 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.adventure .adventureChild .box p {
+  width: 200px;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.popular {
+  width: 100%;
+  height: 100vh;
+  background-color: #e0ebcb;
+  margin-top: 0;
+  padding: 0;
+}
+
+.popular h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.popular .dugme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popular .dugme .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 30px;
+  padding: 20px 30px;
+  background: linear-gradient(460deg, #0d7a7e 10%, #c2dbda 100%);
+  border-radius: 25px;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.boxesPopular {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: #0b6164;
+}
+
+.boxesPopular #white {
+  background-color: blanchedalmond;
+}
+
+.boxesPopular #blue {
+  background-color: #0b6164;
+}
+
+.boxesPopular #blue p {
+  color: white !important;
+  border-bottom: 1px solid white;
+}
+
+.boxesPopular .boxPopular {
+  width: 300px;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  position: relative;
+  margin: 0 20px;
+}
+
+.boxesPopular .boxPopular img {
+  width: 300px;
+  position: absolute;
+  top: 0;
+}
+
+.boxesPopular .boxPopular h4 {
+  margin-top: 230px;
+}
+
+.boxesPopular .boxPopular .popularUl {
+  padding-bottom: 30px;
+}
+
+.boxesPopular .boxPopular .popularUl p {
+  border-bottom: 1px solid #0b6164;
+  padding: 10px 20px;
+  margin: 0px 20px;
+  cursor: pointer;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #0b6164;
+  height: 20vh;
+}
+
+.footer .footerDrugiRed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+.footer .footerDrugiRed img {
+  padding-left: 20px;
+}
+
+#search11 {
+  width: 15%;
+  padding: 3.5vh;
+}
+
+#footer3 {
+  background-color: #041718;
+}
+/*# sourceMappingURL=style.css.map */
