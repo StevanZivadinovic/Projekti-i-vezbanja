@@ -153,6 +153,7 @@ ul{
     background-color: rgb(224, 235, 203);
     margin-top: 0;
     padding: 0;
+   
     h1{
         align-self: center;
         text-align: center;
@@ -211,6 +212,14 @@ ul{
            width: 300px;
            position: absolute;
            top: 0;
+           clip-path: polygon(100% 0%, 100% 100%, 0% 90%, 0% 0%);
+           cursor: pointer;
+           &:hover{
+               transform: scale(1.2);
+               transition: transform 2s;
+               clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+
+           }
            
         }
 

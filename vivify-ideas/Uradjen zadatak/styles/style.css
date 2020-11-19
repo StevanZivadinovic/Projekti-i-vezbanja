@@ -276,6 +276,20 @@ ul li:hover {
   width: 300px;
   position: absolute;
   top: 0;
+  -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 90%, 0% 0%);
+          clip-path: polygon(100% 0%, 100% 100%, 0% 90%, 0% 0%);
+  cursor: pointer;
+}
+
+.boxesPopular .boxPopular img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
+  -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+          clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 }
 
 .boxesPopular .boxPopular h4 {
