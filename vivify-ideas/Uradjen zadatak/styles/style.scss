@@ -11,6 +11,7 @@ body{
 nav{
     position: sticky;
     top: 0;
+    z-index:100;
 }
 
 .navbar__container{
@@ -96,7 +97,7 @@ ul{
     background-size: cover;
     width: 100%;
     height: 100vh;
-  
+    clip-path: polygon(100% 10%, 100% 100%, 0% 90%, 0% 0%);
     background-position: center;
     position: relative;
     display: flex;
@@ -108,6 +109,8 @@ ul{
         background: linear-gradient(460deg, rgb(22, 172, 177) 10%, rgb(231, 230, 230) 100%);
         width: 100%;
         opacity: 0.7;
+        clip-path: polygon(100% 10%, 100% 100%, 0% 90%, 0% 0%);
+
     }
     
     .adventureChild{
@@ -268,6 +271,27 @@ ul{
         }
     
 
+        @media screen and (max-width: 960px) {
+            // Ovo je bezveze, nisam stigo jednostavno :)
 
+            .navbar__container{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .connect{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                img{
+                    width: 100px;
+                }
+            }
+            .adventure{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
 
 
