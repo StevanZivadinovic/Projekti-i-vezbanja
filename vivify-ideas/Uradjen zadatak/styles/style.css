@@ -3,7 +3,7 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 nav {
@@ -49,10 +49,15 @@ ul {
 
 ul li {
   text-decoration: none;
+  width: 100%;
+  text-align: center;
+  height: 10vh;
+  line-height: 10vh;
 }
 
 ul li:hover {
   font-size: 15px;
+  border-bottom: 2px solid black;
 }
 
 #search {
@@ -127,6 +132,7 @@ ul li:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #0b6164;
 }
 
 .adventure::before {
@@ -190,6 +196,8 @@ ul li:hover {
   background-color: #e0ebcb;
   margin-top: 0;
   padding: 0;
+  -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+          clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 }
 
 .popular h1 {
@@ -319,7 +327,7 @@ ul li:hover {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #0b6164;
-  height: 20vh;
+  height: 25vh;
 }
 
 .footer .footerDrugiRed {
@@ -331,7 +339,7 @@ ul li:hover {
   text-align: center;
   -ms-flex-item-align: center;
       align-self: center;
-  padding-top: 20px;
+  padding-top: 10px;
   cursor: pointer;
 }
 
@@ -348,7 +356,16 @@ ul li:hover {
   background-color: #041718;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 620px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .navbar__container {
     width: 100%;
     display: -webkit-box;
@@ -358,6 +375,52 @@ ul li:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    height: 100%;
+    text-align: center;
+  }
+  .navbar__container img {
+    display: none;
+  }
+  .navbar__container #navbar__logo {
+    width: 100%;
+  }
+  .navbar__container ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0;
+  }
+  .navbar__container ul li {
+    padding-left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+  .navbar__container ul li:hover {
+    background-color: rgba(0, 0, 0, 0.199);
+    border: none;
+  }
+  .navbar__container #search {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navbar__container #search:hover {
+    background-color: rgba(0, 0, 0, 0.199);
   }
   .connect {
     width: 100%;
@@ -368,9 +431,27 @@ ul li:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: 100%;
+    margin-left: 5px;
+    padding: 0;
+    margin-right: 0;
+    overflow-x: hidden;
   }
-  .connect img {
-    width: 100px;
+  .connect .mainContact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+  .connect .mainContact .mainRight {
+    margin-right: 20px;
+  }
+  .connect .mainContact img {
+    width: 100%;
   }
   .adventure {
     width: 100%;
@@ -381,6 +462,37 @@ ul li:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: 250vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+  .adventure .adventureChild {
+    height: 100%;
+  }
+  .adventure .adventureChild .boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .adventure .adventureChild .boxes .box {
+    margin-bottom: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

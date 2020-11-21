@@ -164,21 +164,46 @@
 
         </div>
 
-       
+
     </div>
 
     <div class="footer2">
         <nav class="navbar" id="footer2">
             <div class="navbar__container" id="footer3">
                 <a href="#" id="navbar__logo"><img src="./icons/icon-sun.svg">ALWAYS OUTDORS</a>
-    
-             
+
+
                 <a href="#" id="search11">&#169 2019, Always Outside</a>
             </div>
-    
+
         </nav>
     </div>
-   
+
+    <script>
+        let parametar = true;
+        let logo = document.querySelector('#navbar__logo')
+        let container = document.querySelector('.navbar__container').children;
+        logo.addEventListener('click', () => {
+            if (parametar) {
+                for (let i = 1; i < container.length; i++) {
+                    container[i].style.display = 'none';
+                    parametar = false;
+
+                }
+
+            }
+
+            else {
+                for (let i = 1; i < container.length; i++) {
+                    container[i].style.display = 'flex';
+                    parametar = true;
+
+                }
+            }
+        })
+
+    </script>
+
 </body>
 
 </html>
