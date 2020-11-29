@@ -253,3 +253,19 @@ funkcija();
 //   let withoutLower1 = withoutLower.substr(2, a);
 //   console.log(withoutLower1.length);
 //   console.log("Here is your shiny new password:", withoutLower1);
+
+
+//Kopiranje text-a na clipboard
+
+
+function copy_password() {
+    let btnCopy = document.getElementById('result');
+    var textArea = document.createElement("textarea");
+    textArea.value = btnCopy.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    alert(`Password has copied: ${textArea.value}`)
+    textArea.remove();
+    
+}
