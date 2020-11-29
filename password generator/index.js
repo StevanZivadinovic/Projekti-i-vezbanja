@@ -4,9 +4,8 @@ let funkcija = () => {
   let numbers = document.querySelector("#numbers").checked;
   let symbols = document.querySelector("#symbols").checked;
 
-  
   let password = document.getElementById("result");
- 
+
   console.log(password);
 
   let length = document.querySelector("input[type=number]").value;
@@ -17,7 +16,6 @@ let funkcija = () => {
     symbols === true &&
     numbers === false
   ) {
-    
     function getRandomString(length) {
       var randomChars =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*(){}[]=<>/,.";
@@ -31,7 +29,6 @@ let funkcija = () => {
       password.innerText = result;
       return result;
     }
-   
 
     console.log("Here is your shiny new password:", getRandomString(length)); // pass desired length of random string
   } else if (
@@ -69,7 +66,7 @@ let funkcija = () => {
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
@@ -89,7 +86,7 @@ let funkcija = () => {
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
@@ -109,7 +106,7 @@ let funkcija = () => {
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
@@ -128,7 +125,7 @@ let funkcija = () => {
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
@@ -147,7 +144,7 @@ let funkcija = () => {
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
@@ -167,7 +164,7 @@ let funkcija = () => {
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
@@ -186,7 +183,7 @@ let funkcija = () => {
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
@@ -199,6 +196,7 @@ let funkcija = () => {
   ) {
     function getRandomString(length) {
       var randomChars = "abcdefghijklmnopqrstuvwxyz0123456789";
+      var result = "";
       for (var i = 0; i < length; i++) {
         result += randomChars.charAt(
           Math.floor(Math.random() * randomChars.length)
@@ -217,26 +215,25 @@ let funkcija = () => {
   ) {
     function getRandomString(length) {
       var randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*(){}[]=<>/,.";
+      var result = "";
       for (var i = 0; i < length; i++) {
         result += randomChars.charAt(
           Math.floor(Math.random() * randomChars.length)
         );
       }
-      password.innerText =result;
+      password.innerText = result;
       return result;
     }
 
     console.log("Here is your shiny new password:", getRandomString(length)); // pass desired length of random string
-  }
-
-  else if(uppercase === false &&
+  } else if (
+    uppercase === false &&
     lowercase === false &&
     symbols === false &&
-    numbers === false) {
-
-     password.innerHTML ='Choose minimum two parameters';
+    numbers === false
+  ) {
+    password.innerHTML = "Choose minimum two parameters";
   }
-  
 };
 
 funkcija();
@@ -254,18 +251,15 @@ funkcija();
 //   console.log(withoutLower1.length);
 //   console.log("Here is your shiny new password:", withoutLower1);
 
-
 //Kopiranje text-a na clipboard
 
-
 function copy_password() {
-    let btnCopy = document.getElementById('result');
-    var textArea = document.createElement("textarea");
-    textArea.value = btnCopy.textContent;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    alert(`Password has copied: ${textArea.value}`)
-    textArea.remove();
-    
+  let btnCopy = document.getElementById("result");
+  var textArea = document.createElement("textarea");
+  textArea.value = btnCopy.textContent;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("Copy");
+  alert(`Password has copied: ${textArea.value}`);
+  textArea.remove();
 }
