@@ -8,12 +8,13 @@
 body {
   // --background: green;
   height: 100vh;
-  background-image: linear-gradient(rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+  background-image:url('./map.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Texturina", serif;
   font-size: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -21,7 +22,7 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background-color: rgba(25, 95, 22, 0.8);
+    background-color: rgb(153,0,0);
     border: 2px solid black;
     position: relative;
 

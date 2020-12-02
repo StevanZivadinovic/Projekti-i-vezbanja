@@ -8,8 +8,7 @@
 
 body {
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0)), to(red));
-  background-image: linear-gradient(rgba(255, 0, 0, 0), red);
+  background-image: url("./map.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Texturina", serif;
@@ -17,6 +16,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -29,7 +32,7 @@ body .clock {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background-color: rgba(25, 95, 22, 0.8);
+  background-color: #990000;
   border: 2px solid black;
   position: relative;
 }
