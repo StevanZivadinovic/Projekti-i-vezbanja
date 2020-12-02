@@ -25,6 +25,20 @@ body {
     border: 2px solid black;
     position: relative;
 
+    &::after{
+      content: '';
+      position: absolute;
+      left: 49%;
+      top: 50%;
+      width: 15px;
+      height: 15px;
+      background-color: black;
+      border-radius: 50%;
+      z-index: 11;
+      transform: translateX(-50%);
+      transform: translateY(-50%);
+    }
+
   
 
         .number {
@@ -71,8 +85,8 @@ body {
         }
 
         .hand{
-            --rotation:0deg;
-            // background-color: black;
+            --rotation:130deg;
+            // background-color: black; 
             width: 8px;
             height: 40%;
             border-radius: 3px;
@@ -81,7 +95,7 @@ body {
             bottom: 50%;
             z-index: 1;
             transform-origin: bottom;
-            transform: translateX(-5px) rotate(calc(var(--rotation)));
+            transform: translateX(-50%) rotate(calc(var(--rotation)));
             
 
             &:hover{

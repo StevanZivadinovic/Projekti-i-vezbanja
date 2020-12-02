@@ -34,6 +34,22 @@ body .clock {
   position: relative;
 }
 
+body .clock::after {
+  content: '';
+  position: absolute;
+  left: 49%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 11;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 body .clock .number {
   position: absolute;
   width: 100%;
@@ -97,7 +113,7 @@ body .clock .number11 {
 }
 
 body .clock .hand {
-  --rotation:0deg;
+  --rotation:130deg;
   width: 8px;
   height: 40%;
   border-radius: 3px;
@@ -107,8 +123,8 @@ body .clock .hand {
   z-index: 1;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
-  -webkit-transform: translateX(-5px) rotate(calc(var(--rotation)));
-          transform: translateX(-5px) rotate(calc(var(--rotation)));
+  -webkit-transform: translateX(-50%) rotate(calc(var(--rotation)));
+          transform: translateX(-50%) rotate(calc(var(--rotation)));
 }
 
 body .clock .hand:hover {
