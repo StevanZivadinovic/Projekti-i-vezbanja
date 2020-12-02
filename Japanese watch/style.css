@@ -7,7 +7,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 120vh;
   background-image: url("./map.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,6 +26,29 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
+}
+
+body svg path {
+  stroke: black;
+  fill: none;
+  stroke-dasharray: 500px;
+  stroke-dashoffset: 500px;
+  stroke-width: 2px;
+  -webkit-animation: line-anim 3s ease forwards;
+          animation: line-anim 3s ease forwards;
+}
+
+@-webkit-keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 body .clock {
@@ -150,5 +173,18 @@ body .clock .Sec {
   width: 3px;
   height: 45%;
   background-color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  svg path {
+    margin: 0 auto;
+  }
+  .clock {
+    width: 300px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 -130px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

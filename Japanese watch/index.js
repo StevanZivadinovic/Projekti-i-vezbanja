@@ -25,3 +25,8 @@ sat.style.transform = `rotate(${hourRatio*360}deg)`;
 
 console.log(hour,min,sec);
 },1000)
+
+
+
+let natpis = document.querySelector('svg path');
+console.log(natpis.getTotalLength());
