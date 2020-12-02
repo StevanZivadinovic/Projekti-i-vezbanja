@@ -35,8 +35,8 @@ body svg path {
   stroke-dasharray: 500px;
   stroke-dashoffset: 500px;
   stroke-width: 2px;
-  -webkit-animation: line-anim 3s ease forwards;
-          animation: line-anim 3s ease forwards;
+  -webkit-animation: line-anim 6s ease forwards;
+          animation: line-anim 6s ease forwards;
 }
 
 @-webkit-keyframes line-anim {
