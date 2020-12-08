@@ -7,7 +7,7 @@
 }
 
 body {
-  height: 120vh;
+  height: 100vh;
   background-image: url("./map.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,7 +61,7 @@ body .clock {
 }
 
 body .clock::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 49%;
   top: 50%;
@@ -139,7 +139,7 @@ body .clock .number11 {
 }
 
 body .clock .hand {
-  --rotation:130deg;
+  --rotation: 130deg;
   width: 8px;
   height: 40%;
   border-radius: 3px;
@@ -176,15 +176,21 @@ body .clock .Sec {
 }
 
 @media only screen and (max-width: 600px) {
-  svg path {
-    margin: 0 auto;
+  body {
+    width: 100%;
+    height: 100vh;
+  }
+  svg {
+    stroke: blue;
+    fill: none;
+    stroke-width: 1px;
   }
   .clock {
-    width: 300px;
+    width: 100%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: 0 -130px;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
