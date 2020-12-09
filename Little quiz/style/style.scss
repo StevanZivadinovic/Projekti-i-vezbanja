@@ -64,20 +64,21 @@
   &:hover::before {
     transform: scaleY(1);
   }
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: blue;
+    transform: scaleY(0);
+    transform-origin:top;
+   
+    transition: transform 300ms  ;
+  }
 }
 
-.submit::before {
-  content: "";
-  position: absolute;
-  border-radius: 5px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: blue;
-  transform: scaleY(0);
-  transform-origin:top;
- 
-  transition: transform 300ms  ;
-}
+
