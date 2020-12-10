@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(120deg, #f6d365, #fda085);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+body h1 {
+  text-align: center;
+  margin-top: 5vh;
+  font-size: 7vh;
+}
+
+body .inputi {
+  margin-top: 5vh;
+}
+
+body .inputi form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .inputi form input[type="text"] {
+  width: 50%;
+  height: 50px;
+  border: none;
+}
+
+body .inputi form .dugme {
+  border: none;
+  width: 7vh;
+  position: relative;
+  color: #d88771;
+  background: white;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body .inputi form .dugme:hover {
+  color: white;
+  background: #d88771;
+}
+
+body .inputi form .dugme .fas {
+  -webkit-transform: scale(3);
+          transform: scale(3);
+}
+
+body ul {
+  margin: 10% auto 0 auto;
+  width: 50%;
+  list-style-type: none;
+}
+
+body ul .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body ul .item .klasaListe {
+  width: 100%;
+  background-color: white;
+  border: none;
+  height: 50px;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+  margin-bottom: 5px;
+}
+
+body ul .item .trash {
+  width: 50px;
+  height: 50px;
+  background-color: #34af34;
+  border: none;
+  color: wheat;
+  cursor: pointer;
+}
+
+body .pretragaMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .pretragaMain .pretraga {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 50px;
+  border: none;
+  margin-top: 10px;
+}
+
+body .pretragaMain .pretraga1 {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  border: none;
+  color: #d88771;
+  background: white;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body .pretragaMain .pretraga1:hover {
+  color: white;
+  background: #d88771;
+}
+
+body .pretragaMain .fas {
+  -webkit-transform: scale(3);
+          transform: scale(3);
+}
+/*# sourceMappingURL=style.css.map */
