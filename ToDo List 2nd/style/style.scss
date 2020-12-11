@@ -53,6 +53,12 @@ body {
     margin: 10% auto 0 auto;
     width: 50%;
     list-style-type: none;
+    .brisanje{
+      opacity: 0.1;
+      transform: translateX(-8rem);
+      transition: all 1s;
+
+    }
     .item {
       display: flex;
       flex-direction: row;

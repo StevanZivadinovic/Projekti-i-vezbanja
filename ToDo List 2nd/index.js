@@ -7,6 +7,10 @@ dugme.addEventListener("click", (e) => {
   console.log(input.length);
   if (input.length && input.length < 15) {
     ul.innerHTML += `<div class='item'><li class='klasaListe'>${input} </li><button class='trash'><i class="fas fa-trash-alt"></i></button></div>`;
+    form.reset();
+  }
+  else{
+    alert('wrong input!!')
   }
 });
 
@@ -16,7 +20,11 @@ ul.addEventListener("click", (e) => {
     e.target.classList.contains("fa-trash-alt")
   ) {
     let div = document.querySelector(".item");
+    div.classList.add('brisanje');
+    setTimeout(()=>{
     div.remove();
+    },1000)
+    
   }
 });
 
