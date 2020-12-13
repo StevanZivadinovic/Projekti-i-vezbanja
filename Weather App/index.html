@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="naslov">Weather App</h1>
+
+        <form class="unos">
+            <label for="unosGrada" class="for">Enter a location for weather location</label>
+            <input type="text" name="unosGrada" onkeypress="return event.keyCode != 13;">
+            <!-- Ako u css stavis da input ima :focus, onda se ta forma u kojoj se
+            nalazi taj input submituje pritiskom na enter -->
+        </form>
+
+        <div class="rezultat">
+            <img src="https://via.placeholder.com/400x300" alt="slika1">
+        </div>
+        <div class="icon">
+            <!-- ikonica vremena -->
+        </div>
+        <div class="details">
+            <h3 class="cityName">Name</h5>
+            <div class="weatherCondition">Weather Condition</div>
+            <div class="temp">
+                <span>temp</span>
+                <span>&deg;C</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/forecast.js"></script>
+</body>
+
+</html>
