@@ -1,6 +1,8 @@
 let forma = document.querySelector(".unos");
 let input = forma.unosGrada;
 let details = document.querySelector('.details');
+let slika = document.querySelector('.rezultat img');
+  slika.style.display = 'none';
 input.addEventListener("keyup", (e) => {
   // e.preventDefault();
   if (e.keyCode === 13) {
@@ -17,8 +19,39 @@ input.addEventListener("keyup", (e) => {
         <div class="temp">
             <span>${data.b.Temperature.Metric.Value}</span>
             <span>&deg;C</span>
-        </div>`
+        </div>`;
+
+
+        
+      //update the night/day and icon images
+        let ikonica = document.querySelector('.icon img');
+        let icon = document.querySelector('.icon');
+        let ispisPodataka = document.querySelector('.ispisPodataka');
+     
+        ispisPodataka.style.display = 'block';
+        icon.style.display = 'block';
+        icon.style.borderRadius = '50%';
+        ikonica.style.backgroundColor = 'lightblue'
+       
+        ikonica.setAttribute('src', `./icons/${data.b.WeatherIcon}.svg`);
+        console.log(data.b.WeatherIcon);
+
+          if(data.b.IsDayTime){
+            console.log(data.b.IsDayTime);
+            slika.setAttribute('src','./icons/day.svg');
+            slika.style.display = 'flex';
+
+          }
+          else{
+            console.log(data.b.IsDayTime);
+            slika.setAttribute('src','./icons/night.svg');
+            slika.style.display = 'flex';
+
+
+          }
     };
+
+   
 
     //1. nacin pozivanja
     let getData = async (grad) => {
