@@ -1,0 +1,137 @@
+body{
+    background-color: rgb(207, 92, 207);
+}
+.container{
+    margin: 4px auto;
+    max-width: 600px;
+    background-color: purple;
+    height: 50vh;
+    padding: 30px 10px;
+    border-radius: 10px;
+
+
+    .naslov{
+        text-align: center;
+    }
+
+    .chat-rooms{
+        margin: 3px auto;
+        max-width: 500px;
+
+        
+        
+        .podnaslov{
+            margin: 20px 0;
+            text-align: center;
+        }
+        .dugmici{
+            display: flex;
+            justify-content: space-around;
+
+            .btn{
+                background-color: #43d9be;
+                color: white;
+                outline: none !important;
+                box-shadow: none !important;
+                border: none;
+                padding: 5px 15px;
+                border-radius: 5px;
+                
+                &:focus{
+                    outline: none !important;
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+       
+        
+    }
+    .new-chat {
+
+        .input-group{
+            display: flex;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid black;
+            .input-group-text{
+                padding: 10px 20px;
+                background-color: grey;
+                width: 70px;
+             
+            }
+            .btn{
+                background-color: #43d9be;
+                color: white;
+                outline: none !important;
+                box-shadow: none !important;
+                border: none;
+                padding: 11px 35px;
+                height: 100%;
+                width: 100px;
+
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+
+                
+                &:focus{
+                    outline: none !important;
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .form-control{
+                width: 100%;
+            }
+        }
+    }
+
+    .new-name{
+        margin: 30px 0;
+        .input-group{
+            .input-group-prepend{
+                display: flex;
+                border-radius: 5px;
+                border: 1px solid black;
+
+                .btn{
+                    background-color: #43d9be;
+                    color: white;
+                    outline: none !important;
+                    box-shadow: none !important;
+                    border: none;
+                    padding: 11px 35px;
+                    height: 100%;
+                    width: 100px;
+    
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+    
+                    
+                    &:focus{
+                        outline: none !important;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+
+                .input-group-text{
+                    padding: 10px 10px;
+                    background-color:grey;
+                    width: 150px;
+                    
+                  
+                }
+                .form-control{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}

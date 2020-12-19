@@ -1,0 +1,139 @@
+body {
+  background-color: #cf5ccf;
+}
+
+.container {
+  margin: 4px auto;
+  max-width: 600px;
+  background-color: purple;
+  height: 50vh;
+  padding: 30px 10px;
+  border-radius: 10px;
+}
+
+.container .naslov {
+  text-align: center;
+}
+
+.container .chat-rooms {
+  margin: 3px auto;
+  max-width: 500px;
+}
+
+.container .chat-rooms .podnaslov {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.container .chat-rooms .dugmici {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container .chat-rooms .dugmici .btn {
+  background-color: #43d9be;
+  color: white;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.container .chat-rooms .dugmici .btn:focus {
+  outline: none !important;
+}
+
+.container .chat-rooms .dugmici .btn:hover {
+  cursor: pointer;
+}
+
+.container .new-chat .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.container .new-chat .input-group .input-group-text {
+  padding: 10px 20px;
+  background-color: grey;
+  width: 70px;
+}
+
+.container .new-chat .input-group .btn {
+  background-color: #43d9be;
+  color: white;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none;
+  padding: 11px 35px;
+  height: 100%;
+  width: 100px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.container .new-chat .input-group .btn:focus {
+  outline: none !important;
+}
+
+.container .new-chat .input-group .btn:hover {
+  cursor: pointer;
+}
+
+.container .new-chat .input-group .form-control {
+  width: 100%;
+}
+
+.container .new-name {
+  margin: 30px 0;
+}
+
+.container .new-name .input-group .input-group-prepend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.container .new-name .input-group .input-group-prepend .btn {
+  background-color: #43d9be;
+  color: white;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none;
+  padding: 11px 35px;
+  height: 100%;
+  width: 100px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.container .new-name .input-group .input-group-prepend .btn:focus {
+  outline: none !important;
+}
+
+.container .new-name .input-group .input-group-prepend .btn:hover {
+  cursor: pointer;
+}
+
+.container .new-name .input-group .input-group-prepend .input-group-text {
+  padding: 10px 10px;
+  background-color: grey;
+  width: 150px;
+}
+
+.container .new-name .input-group .input-group-prepend .form-control {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
