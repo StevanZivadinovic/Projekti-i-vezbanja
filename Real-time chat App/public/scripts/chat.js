@@ -62,6 +62,7 @@ class Chatroom {
   updateRoom(room) {
     this.room = room;
     localStorage.setItem("room", room);
+    
 
     if (this.unsub) {
       this.unsub();

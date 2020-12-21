@@ -44,6 +44,10 @@ newName.addEventListener("submit", (e) => {
     ispis.innerHTML = "";
   }, 3000);
   newName.reset();
+  setTimeout(() => {
+    window.location.reload();
+  }, 3000);
+  
 });
 
 let checkUsername = () => {
