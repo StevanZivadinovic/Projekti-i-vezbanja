@@ -1,0 +1,59 @@
+
+$backgroundColor:lightgrey;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+background-color: $backgroundColor;
+
+}
+
+.nav-wrapper{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(229, 226, 226);
+    height: 10vh;
+    ul{
+        display: flex;
+        list-style-type: none;
+        
+        li{
+            line-height: 100%;
+            padding: 0 10px;
+            
+            &:hover{
+                background-color: rgb(146, 146, 146);
+            }
+            a{
+                color: rgb(173, 146, 146);
+                text-decoration: none;
+                line-height: 10vh;
+
+            }
+        }
+        
+    }
+}
+
+.modal{
+    display: none;
+}
+
+.collapsible{
+    width: 80%;
+    margin: 0 auto;
+    list-style-type: none;
+
+    #coll{
+        background-color: rgb(229, 226, 226);
+        margin-top: 2px;
+        padding: 10px 5px;
+        color: rgb(121, 97, 97);
+
+    }
+    #ispis{
+        display: none;
+    }
+}
