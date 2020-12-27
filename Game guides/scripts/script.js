@@ -23,6 +23,26 @@ let promenaNav = (user) =>{
 
 //ispis podataka iz baze u browseru
 
+// let ispisPodataka = (data, id)=>{
+//   if(data){
+
+//       let li =` 
+//           <li  data-id='${id}'>
+//               <button class="collapsible" id="coll">${data.title} </button><span><button class='iks'>X</button></span>
+//               <div class="collapsible" id="ispis">
+//                 <p>${data.content}</p>
+//               </div>
+//             </li>
+//           `;
+    
+//       guidesList.innerHTML += li;
+//  }
+//  else {
+//       guidesList.innerHTML = `<li><h5>Login to view guides</h5></li>`;
+//     }
+
+// }
+
 
 let ispisPodataka = (data) => {
   console.log(data);
@@ -30,9 +50,10 @@ let ispisPodataka = (data) => {
     let html = ``
   data.forEach(doc=>{
     let guide = doc.data();
+    let id = doc.id;
     let li =` 
-      <li>
-          <button class="collapsible" id="coll">${guide.title}</button>
+      <li  data-id='${id}'>
+          <button class="collapsible" id="coll">${guide.title}</button><span style='cursor:pointer' class='ikso'>X</span>
           <div class="collapsible" id="ispis">
             <p>${guide.content}</p>
           </div>
@@ -46,6 +67,11 @@ let ispisPodataka = (data) => {
     guidesList.innerHTML = `<li><h5>Login to view guides</h5></li>`;
   }
 };
+
+
+
+
+
 
 
 

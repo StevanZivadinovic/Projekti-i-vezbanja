@@ -1,5 +1,20 @@
 let createGuideForm = document.querySelector('#create-form');
 let modalGuideForm = document.querySelector('#modal-create');
+let listaZadataka = document.querySelector('#guidesLista');
+
+
+listaZadataka.addEventListener('click',e=>{
+  if(e.target.classList.contains('ikso')){
+    console.log('haj');
+    let id = e.target.parentElement.getAttribute('data-id');
+    console.log(id);
+    db.collection('guides').doc(id).delete()
+    .then(()=>{
+        console.log('Recipe is deleted');
+        // window.location.reload()
+    })
+  }
+});
 
 
 createGuideForm.addEventListener('submit',e=>{
@@ -17,7 +32,9 @@ createGuideForm.addEventListener('submit',e=>{
   .catch(err=>{
     console.log(err);
   })
-})
+});
+
+
 
 
 
@@ -31,6 +48,7 @@ auth.onAuthStateChanged((user) => {
       ispisPodataka(spanshot.docs);
     })
     promenaNav(user);
+
 
   } else {
     promenaNav();
