@@ -27,7 +27,7 @@ auth.onAuthStateChanged((user) => {
     console.log(user);
     
     
-    db.collection("guides").get().then(spanshot=>{
+    db.collection("guides").onSnapshot(spanshot=>{//samo posmatra promene
       ispisPodataka(spanshot.docs);
     })
     promenaNav(user);
