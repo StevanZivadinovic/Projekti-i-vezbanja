@@ -1,6 +1,28 @@
+let guidesList = document.querySelector("#guidesLista");
+let logInNav = document.querySelectorAll('.logged-in');
+let logOutNav = document.querySelectorAll('.logged-out');
+
+//skrivanje pojedinih elemenata navbar-a u zavisnosti da li je korisnik
+//prijavljen ili ne
+
+
+
+let promenaNav = (user) =>{
+  if(user){
+    logInNav.forEach(item=>{item.style.display = 'block'});
+    logOutNav.forEach(item=>{item.style.display = 'none'});
+
+  }
+  else{
+    logInNav.forEach(item=>{item.style.display = 'none'});
+    logOutNav.forEach(item=>{item.style.display = 'block'});
+  }
+}
+
+
+
 //ispis podataka iz baze u browseru
 
-let guidesList = document.querySelector("#guidesLista");
 
 let ispisPodataka = (data) => {
   console.log(data);
@@ -19,9 +41,6 @@ let ispisPodataka = (data) => {
       html +=li;
   })
       guidesList.innerHTML = html;
-
-
-  
   
   } else {
     guidesList.innerHTML = `<li><h5>Login to view guides</h5></li>`;

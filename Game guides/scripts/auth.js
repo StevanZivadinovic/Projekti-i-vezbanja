@@ -9,8 +9,10 @@ auth.onAuthStateChanged((user) => {
     db.collection("guides").get().then(spanshot=>{
       ispisPodataka(spanshot.docs);
     })
+    promenaNav(user);
 
   } else {
+    promenaNav();
     ispisPodataka();
     console.log(user);
   }
