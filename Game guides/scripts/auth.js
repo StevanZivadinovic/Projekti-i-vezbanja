@@ -1,11 +1,32 @@
+let createGuideForm = document.querySelector('#create-form');
+let modalGuideForm = document.querySelector('#modal-create');
+
+
+createGuideForm.addEventListener('submit',e=>{
+  e.preventDefault();
+
+  db.collection('guides').add({
+    title:createGuideForm.title.value,
+    content: createGuideForm.content.value
+  })
+  .then(message=>{
+    console.log(message);
+    createGuideForm.reset();
+    modalGuideForm.remove();
+  })
+  .catch(err=>{
+    console.log(err);
+  })
+})
+
+
 
 
 auth.onAuthStateChanged((user) => {
   if (user) {
     console.log(user);
     
-    //umesto ovog iznad koda, koristimo live listeners-e, i preko njih preuzmamo
-    //podatke iz baze
+    
     db.collection("guides").get().then(spanshot=>{
       ispisPodataka(spanshot.docs);
     })
