@@ -37,11 +37,14 @@ createGuideForm.addEventListener("submit", (e) => {
 auth.onAuthStateChanged((user) => {
   if (user) {
     console.log(user);
-    db.collection("guides").onSnapshot((spanshot) => {
+    db.collection("guides").onSnapshot((snapshot) => {
       //samo posmatra promene
-      ispisPodataka(spanshot.docs);
-    });
-    promenaNav(user);
+      ispisPodataka(snapshot.docs);
+      promenaNav(user);
+    },err=>{//ovo posle zareza je callback funkcija, kao drugi parametar onSnapshot funkcije
+      console.log(err.message)
+    })
+    
   } else {
     promenaNav();
     ispisPodataka();
@@ -57,18 +60,22 @@ signInForm.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(email, password);
   //sign in user
-  auth
-    .createUserWithEmailAndPassword(email, password)
+  auth.createUserWithEmailAndPassword(email, password)
     .then((credential) => {
-      // console.log(credential);
-      console.log(credential.user);
+      return db.collection('users').doc(credential.user.uid).set({
+        biografy: signInForm['signup-bio'].value
+      })//ovde bi morao da pozvovem then() da nisam uneo gore return
+
+    })
+    .then(()=>{
+      signInForm.reset();
+      let signIn = document.querySelector("#modal-signup");
+      signIn.remove();
+
     })
     .catch((err) => {
       console.log(err);
     });
-  signInForm.reset();
-  let signIn = document.querySelector("#modal-signup");
-  signIn.remove();
 });
 
 //logout user

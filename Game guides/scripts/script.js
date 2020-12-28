@@ -1,6 +1,7 @@
 let guidesList = document.querySelector("#guidesLista");
 let logInNav = document.querySelectorAll('.logged-in');
 let logOutNav = document.querySelectorAll('.logged-out');
+let ispisAccount = document.querySelector('.account-details');
 
 //skrivanje pojedinih elemenata navbar-a u zavisnosti da li je korisnik
 //prijavljen ili ne
@@ -9,11 +10,22 @@ let logOutNav = document.querySelectorAll('.logged-out');
 
 let promenaNav = (user) =>{
   if(user){
+    //ispis prijavljenog user-a
+    db.collection('users').doc(user.uid).get().then(doc=>{
+      let html=`
+      <div>User is logged in as: ${user.email}</div>
+      <div>User biografy: ${doc.data().biografy}</div>
+      `
+      ispisAccount.innerHTML = html;
+
+    });
     logInNav.forEach(item=>{item.style.display = 'block'});
     logOutNav.forEach(item=>{item.style.display = 'none'});
 
   }
   else{
+    ispisAccount.innerHTML = ``;
+
     logInNav.forEach(item=>{item.style.display = 'none'});
     logOutNav.forEach(item=>{item.style.display = 'block'});
   }
