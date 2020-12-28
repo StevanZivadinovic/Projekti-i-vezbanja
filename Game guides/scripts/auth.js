@@ -1,55 +1,47 @@
-let createGuideForm = document.querySelector('#create-form');
-let modalGuideForm = document.querySelector('#modal-create');
-let listaZadataka = document.querySelector('#guidesLista');
+let createGuideForm = document.querySelector("#create-form");
+let modalGuideForm = document.querySelector("#modal-create");
+let listaZadataka = document.querySelector("#guidesLista");
 
-
-listaZadataka.addEventListener('click',e=>{
-  if(e.target.classList.contains('ikso')){
-    console.log('haj');
-    let id = e.target.parentElement.getAttribute('data-id');
+listaZadataka.addEventListener("click", (e) => {
+  if (e.target.classList.contains("ikso")) {
+    console.log("haj");
+    let id = e.target.parentElement.parentElement.getAttribute("data-id");
     console.log(id);
-    db.collection('guides').doc(id).delete()
-    .then(()=>{
-        console.log('Recipe is deleted');
-        // window.location.reload()
-    })
+    db.collection("guides")
+      .doc(id)
+      .delete()
+      .then(() => {
+        console.log("Guide is deleted");
+      });
   }
 });
 
-
-createGuideForm.addEventListener('submit',e=>{
+createGuideForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  db.collection('guides').add({
-    title:createGuideForm.title.value,
-    content: createGuideForm.content.value
-  })
-  .then(message=>{
-    console.log(message);
-    createGuideForm.reset();
-    modalGuideForm.remove();
-  })
-  .catch(err=>{
-    console.log(err);
-  })
+  db.collection("guides")
+    .add({
+      title: createGuideForm.title.value,
+      content: createGuideForm.content.value,
+    })
+    .then((message) => {
+      console.log(message);
+      createGuideForm.reset();
+      modalGuideForm.remove();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
-
-
-
-
-
 
 auth.onAuthStateChanged((user) => {
   if (user) {
     console.log(user);
-    
-    
-    db.collection("guides").onSnapshot(spanshot=>{//samo posmatra promene
+    db.collection("guides").onSnapshot((spanshot) => {
+      //samo posmatra promene
       ispisPodataka(spanshot.docs);
-    })
+    });
     promenaNav(user);
-
-
   } else {
     promenaNav();
     ispisPodataka();
