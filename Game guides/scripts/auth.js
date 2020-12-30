@@ -106,3 +106,19 @@ loginForm.addEventListener("submit", (e) => {
   let loginModal = document.querySelector("#modal-login");
   loginModal.remove();
 });
+
+
+
+let get = () =>{
+  
+ return new Promise((resolve, reject)=>{
+
+    resolve('haj haj haj');
+    //reject('no no no');
+  })
+  
+}
+
+get().then((data)=>{
+  console.log(data);
+})
