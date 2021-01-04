@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+@mixin present {
+  position: absolute;
+      top: 200px;
+      left: 150px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+
 body {
   background-color: rgb(28, 145, 44);
   padding-top: 200px;
 
   .present {
-      position: absolute;
-      top: 200px;
-      left: 150px;
-    width: 400px;
-    margin: 0 auto;
+      @include present();
     .bow{
         position: relative;
         transition: top ease-out 0.5s, transform ease-out 0.5s;
