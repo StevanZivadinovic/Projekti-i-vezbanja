@@ -3,7 +3,9 @@ let del = document.querySelector("#delete");
 let update = document.querySelector("#update");
 let prikaz = document.querySelector("#prikaz");
 let divPri = document.querySelector("#prikazDiv");
+let lista = document.querySelector('#prikazDiv');
 
+//unos i brisanje podataka iz baze podataka
 apply.addEventListener("click", (a) => {
   a.preventDefault();
 
@@ -42,124 +44,61 @@ apply.addEventListener("click", (a) => {
     });
 });
 
-//Dodeljivanje ID, prikaz svih dokumenata iz kolekcije i brisanje
+lista.addEventListener('click',e=>{
+  if(e.target.tagName === 'BUTTON'){
+      console.log('haj');
 
-let dodeljivanjeId = (doc) => {
-  let li = document.createElement("li");
-  li.setAttribute("data-id", doc.id);
+  let id = e.target.parentElement.getAttribute('data-id');
+  console.log(id);
 
-  let x = document.createElement("div");
+  db.collection('podaci').doc(id).delete()
+  .then(()=>{
+      console.log('Recipe is deleted');
+    
+  })
+  }
+})
 
-  x.textContent = `x`;
-  x.style.float = "right";
-  x.style.backgroundColor = "white";
-  x.style.padding = "3px 3px";
-  li.appendChild(x);
-  li.innerHTML += `${doc.data().name}<br>`;
+// prikaz svih dokumenata i brisanje iz browsera
 
-  li.innerHTML += `${doc.data().email}<hr>`;
 
-  let a = li.firstChild; //ovo je u stvari x znak, samo sam ga ovako dogvatio, posto je prvo dete li-a
-  li.style.cursor = "pointer";
 
-  divPri.appendChild(li);
+let preuzmi = (data, id)=>{
+    let html = `<li data-id='${id}'>
+    
+    <div>${data.name}</div>
+    <div>${data.email}</div>
+    <button class="dugmeLista">Delete</button>
+    </li>`;
 
-  a.addEventListener("click", (e) => {
-    e.stopPropagation();
-    let r = confirm("Da li želite da trajno obrišete poruku?");
-    if (r) {
-      let id = e.target.parentElement.getAttribute("data-id");
-      db.collection("podaci").doc(id).delete();
-    }
-  });
-};
+    lista.innerHTML +=html;
+}
 
-//dodeljujes id svakom elementu preko funkcije za dodeljivanje id-a, to je funkcija dodeljivanjeId.
-//ovde prolazis kroz svaki dokument i ubacujes ga u gunkciju za dodeljivanje id koju si iznad definisao
+let obrisati=(id)=>{
 
-db.collection("podaci")
-  .get()
-  .then((snapshot) => {
-    console.log(snapshot.docs); //dobijes sva dokumenta u nizu, ali ne vidis njihov sadrzaj
-    snapshot.docs.forEach((doc) => {
-      console.log(doc.id);
-
-      dodeljivanjeId(doc);
-    });
-  });
-
-//update, prekopirano sve skoro odozgo u event Listener za dugme update
-
-update.addEventListener("click", (e) => {
-  let divPri = document.querySelector("#prikazDiv");
-  divPri.innerHTML = ``;
-
-  divPri.style.backgroundColor = "lightblue";
-  divPri.style.border = "2px solid black";
-  divPri.style.borderRadius = "6px";
-  divPri.style.margin = "5px 0 0 0";
-  divPri.style.listStyleType = "none";
-  divPri.style.padding = 0;
-  let dodeljivanjeId = (doc) => {
-    let li = document.createElement("li");
-
-    li.setAttribute("data-id", doc.id);
-    li.style.hover = "background-color:red";
-
-    let x = document.createElement("div");
-
-    x.textContent = `x`;
-    x.style.float = "right";
-    x.style.backgroundColor = "white";
-    x.style.padding = "3px 3px";
-    li.appendChild(x);
-    li.innerHTML += `${doc.data().name}<br>`;
-
-    li.innerHTML += `${doc.data().email}<hr>`;
-
-    let a = li.firstChild; //ovo je u stvari x znak, samo sam ga ovako dogvatio, posto je prvo dete li-a
-    li.style.cursor = "pointer";
-
-    divPri.appendChild(li);
-
-    a.addEventListener("click", (e) => {
-      e.stopPropagation();
-      let r = confirm("Da li želite da trajno obrišete poruku?");
-      if (r) {
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("podaci").doc(id).delete();
+  let li = document.querySelectorAll('li');
+  li.forEach(a=>{
+      let dataId = a.getAttribute('data-id');
+      if(dataId === id){
+          a.remove();
       }
-    });
-  };
-
-  //kad izbrises nekog korisnika i odes na update ispise ti preostale podatke koje ispise iz baze
-  db.collection("podaci")
-    .get()
-    .then((snapshot) => {
-      console.log(snapshot.docs); //dobijes sva dokumenta u nizu, ali ne vidis njihov sadrzaj
-      snapshot.docs.forEach((doc) => {
-
-        dodeljivanjeId(doc);
-      });
-    });
-});
+  })
+}
 
 
-db.collection("podaci")
-  .get()
-  .then((snapshot) => {
-    console.log(snapshot.docs); //dobijes sva dokumenta u nizu, ali ne vidis njihov sadrzaj
-    snapshot.docs.forEach((doc) => {
-      document.addEventListener("dblclick", (e) => {
-        let id = e.target.getAttribute("data-id");
-        let id1 = doc.id;
 
-        console.log(id);
-        if (id === id1) {
-          //kad duplo kliknem na neko ime da mi otvori bas to ime sa podacima
-          //za to ime, a ne neko bezveze
-          prepoznavanje(doc);
-        }
-      });
-    });
-  });
+//listener promena
+db.collection('podaci').onSnapshot(snapshot =>{
+  snapshot.docChanges().forEach(change=>{
+      console.log(change);
+      let doc = change.doc;
+      if(change.type === 'added'){
+          preuzmi(doc.data(), doc.id)
+      }
+      else if(change.type === 'removed'){
+          obrisati(doc.id);
+      }
+  })
+})
+
+   
