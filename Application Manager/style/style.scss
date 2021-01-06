@@ -1,0 +1,40 @@
+
+
+body {
+    background-color: lightgreen;
+
+    .main{
+        width: 70vw;
+        margin: 0 auto;
+        h1{
+            text-align: center;
+        }
+        p {
+            color: red;
+            font-size: 9px;
+        }
+        
+        #E {
+            width: 300px;
+        }
+        li:hover{
+            background-color: cadetblue;
+        }
+        .izmenjenaForma{
+            width: 300px;
+            height: 300px;
+        }
+        #prikazDiv{
+            background-color: lightblue;
+            border: 2px solid black; 
+            border-radius: 6px;
+            margin: 5px 0 0 0;
+            list-style-type: none;
+            padding: 0;
+            
+        }
+    }
+   
+   
+}
+

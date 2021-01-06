@@ -2,6 +2,7 @@ let apply = document.querySelector("#apply");
 let del = document.querySelector("#delete");
 let update = document.querySelector("#update");
 let prikaz = document.querySelector("#prikaz");
+let divPri = document.querySelector("#prikazDiv");
 
 apply.addEventListener("click", (a) => {
   a.preventDefault();
@@ -30,8 +31,9 @@ apply.addEventListener("click", (a) => {
   };
 
   db.collection("podaci")
-    .doc()
-    .set(c1)
+    .add(c1)
+    // .doc()
+    // .set(c1)
     .then(() => {
       console.log("Client added successfully");
     })
@@ -42,29 +44,9 @@ apply.addEventListener("click", (a) => {
 
 //Dodeljivanje ID, prikaz svih dokumenata iz kolekcije i brisanje
 
-let divPri = document.querySelector("#prikazDiv");
-divPri.style.backgroundColor = "lightblue";
-divPri.style.border = "2px solid black";
-divPri.style.borderRadius = "6px";
-divPri.style.margin = "5px 0 0 0";
-divPri.style.listStyleType = "none";
-divPri.style.padding = 0;
 let dodeljivanjeId = (doc) => {
-  let name = document.querySelector("#usr").value;
-  let email = document.querySelector("#pwd").value;
-  let age = document.querySelector("#Age").value;
-  let phone = document.querySelector("#phd").value;
-  let communication = document.querySelector(".form-check-input").value;
-  let english = document.querySelector("#sel1").value;
-  let start = document.querySelector("#aa").value;
-  let tehnical = document.querySelector("#aaa").value;
-  let presentation = document.querySelector("#aaa1").value;
-  let home = document.querySelector("#home").value;
-
   let li = document.createElement("li");
-
   li.setAttribute("data-id", doc.id);
-  li.style.hover = "background-color:red";
 
   let x = document.createElement("div");
 
@@ -100,9 +82,6 @@ db.collection("podaci")
   .then((snapshot) => {
     console.log(snapshot.docs); //dobijes sva dokumenta u nizu, ali ne vidis njihov sadrzaj
     snapshot.docs.forEach((doc) => {
-      // console.log(doc); //dobijes sve dokumente, svaki pojedinacno, ali opet ne vidis sadrzaj
-      // console.log(doc.data()); //ovde tek vidis sazdraj!!!
-      // console.log(doc.data().name);
       console.log(doc.id);
 
       dodeljivanjeId(doc);
@@ -153,128 +132,18 @@ update.addEventListener("click", (e) => {
     });
   };
 
-
- 
-
   //kad izbrises nekog korisnika i odes na update ispise ti preostale podatke koje ispise iz baze
   db.collection("podaci")
     .get()
     .then((snapshot) => {
       console.log(snapshot.docs); //dobijes sva dokumenta u nizu, ali ne vidis njihov sadrzaj
       snapshot.docs.forEach((doc) => {
-        // console.log(doc); //dobijes sve dokumente, svaki pojedinacno, ali opet ne vidis sadrzaj
-        // console.log(doc.data()); //ovde tek vidis sazdraj!!!
-        // console.log(doc.data().name);
-        console.log(doc.id);
 
         dodeljivanjeId(doc);
       });
     });
-
 });
 
-//izmena
-
-let forma1 = document.querySelector("#mojaForma1");
-forma1.style.display = "none";
-
-let prepoznavanje = (doc) => {
-  //let li = document.querySelectorAll("li");
-  //li.forEach((a) => {
-
-  let forma1 = document.querySelector("#mojaForma1");
-  let forma = document.querySelector("#mojaForma");
-
-  forma.style.display = "none";
-  forma1.style.display = "block";
-  let prikaz = document.querySelector("#prikazDiv");
-  prikaz.style.display = "none";
-
-  let name = (forma1.ime.value = doc.data().name);
-  let email = (forma1.email.value = doc.data().email);
-  let age = (forma1.age.value = doc.data().age);
-  let phone = (forma1.phone.value = doc.data().PhoneNumber);
-  let optradio = (forma1.optradio.value = doc.data().PreferredWayofCommunication);
-  let english = (forma1.english.value = doc.data().EnglishLevel);
-  let date = (forma1.date.value = doc.data().AvailableToStart);
-  let skills = (forma1.skills.value = doc.data().TechnicalSkillsAndCourses);
-  let presonal = (forma1.personal.value = doc.data().ShortPersonalPresentation);
-  let study = (forma1.study.value = doc.data().StudyFromHome);
-
-  //ovo isood je prekopirano
-  update.addEventListener("click", (e) => {
-    let divPri = document.querySelector("#prikazDiv");
-    divPri.innerHTML = ``;
-
-    divPri.style.backgroundColor = "lightblue";
-    divPri.style.border = "2px solid black";
-    divPri.style.borderRadius = "6px";
-    divPri.style.margin = "5px 0 0 0";
-    divPri.style.listStyleType = "none";
-    divPri.style.padding = 0;
-  });
-
-  let change = document.querySelector("#change");
-  //ovo ispod je iskopirano osim change addEvent-a
-
-  change.addEventListener("click", (e) => {
-
-    e.preventDefault();
-
-  let name = forma1.ime.value;
-  //console.log(name);
-  let email = forma1.email.value;
-  let age = forma1.age.value;
-  let phone = forma1.phone.value;
-  let optradio = forma1.optradio.value;
-  let english = forma1.english.value;
-  let date = forma1.date.value;
-  let skills = forma1.skills.value;
-  let presonal = forma1.personal.value;
-  let study = forma1.study.value;
-
-
-  let id = doc.id;
-  //console.log(id);
-  db.collection("podaci")
-  .doc(id)
-  .update({
-    name: name,
-    email: email,
-    age: age,
-    PhoneNumber: phone,
-    PreferredWayofCommunication: optradio,
-    EnglishLevel: english,
-    AvailableToStart: date,
-    TechnicalSkillsAndCourses: skills,
-    ShortPersonalPresentation: presonal,
-    StudyFromHome: study,
-
-  })
-
-   name = forma1.ime.value='';
-  //console.log(name);
-   email = forma1.email.value='';
-   age = forma1.age.value='';
-   phone = forma1.phone.value='';
-   optradio = forma1.optradio.value='';
-   english = forma1.english.value='';
-   date = forma1.date.value='';
-   skills = forma1.skills.value='';
-   presonal = forma1.personal.value='';
-   study = forma1.study.value='';
-
-  
-  });
-
-
-
-
-
-  
-
-  //dovde
-};
 
 db.collection("podaci")
   .get()
@@ -286,7 +155,8 @@ db.collection("podaci")
         let id1 = doc.id;
 
         console.log(id);
-        if (id === id1) {//kad duplo kliknem na neko ime da mi otvori bas to ime sa podacima
+        if (id === id1) {
+          //kad duplo kliknem na neko ime da mi otvori bas to ime sa podacima
           //za to ime, a ne neko bezveze
           prepoznavanje(doc);
         }

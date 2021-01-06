@@ -1,0 +1,40 @@
+body {
+  background-color: lightgreen;
+}
+
+body .main {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+body .main h1 {
+  text-align: center;
+}
+
+body .main p {
+  color: red;
+  font-size: 9px;
+}
+
+body .main #E {
+  width: 300px;
+}
+
+body .main li:hover {
+  background-color: cadetblue;
+}
+
+body .main .izmenjenaForma {
+  width: 300px;
+  height: 300px;
+}
+
+body .main #prikazDiv {
+  background-color: lightblue;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin: 5px 0 0 0;
+  list-style-type: none;
+  padding: 0;
+}
+/*# sourceMappingURL=style.css.map */
