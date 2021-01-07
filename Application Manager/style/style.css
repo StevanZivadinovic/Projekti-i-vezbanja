@@ -41,6 +41,17 @@ body .main .dugmeLista {
   right: 0;
 }
 
+body .main .dugmeUpdate {
+  padding: 5px 10px;
+  background-color: #ccb637;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 80px;
+}
+
 body .main .izmenjenaForma {
   width: 300px;
   height: 300px;

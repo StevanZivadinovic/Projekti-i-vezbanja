@@ -45,7 +45,7 @@ apply.addEventListener("click", (a) => {
 });
 
 lista.addEventListener('click',e=>{
-  if(e.target.tagName === 'BUTTON'){
+  if(e.target.classList.contains('dugmeLista')){
       console.log('haj');
 
   let id = e.target.parentElement.getAttribute('data-id');
@@ -69,6 +69,8 @@ let preuzmi = (data, id)=>{
     <div>${data.name}</div>
     <div>${data.email}</div>
     <button class="dugmeLista">Delete</button>
+    <button class="dugmeUpdate">Update</button>
+
     </li>`;
 
     lista.innerHTML +=html;
@@ -90,15 +92,43 @@ let obrisati=(id)=>{
 //listener promena
 db.collection('podaci').onSnapshot(snapshot =>{
   snapshot.docChanges().forEach(change=>{
-      console.log(change);
-      let doc = change.doc;
-      if(change.type === 'added'){
-          preuzmi(doc.data(), doc.id)
-      }
-      else if(change.type === 'removed'){
-          obrisati(doc.id);
-      }
+    console.log(change);
+    let doc = change.doc;
+    if(change.type === 'added'){
+      preuzmi(doc.data(), doc.id)
+    }
+    else if(change.type === 'removed'){
+      obrisati(doc.id);
+    }
   })
 })
+
+
+lista.addEventListener('click',e=>{
+  if(e.target.classList.contains('dugmeUpdate')){
+      console.log('haj');
+
+  let id = e.target.parentElement.getAttribute('data-id');
+  console.log(id);
+
+  db.collection('podaci').doc(id).onSnapshot(snapshot=>{
+    console.log(snapshot.data());
+    document.querySelector("#usr").value=snapshot.data().name;
+    document.querySelector("#pwd").value=snapshot.data().email;
+    document.querySelector("#Age").value=snapshot.data().age;
+    document.querySelector("#phd").value=snapshot.data().PhoneNumber;
+    document.querySelector(".form-check-input").value=snapshot.data().PreferredWayofCommunication;
+    document.querySelector("#sel1").value=snapshot.data().EnglishLevel;
+    document.querySelector("#aa").value=snapshot.data().AvailableToStart;
+    document.querySelector("#aaa").value=snapshot.data().TechnicalSkillsAndCourses;
+    document.querySelector("#aaa1").value=snapshot.data().ShortPersonalPresentation;
+    document.querySelector("#home").value=snapshot.data().StudyFromHome;
+  })
+  }
+})
+
+
+
+
 
    
