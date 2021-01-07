@@ -95,8 +95,14 @@ db.collection('podaci').onSnapshot(snapshot =>{
     console.log(change);
     let doc = change.doc;
     if(change.type === 'added'){
+
       preuzmi(doc.data(), doc.id)
     }
+    else if(change.type ==='modified'){
+      obrisati(doc.id);
+      preuzmi(doc.data(), doc.id);
+    }
+    
     else if(change.type === 'removed'){
       obrisati(doc.id);
     }
@@ -124,6 +130,27 @@ lista.addEventListener('click',e=>{
     document.querySelector("#aaa1").value=snapshot.data().ShortPersonalPresentation;
     document.querySelector("#home").value=snapshot.data().StudyFromHome;
   })
+
+
+
+  let update2 = document.querySelector('#update');
+update2.addEventListener('click',e=>{
+  e.preventDefault();
+  db.collection('podaci').doc(id).update({
+  name: document.querySelector("#usr").value,
+  // email: email,
+  // age: age,
+  // PhoneNumber: phone,
+  // PreferredWayofCommunication: communication,
+  // EnglishLevel: english,
+  // AvailableToStart: start,
+  // TechnicalSkillsAndCourses: tehnical,
+  // ShortPersonalPresentation: presentation,
+  // StudyFromHome: home,
+  })
+})
+
+ 
   }
 })
 
