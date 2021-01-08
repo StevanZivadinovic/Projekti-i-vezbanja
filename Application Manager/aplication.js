@@ -100,6 +100,8 @@ db.collection('podaci').onSnapshot(snapshot =>{
     }
     else if(change.type ==='modified'){
       obrisati(doc.id);
+      let forma = document.querySelector('#mojaForma');
+      forma.reset();
       preuzmi(doc.data(), doc.id);
     }
     
@@ -138,15 +140,15 @@ update2.addEventListener('click',e=>{
   e.preventDefault();
   db.collection('podaci').doc(id).update({
   name: document.querySelector("#usr").value,
-  // email: email,
-  // age: age,
-  // PhoneNumber: phone,
-  // PreferredWayofCommunication: communication,
-  // EnglishLevel: english,
-  // AvailableToStart: start,
-  // TechnicalSkillsAndCourses: tehnical,
-  // ShortPersonalPresentation: presentation,
-  // StudyFromHome: home,
+  email: document.querySelector("#pwd").value,
+  age: document.querySelector("#Age").value,
+  PhoneNumber: document.querySelector("#phd").value,
+  PreferredWayofCommunication: document.querySelector(".form-check-input").value,
+  EnglishLevel: document.querySelector("#sel1").value,
+  AvailableToStart: document.querySelector("#aa").value,
+  TechnicalSkillsAndCourses: document.querySelector("#aaa").value,
+  ShortPersonalPresentation: document.querySelector("#aaa1").value,
+  StudyFromHome: document.querySelector("#home").value,
   })
 })
 
