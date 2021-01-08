@@ -6,9 +6,6 @@ let divPri = document.querySelector("#prikazDiv");
 let lista = document.querySelector("#prikazDiv");
 let forma = document.getElementById("mojaForma");
 
-//reset forme, ne radi da ugradjenom funkcijom reset() pa moram ovako
-
-
 
 //unos i brisanje podataka iz baze podataka
 apply.addEventListener("click", (a) => {
