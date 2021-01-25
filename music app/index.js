@@ -41,3 +41,13 @@ window.addEventListener('load', ()=>{
 
 })
 
+
+
+// fetch('./db.json')
+// .then(data=>{
+//   return data.json();
+
+// })
+// .then(data=>{
+//   console.log(data);
+// })
