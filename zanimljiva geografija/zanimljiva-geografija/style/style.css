@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: lightgrey;
+}
+
+body .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-bottom: 1px solid black;
+  height: 6vh;
+}
+
+body .navbar a {
+  text-decoration: none;
+  color: #ce1d3a;
+}
+
+body .navbar .navbar-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+body .navbar .navbar-header:hover {
+  background-color: #84838a;
+  cursor: pointer;
+}
+
+body .prvi {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 300px;
+  margin: 0;
+  height: 100%;
+  padding: 0;
+}
+
+body .prvi .active1 {
+  padding: 0 33px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .prvi .active1:hover {
+  background-color: #84838a;
+  cursor: pointer;
+}
+
+body .unosImena {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 35vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 14vh;
+}
+
+body .unosImena .korisnik {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 5vh;
+}
+
+body .unosImena .korisnik input {
+  border: none;
+  border-radius: 5px;
+}
+
+body .unosImena .korisnik input:focus {
+  outline: none;
+  background-color: lightblue;
+  border-bottom: 1px solid #256277;
+}
+
+body .unosImena .btn, body .unosImena .btn1 {
+  width: 200px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 5px;
+  height: 4vh;
+}
+
+body .unosImena .btn:hover, body .unosImena .btn1:hover {
+  background-color: #383847;
+  cursor: pointer;
+}
+
+.pojmovi .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 50vh;
+  background-color: lightcoral;
+}
+
+.pojmovi .main #formTermini {
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=style.css.map */

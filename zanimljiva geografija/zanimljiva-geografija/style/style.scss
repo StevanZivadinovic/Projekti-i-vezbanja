@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: lightgrey;
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    height: 6vh;
+
+    a {
+      text-decoration: none;
+      color: rgb(206, 29, 58);
+    }
+
+    .navbar-header {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-content: center;
+      height: 100%;
+
+      &:hover {
+        background-color: rgb(132, 131, 138);
+        cursor: pointer;
+      }
+    }
+  }
+  .prvi {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+
+    .active1 {
+      padding: 0 33px;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      &:hover {
+        background-color: rgb(132, 131, 138);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .unosImena {
+    display: flex;
+    flex-direction: column;
+    margin-top: 35vh;
+    justify-content: space-around;
+    height: 14vh;
+
+    .korisnik {
+      display: flex;
+      justify-content: center;
+      height: 5vh;
+      input {
+        border: none;
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+          background-color: lightblue;
+          border-bottom: 1px solid rgb(37, 98, 119);
+        }
+      }
+    }
+    .btn, .btn1 {
+      width: 200px;
+      margin: 0 auto;
+      border: none;
+      border-radius: 5px;
+      height: 4vh;
+
+      &:hover {
+        background-color: rgb(56, 56, 71);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.pojmovi {
+
+ .main{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     height: 50vh;
+     background-color: lightcoral;
+     #formTermini{
+         height: 20vh;
+         display: flex;
+
+        
+        
+     }
+ }
+}
