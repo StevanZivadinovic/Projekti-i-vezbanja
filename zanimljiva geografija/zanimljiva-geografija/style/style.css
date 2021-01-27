@@ -133,7 +133,7 @@ body .unosImena .btn:hover, body .unosImena .btn1:hover {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 50vh;
+  height: 90vh;
   background-color: lightcoral;
 }
 
@@ -142,5 +142,22 @@ body .unosImena .btn:hover, body .unosImena .btn1:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pojmovi .main #formTermini .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predlog pojmova</title>
-    <link rel="stylesheet" href="./style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predlog pojmova</title>
+  <link rel="stylesheet" href="./style/style.css">
 
 </head>
+
 <body class="pojmovi">
 
-    <nav class="navbar">
+  <nav class="navbar">
 
-        <div class="navbar-header">
-          <a class="navbar-brand" href="./index.html">Zanimljiva geografija</a>
-        </div>
-        <ul class="prvi">
-          <li class="active1 loose" ><a  href="./index.html">Pocetna</a></li>
-          <li class="active1 loose" ><a  href='./predlogPojmova.html'  >Predlozi pojmove</a></li>
-          <li class="ispisKorisnika"></li>
-        </ul>
-    
-      </nav>
-
-    <div class="main">
-        <form id="formTermini">
-            <div class="form-group">
-                <label>Izaberite kategoriju</label>
-                <select id="selectKategorija" class="form-control">
-                <option value="drzava">Država</option>
-                <option value="grad">Grad</option>
-                <option value="reka">Reka</option>
-                <option value="planina">Planina</option>
-                <option value="zivotinja">Životinja</option>
-                <option value="biljka">Biljka</option>
-                <option value="predmet">Predmet</option>
-                </select>
-            </div>
-            <div class="unesTermina">
-               
-                <input id="unosTermina" type="text" class="form-control" placeholder="Unesite pojam iz izabrane kategorije"><br>
-                <button type="button" class="btn">Potvrdite unos</button>
-              </div>
-              <div id="info"></div>
-        </form>
-        <a href="index.html" class="btn" role="button">Povratak na start</a>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./index.html">Zanimljiva geografija</a>
     </div>
+    <ul class="prvi">
+      <li class="active1 loose"><a href="./index.html">Pocetna</a></li>
+      <li class="active1 loose"><a href='./predlogPojmova.html'>Predlozi pojmove</a></li>
+      <li class="ispisKorisnika"></li>
+    </ul>
 
-    <script src="/compos/predlogTermina.js" type="module"></script>
+  </nav>
+
+  <div class="main">
+    <form id="formTermini" class="form-group">
+      <div class="form-group">
+        <label>Izaberite kategoriju</label>
+        <select id="selectKategorija" class="form-control">
+          <option value="drzava">Država</option>
+          <option value="grad">Grad</option>
+          <option value="reka">Reka</option>
+          <option value="planina">Planina</option>
+          <option value="zivotinja">Životinja</option>
+          <option value="biljka">Biljka</option>
+          <option value="predmet">Predmet</option>
+        </select>
+        <input id="unosTermina" type="text" class="form-control" placeholder="Unesite pojam iz izabrane kategorije"><br>
+        <button type="button" class="btn1">Potvrdite unos</button>
+      </div>
+
+    </form>
+    <div id="info"></div>
+
+  </div>
+
+  <script src="./compos/predlogTermina.js"></script>
 </body>
+
 </html>
