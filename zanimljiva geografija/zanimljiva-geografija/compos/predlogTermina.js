@@ -1,8 +1,11 @@
+import Ispis from './firebase.js'
+
 let vrednostIme = localStorage.getItem("korisnickoIme");
 let ispisKorisnika = document.querySelector(".ispisKorisnika");
-let input = document.querySelector("input");
 let btn1 = document.querySelector(".btn1");
-let form = document.querySelector('#formTermini');
+
+
+
 
 // provera korisnika na pocetku, da li je prijavljen
 if (localStorage.getItem("korisnickoIme")) {
@@ -11,23 +14,30 @@ if (localStorage.getItem("korisnickoIme")) {
 
 
   //validacija inputa
-  let patternUsername = /^[a-z\s]+$/;
+  let patternUsername = /^[a-zA-Z\s]+$/;
   
-  input.addEventListener("keyup", (e) => {
+  btn1.addEventListener("click", (e) => {
     let input = document.querySelector("input");
     let korisnickoIme = input.value;
+   let pom = patternUsername.test(korisnickoIme)
+   if(pom){
+    let b = korisnickoIme.toLowerCase();
+    let a = b.split(' ');
+    let noviString =''
+    a.forEach(b=>{
+      let prepravljeno = b[0].toUpperCase() + b.slice(1);
+      console.log(prepravljeno);
+       noviString += prepravljeno; 
 
-    let pom = patternUsername.test(korisnickoIme);
-      console.log(pom);
-    if(pom){
-      btn1.addEventListener('click',e=>{
-        let korisnickoIme = input.value;
-          console.log(korisnickoIme);
-      });
-    }else{
-      console.log('neeeeeee');
-      btn1.style.disabled = true;
-    }
+       
+      
+    })
+    Ispis.ispisUbazu(noviString);
+    
+    
+ 
+   }
+
   });
 
   

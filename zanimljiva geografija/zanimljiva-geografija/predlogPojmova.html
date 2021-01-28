@@ -46,7 +46,32 @@
 
   </div>
 
-  <script src="./compos/predlogTermina.js"></script>
+  <!-- SKRIPT FAJLOVI -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDSvnaHpof8X5cT6d4WAUGynXFLg8mkG6Q",
+      authDomain: "zgeografija-c4387.firebaseapp.com",
+      databaseURL: "https://zgeografija-c4387.firebaseio.com",
+      projectId: "zgeografija-c4387",
+      storageBucket: "zgeografija-c4387.appspot.com",
+      messagingSenderId: "394152290998",
+      appId: "1:394152290998:web:5bd13fb811eaee32b41417",
+      measurementId: "G-HRVNTERM3Z"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore();
+  </script>
+
+  <script type="module" src="./compos/predlogTermina.js" ></script>
+  
+
 </body>
 
 </html>
