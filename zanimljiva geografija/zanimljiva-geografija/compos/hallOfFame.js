@@ -1,7 +1,7 @@
 const NizKorisnika = (ul) => {
   let ispisKorsnickeListe = document.querySelector(".ispisKorsnickeListe");
   let hallOfFame = document.querySelector(".hallOfFame");
-
+  
   let arr = [];
   let altarr = [];
   let counter = 0;
@@ -24,12 +24,11 @@ const NizKorisnika = (ul) => {
         altarr.push({ ime: a, counter: objekat });
       });
 
-
-
       let array = [];
       let singleEle = [];
 
-      altarr.forEach((item) => {//filtriranje jedinstvenih vrednosti objekata
+      altarr.forEach((item) => {
+        //filtriranje jedinstvenih vrednosti objekata
         //u nizu objekata
         if (!array[item.ime]) {
           array[item.ime] = true;
