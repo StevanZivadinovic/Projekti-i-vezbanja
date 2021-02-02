@@ -1,22 +1,10 @@
+import NizKorisnika from './hallOfFame.js';
 const ispisUbazu = (ime, grupa, pocetnoSlovo) => {
   console.log(ime, grupa, pocetnoSlovo);
 
   let provera;
   let kategorija;
   let vrednost;
-//  let a =()=>{
-//   db.collection("pojmovi")
-//           .add({
-//             kategorija: grupa,
-//             pojam:ime
-//           })
-//           .then((data) => {
-//              console.log("podaci su uneseni");
-//           })
-//           .catch(err=>{
-//             console.log('Postoji takav podatak');
-//           })
-//  } 
 
 
   db.collection("pojmovi")
@@ -42,6 +30,7 @@ const ispisUbazu = (ime, grupa, pocetnoSlovo) => {
           })
           .then((data) => {
              console.log("podaci su uneseni");
+             NizKorisnika.NizKorisnika()
           })
           .catch(err=>{
             console.log('Postoji takav podatak');

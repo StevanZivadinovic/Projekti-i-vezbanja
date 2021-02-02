@@ -1,23 +1,38 @@
 import Ispis from "./firebase.js";
+import NizKorisnika from './hallOfFame.js';
 
 let vrednostIme = localStorage.getItem("korisnickoIme");
 let ispisKorisnika = document.querySelector(".ispisKorisnika");
 let btn1 = document.querySelector(".btn1");
+let ispisKorsnickeListe = document.querySelector('.ispisKorsnickeListe');
+
 
 // provera korisnika na pocetku, da li je prijavljen
 if (localStorage.getItem("korisnickoIme")) {
   ispisKorisnika.innerText = vrednostIme;
 }
 
+
+ 
+
+
+//lista top korisnika - hallOfFame
+NizKorisnika.NizKorisnika()
+//dovde
+
 //validacija inputa
 let patternUsername = /^[a-zA-Z\s]+$/;
 
 btn1.addEventListener("click", (e) => {
+  
+
   let input = document.querySelector("input");
   let korisnickoIme = input.value;
 
   let padajuciMeni = document.querySelector(".PadajuciMeni");
   let grupa = padajuciMeni.value;
+
+  
 
   let pom = patternUsername.test(korisnickoIme);
   if (pom) {
@@ -34,3 +49,6 @@ btn1.addEventListener("click", (e) => {
     Ispis.ispisUbazu(noviString, grupa, pocetnoSlovo);
   }
 });
+
+
+
