@@ -174,4 +174,67 @@ body .unosImena .btn:hover, body .unosImena .btn1:hover {
   background-color: rgba(100, 104, 105, 0.5);
   border-radius: 10px;
 }
+
+.dugme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5% 0;
+}
+
+.dugme .igraj {
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.tajmer, .randomSlovo {
+  width: 200px;
+  margin: 2% auto;
+  font-weight: 600;
+  font-size: 25px;
+  color: #9e8181;
+  text-align: center;
+}
+
+.forma {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 280px;
+  margin: 0 auto;
+}
+
+.forma label {
+  margin-right: 10px;
+}
+
+.forma input {
+  float: right;
+}
+
+.forma .sekcija1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.forma .sekcija1 #submit {
+  width: 100px;
+  margin: 0 auto;
+  float: none;
+}
 /*# sourceMappingURL=style.css.map */

@@ -123,5 +123,53 @@ body {
          
        }
      }
+
+     
  }
+}
+
+.dugme{
+  display: flex;
+  justify-content: center;
+  margin:5% 0;
+  .igraj{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    
+  }
+}
+
+.tajmer, .randomSlovo{
+  width: 200px;
+  margin: 2% auto;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(158, 129, 129);
+  text-align: center;
+
+}
+
+.forma{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 280px;
+  margin: 0 auto;
+  label{
+    margin-right: 10px;
+  }
+  input{
+    float: right;
+  }
+  .sekcija1{
+    display: flex;
+    justify-content: center;
+    #submit{
+      width: 100px;
+      margin: 0 auto;
+      float: none;
+    }
+  }
+  
 }

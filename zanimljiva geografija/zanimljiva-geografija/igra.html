@@ -25,20 +25,50 @@
     </ul>
 
   </nav>
-
-  <div class="forma">
-    <form class="unosImena">
-      <div class="korisnik">
-        <input type="text" class="form-control" placeholder="Unesite Vaše korisničko ime">
-      </div>
-      <button type="submit" class="btn">Ulogujte se</button>
-      <button type="submit" class="btn1">Izlogujte se</button>
-
-    </form>
+  <div class="tajmer"></div>
+  <div class="randomSlovo"></div>
+  <div class="dugme">
+    <button type="submit" class="btn igraj">Igraj</button>
+  </div>
   
 
+  <form class='forma igraj'>
+      <div class="sekcija">
+          <label for="drzava">Drzava: </label>
+          <input type="text" id="drzava">
+      </div>
+      <div class="sekcija">
+      <label for="Grad">Grad: </label>
+      <input type="text" id="Grad">
+    </div>
+      <div class="sekcija">
+      <label for="Reka">Reka: </label>
+      <input type="text" id="Reka">
+    </div>
+      <div class="sekcija">
+      <label for="Planina">Planina: </label>
+      <input type="text" id="Planina">
+    </div>
+      <div class="sekcija">
+      <label for="Biljka">Biljka: </label>
+      <input type="text" id="Biljka">
+    </div>
+      <div class="sekcija">
+      <label for="Zivotinja">Zivotinja: </label>
+      <input type="text" id="Zivotinja">
+    </div>
+      <div class="sekcija">
+      <label for="Predmet">Predmet: </label>
+      <input type="text" id="Predmet">
+    </div>
+    <div class="sekcija1">
+        <input type="submit" value="Potvrdi" id='submit'>
+      </div>
+  </form>
 
-  <!-- SKRIPT FAJLOVI -->
+
+
+    <!-- SKRIPT FAJLOVI -->
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
@@ -62,8 +92,6 @@
   </script>
 
 
-  <script src="./compos/index.js" ></script>
+  <script src="./compos/igra.js" ></script>
 
 </body>
-
-</html>
