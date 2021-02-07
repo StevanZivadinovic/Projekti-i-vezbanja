@@ -346,5 +346,10 @@ submit.addEventListener("click", (e) => {
       console.log(Predmet);
       console.log(poeniKomp);
       console.log(poeniKorisnik);
+
+      let ispisRezultata=document.querySelector('.ispisRezultata');
+      ispisRezultata.innerHTML=`Kompijuter: ${poeniKomp},
+                                    Igrac:${poeniKorisnik}`;
+
     });
 });
