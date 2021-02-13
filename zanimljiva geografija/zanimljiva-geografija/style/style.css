@@ -75,10 +75,16 @@ body .prvi .active1:hover {
   cursor: pointer;
 }
 
-body .unosImena {
+body .forma {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+body .forma .unosImena {
+  display: -webkit-box  !important;
+  display: -ms-flexbox  !important;
+  display: flex  !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -89,29 +95,29 @@ body .unosImena {
   height: 14vh;
 }
 
-body .unosImena .korisnik {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+body .forma .unosImena .korisnik {
+  display: -webkit-box  !important;
+  display: -ms-flexbox  !important;
+  display: flex  !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   height: 5vh;
 }
 
-body .unosImena .korisnik input {
+body .forma .unosImena .korisnik input {
   border: none;
   border-radius: 5px;
 }
 
-body .unosImena .korisnik input:focus {
+body .forma .unosImena .korisnik input:focus {
   outline: none;
   background-color: lightblue;
   border-bottom: 1px solid #256277;
 }
 
-body .unosImena .btn,
-body .unosImena .btn1 {
+body .forma .unosImena .btn,
+body .forma .unosImena .btn1 {
   width: 200px;
   margin: 0 auto;
   border: none;
@@ -119,8 +125,8 @@ body .unosImena .btn1 {
   height: 4vh;
 }
 
-body .unosImena .btn:hover,
-body .unosImena .btn1:hover {
+body .forma .unosImena .btn:hover,
+body .forma .unosImena .btn1:hover {
   background-color: #383847;
   cursor: pointer;
 }

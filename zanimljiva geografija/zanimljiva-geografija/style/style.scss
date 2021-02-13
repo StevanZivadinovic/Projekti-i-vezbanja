@@ -49,42 +49,46 @@ body {
       }
     }
   }
+.forma{
+    display:flex;
 
-  .unosImena {
-    display: flex;
-    flex-direction: column;
-    margin-top: 35vh;
-    justify-content: space-around;
-    height: 14vh;
-
-    .korisnik {
-      display: flex;
-      justify-content: center;
-      height: 5vh;
-      input {
+    .unosImena {
+      display: flex  !important;
+      flex-direction: column;
+      margin-top: 35vh;
+      justify-content: space-around;
+      height: 14vh;
+  
+      .korisnik {
+        display: flex  !important;
+        justify-content: center;
+        height: 5vh;
+        input {
+          border: none;
+          border-radius: 5px;
+          &:focus {
+            outline: none;
+            background-color: lightblue;
+            border-bottom: 1px solid rgb(37, 98, 119);
+          }
+        }
+      }
+      .btn,
+      .btn1 {
+        width: 200px;
+        margin: 0 auto;
         border: none;
         border-radius: 5px;
-        &:focus {
-          outline: none;
-          background-color: lightblue;
-          border-bottom: 1px solid rgb(37, 98, 119);
+        height: 4vh;
+  
+        &:hover {
+          background-color: rgb(56, 56, 71);
+          cursor: pointer;
         }
       }
     }
-    .btn,
-    .btn1 {
-      width: 200px;
-      margin: 0 auto;
-      border: none;
-      border-radius: 5px;
-      height: 4vh;
-
-      &:hover {
-        background-color: rgb(56, 56, 71);
-        cursor: pointer;
-      }
-    }
-  }
+}
+ 
 }
 //predlogPojmova.html
 .pojmovi {
