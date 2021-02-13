@@ -32,7 +32,7 @@ let nizSlova = [
   "F",
   "H",
 ];
-let randomSlovo = nizSlova[(Math.random() * 22).toFixed(0)];
+let randomSlovo = nizSlova[(Math.random() * 21).toFixed(0)];
 
 dugme.addEventListener("click", (e) => {
   let forma = document.querySelector(".forma");
@@ -60,6 +60,8 @@ console.log();
 
 submit.addEventListener("click", (e) => {
   e.preventDefault();
+  let forma = document.querySelector('.igraj');
+  forma.style.display='none';
   clearTimeout(a);
   let drzava = document.querySelector("#drzava").value;
   let Grad = document.querySelector("#Grad").value;
@@ -405,9 +407,9 @@ submit.addEventListener("click", (e) => {
                 Igrac:${poeniKor}`
         }
 
-      },100);
+      },30);
       if(poeniK==0){
-        ispisRezultata1.innerHTML+=`,
+        ispisRezultata1.innerHTML+=`
         Kompijuter:${poeniK}`
       }
       if(poeniKor==0){
