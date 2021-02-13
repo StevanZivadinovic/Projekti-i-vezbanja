@@ -1,4 +1,3 @@
-
 let dugme = document.querySelector(".igraj");
 
 let tajmer = document.querySelector(".tajmer");
@@ -36,8 +35,8 @@ let nizSlova = [
 let randomSlovo = nizSlova[(Math.random() * 22).toFixed(0)];
 
 dugme.addEventListener("click", (e) => {
-  let forma = document.querySelector('.forma');
-  forma.style.display='flex';
+  let forma = document.querySelector(".forma");
+  forma.style.display = "flex";
   dugme.remove();
   slovo.innerHTML = `Izabrano slovo: ${randomSlovo}`;
   let a = setInterval(() => {
@@ -46,16 +45,13 @@ dugme.addEventListener("click", (e) => {
       tajmer.innerHTML = counter;
     } else {
       clearTimeout(a);
-      document.getElementById('submit').click();//automatski submituje
+      document.getElementById("submit").click(); //automatski submituje
       //formu nakon isteka vremena
-
-      
     }
   }, 1000);
-  submit.onclick=(()=>{
+  submit.onclick = () => {
     clearTimeout(a);
-  })
-  
+  };
 });
 let a = "";
 
@@ -74,12 +70,12 @@ submit.addEventListener("click", (e) => {
   let Predmet = document.querySelector("#Predmet").value;
 
   let nizDrzava = [];
-  let nizGrad = []
-  let nizReka=[];
-  let nizPlanina=[];
-  let nizBiljka=[];
-  let nizZivotinja=[];
-  let nizPredmet=[];
+  let nizGrad = [];
+  let nizReka = [];
+  let nizPlanina = [];
+  let nizBiljka = [];
+  let nizZivotinja = [];
+  let nizPredmet = [];
 
   let drzavaKomp;
   let gradKomp;
@@ -93,99 +89,145 @@ submit.addEventListener("click", (e) => {
   let poeniKorisnik = 0;
   let poeniKomp = 0;
   let potvrdaDrzava = null;
-  let potvrdaGrad=null;
-  let potvrdaReka=null;
-  let potvrdaPlanina=null;
-  let potvrdaBiljka=null;
-  let potvrdaZivotinja=null;
-  let potvrdaPredmet=null;
+  let potvrdaGrad = null;
+  let potvrdaReka = null;
+  let potvrdaPlanina = null;
+  let potvrdaBiljka = null;
+  let potvrdaZivotinja = null;
+  let potvrdaPredmet = null;
+
   db.collection("pojmovi")
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
-
         //drzava
-        if (doc.data().kategorija === "drzava" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().kategorija === "drzava" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           nizDrzava.push(doc.data().pojam);
         }
         drzavaKomp = nizDrzava[(Math.random() * nizDrzava.length).toFixed(0)];
 
-        if (doc.data().pojam === drzava && doc.data().kategorija === "drzava" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().pojam === drzava &&
+          doc.data().kategorija === "drzava" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           potvrdaDrzava = true;
         }
-
+       
 
         //grad
-        if (doc.data().kategorija === "grad" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().kategorija === "grad" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           nizGrad.push(doc.data().pojam);
         }
         gradKomp = nizGrad[(Math.random() * nizGrad.length).toFixed(0)];
 
-        if (doc.data().pojam === Grad && doc.data().kategorija === "grad" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().pojam === Grad &&
+          doc.data().kategorija === "grad" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           potvrdaGrad = true;
         }
 
         //reka
 
-        if (doc.data().kategorija === "reka" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().kategorija === "reka" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           nizReka.push(doc.data().pojam);
         }
         rekaKomp = nizReka[(Math.random() * nizReka.length).toFixed(0)];
 
-        if (doc.data().pojam === Reka && doc.data().kategorija === "reka" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().pojam === Reka &&
+          doc.data().kategorija === "reka" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           potvrdaReka = true;
         }
 
         //planina
 
-        if (doc.data().kategorija === "planina" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().kategorija === "planina" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           nizPlanina.push(doc.data().pojam);
         }
-        planinaKomp = nizPlanina[(Math.random() * nizPlanina.length).toFixed(0)];
+        planinaKomp =
+          nizPlanina[(Math.random() * nizPlanina.length).toFixed(0)];
 
-        if (doc.data().pojam === Planina && doc.data().kategorija === "planina" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().pojam === Planina &&
+          doc.data().kategorija === "planina" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           potvrdaPlanina = true;
         }
 
         //biljka
 
-        if (doc.data().kategorija === "biljka" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().kategorija === "biljka" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           nizBiljka.push(doc.data().pojam);
         }
         biljkaKomp = nizBiljka[(Math.random() * nizBiljka.length).toFixed(0)];
 
-        if (doc.data().pojam === Biljka && doc.data().kategorija === "biljka" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().pojam === Biljka &&
+          doc.data().kategorija === "biljka" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           potvrdaBiljka = true;
         }
 
         //zivotinja
 
-        if (doc.data().kategorija === "zivotinja" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().kategorija === "zivotinja" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           nizZivotinja.push(doc.data().pojam);
         }
-        zivotinjaKomp = nizZivotinja[(Math.random() * nizZivotinja.length).toFixed(0)];
+        zivotinjaKomp =
+          nizZivotinja[(Math.random() * nizZivotinja.length).toFixed(0)];
 
-        if (doc.data().pojam === Zivotinja && doc.data().kategorija === "zivotinja" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().pojam === Zivotinja &&
+          doc.data().kategorija === "zivotinja" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           potvrdaZivotinja = true;
         }
-        
 
         //predmet
 
-        if (doc.data().kategorija === "predmet" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().kategorija === "predmet" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           nizPredmet.push(doc.data().pojam);
         }
-        predmetKomp = nizPredmet[(Math.random() * nizPredmet.length).toFixed(0)];
+        predmetKomp =
+          nizPredmet[(Math.random() * nizPredmet.length).toFixed(0)];
 
-        if (doc.data().pojam === Predmet && doc.data().kategorija === "predmet" && doc.data().pocetnoSlovo === randomSlovo) {
+        if (
+          doc.data().pojam === Predmet &&
+          doc.data().kategorija === "predmet" &&
+          doc.data().pocetnoSlovo === randomSlovo
+        ) {
           potvrdaPredmet = true;
         }
-
-        
-
       });
-
-
 
       //drzava
       if (potvrdaDrzava) {
@@ -298,7 +340,6 @@ submit.addEventListener("click", (e) => {
 
       //zivotinja
 
-
       if (potvrdaZivotinja) {
         if (zivotinjaKomp !== Zivotinja && zivotinjaKomp !== undefined) {
           console.log("nisu isti");
@@ -319,7 +360,6 @@ submit.addEventListener("click", (e) => {
         }
       }
 
-
       if (potvrdaPredmet) {
         if (predmetKomp !== Predmet && predmetKomp !== undefined) {
           console.log("nisu isti");
@@ -339,17 +379,56 @@ submit.addEventListener("click", (e) => {
           poeniKomp += 15;
         }
       }
-      
 
       console.log(potvrdaDrzava);
-      console.log(predmetKomp);
+      console.log(potvrdaPredmet);
       console.log(Predmet);
       console.log(poeniKomp);
       console.log(poeniKorisnik);
 
-      let ispisRezultata=document.querySelector('.ispisRezultata');
-      ispisRezultata.innerHTML=`Kompijuter: ${poeniKomp},
-                                    Igrac:${poeniKorisnik}`;
+      let ispisRezultata1 = document.querySelector(".ispisRezultata1");
+      let ispisRezultata2 = document.querySelector(".ispisRezultata2");
 
+
+      let poeniK=0;
+      let poeniKor=0;
+
+     
+      setInterval(()=>{
+        if(poeniK<poeniKomp){
+          poeniK+=1;
+          ispisRezultata1.innerHTML = `Kompijuter: ${poeniK}`;
+        }
+        if(poeniKor<poeniKorisnik){
+          poeniKor+=1;
+                ispisRezultata2.innerHTML=`,
+                Igrac:${poeniKor}`
+        }
+
+      },100);
+      if(poeniK==0){
+        ispisRezultata1.innerHTML+=`,
+        Kompijuter:${poeniK}`
+      }
+      if(poeniKor==0){
+        ispisRezultata2.innerHTML+=`,
+        Igrac:${poeniKor}`
+      }
+     
+
+
+    //   if(poeniKor<poeniKorisnik){
+    //   setInterval(()=>{
+        
+    //       poeniKor+=1;
+    //       ispisRezultata.innerHTML+=`,
+    //       Igrac:${poeniKor}`
+        
+    //   },100)
+    // }else  if(poeniKor===poeniKorisnik){
+    //   ispisRezultata.innerHTML+=`
+    //   Igrac:${poeniKor}`
+    // }
+      
     });
 });

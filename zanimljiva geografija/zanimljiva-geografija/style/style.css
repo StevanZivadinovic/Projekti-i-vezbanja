@@ -110,7 +110,8 @@ body .unosImena .korisnik input:focus {
   border-bottom: 1px solid #256277;
 }
 
-body .unosImena .btn, body .unosImena .btn1 {
+body .unosImena .btn,
+body .unosImena .btn1 {
   width: 200px;
   margin: 0 auto;
   border: none;
@@ -118,7 +119,8 @@ body .unosImena .btn, body .unosImena .btn1 {
   height: 4vh;
 }
 
-body .unosImena .btn:hover, body .unosImena .btn1:hover {
+body .unosImena .btn:hover,
+body .unosImena .btn1:hover {
   background-color: #383847;
   cursor: pointer;
 }
@@ -161,6 +163,13 @@ body .unosImena .btn:hover, body .unosImena .btn1:hover {
   height: 10vh;
 }
 
+.pojmovi .main .potvrda {
+  text-align: center !important;
+  font-weight: 600;
+  font-size: 25px;
+  color: #9e8181;
+}
+
 .pojmovi .main .hallOfFame h3 {
   width: 300px;
   margin: 0 auto;
@@ -191,7 +200,8 @@ body .unosImena .btn:hover, body .unosImena .btn1:hover {
   border-radius: 5px;
 }
 
-.tajmer, .randomSlovo {
+.tajmer,
+.randomSlovo {
   width: 200px;
   margin: 2% auto;
   font-weight: 600;
@@ -237,5 +247,28 @@ body .unosImena .btn:hover, body .unosImena .btn1:hover {
   width: 100px;
   margin: 0 auto;
   float: none;
+}
+
+.ispis {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 400px;
+  margin: 5% auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ispis .ispisRezultata1,
+.ispis .ispisRezultata2 {
+  text-align: center !important;
+  font-weight: 600;
+  font-size: 25px;
+  color: #9e8181;
 }
 /*# sourceMappingURL=style.css.map */

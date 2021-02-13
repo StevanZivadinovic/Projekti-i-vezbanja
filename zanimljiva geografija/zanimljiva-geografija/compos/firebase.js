@@ -16,6 +16,8 @@ const ispisUbazu = (ime, grupa, pocetnoSlovo) => {
    
       if(data.size>0 ){
         console.log('neispravno');
+        let potvrda = document.querySelector('.potvrda');
+        potvrda.innerHTML=`Pojam vec postoji!`
         return false;
         
       }
@@ -35,6 +37,9 @@ const ispisUbazu = (ime, grupa, pocetnoSlovo) => {
           .catch(err=>{
             console.log('Postoji takav podatak');
           })
+
+          let potvrda = document.querySelector('.potvrda');
+          potvrda.innerHTML=`Dodali ste pojam u bazu. Hvala Vam :)`
       }
         
       

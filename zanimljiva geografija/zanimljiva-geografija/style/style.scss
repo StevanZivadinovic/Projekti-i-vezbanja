@@ -71,7 +71,8 @@ body {
         }
       }
     }
-    .btn, .btn1 {
+    .btn,
+    .btn1 {
       width: 200px;
       margin: 0 auto;
       border: none;
@@ -87,91 +88,103 @@ body {
 }
 //predlogPojmova.html
 .pojmovi {
-
- .main{
-     display: flex;
-     flex-direction: column;
-     justify-content: space-around;
-     height: 90vh;
-     background-color: lightcoral;
-     #formTermini{
-         height: 20vh;
-         display: flex;
-         justify-content: center;
-      .form-group{
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+    background-color: lightcoral;
+    #formTermini {
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      .form-group {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 10vh;
       }
-        
-        
-     }
+    }
+    .potvrda{
+      text-align: center !important;
+      font-weight: 600;
+    font-size: 25px;
+    color: rgb(158, 129, 129);
+    }
 
-     .hallOfFame{
-       h3{
+    .hallOfFame {
+      h3 {
         width: 300px;
         margin: 0 auto;
         text-align: center;
-       }
-       .ispisKorsnickeListe{
-         list-style-type: none;
-         width: 300px;
-         margin: 0 auto;
-         background-color: rgba(100, 104, 105, .5);
-         border-radius: 10px;
-         
-       }
-     }
-
-     
- }
-}
-
-.dugme{
-  display: flex;
-  justify-content: center;
-  margin:5% 0;
-  .igraj{
-    padding: 5px 20px;
-    border: none;
-    border-radius: 5px;
-    
-    
+      }
+      .ispisKorsnickeListe {
+        list-style-type: none;
+        width: 300px;
+        margin: 0 auto;
+        background-color: rgba(100, 104, 105, 0.5);
+        border-radius: 10px;
+      }
+    }
   }
 }
 
-.tajmer, .randomSlovo{
+.dugme {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0;
+  .igraj {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+.tajmer,
+.randomSlovo {
   width: 200px;
   margin: 2% auto;
   font-weight: 600;
   font-size: 25px;
   color: rgb(158, 129, 129);
   text-align: center;
-
 }
 
-.forma{
+.forma {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 280px;
   margin: 0 auto;
   display: none;
-  label{
+  label {
     margin-right: 10px;
   }
-  input{
+  input {
     float: right;
   }
-  .sekcija1{
+  .sekcija1 {
     display: flex;
     justify-content: center;
-    #submit{
+    #submit {
       width: 100px;
       margin: 0 auto;
       float: none;
     }
   }
-  
+}
+
+.ispis {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  margin: 5% auto;
+  justify-content: center;
+  .ispisRezultata1,
+  .ispisRezultata2 {
+    text-align: center !important;
+    font-weight: 600;
+  font-size: 25px;
+  color: rgb(158, 129, 129);
+  }
 }
