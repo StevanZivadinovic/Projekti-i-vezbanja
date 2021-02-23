@@ -28,21 +28,9 @@ function showSlides(n) {
 
 
 
-// let images = document.querySelectorAll('.img');
-// console.log(images);
-// let status = false;
 
-// images.forEach(image => {
-//   image.addEventListener('click',(e)=>{
-    
-//     if(status === false){
-//       e.target.style.backgroundColor = 'green';
-     
-      
-//     }
    
     
     
 
-// });
-// });
+
