@@ -53,6 +53,22 @@ let carType = document.querySelector('#carType').value;
 let ispis = document.querySelector('.ispis');
 let btnShowCar = document.querySelector('#btnShowCar');
 
+
+let preuzmi = (data, id) => {
+    let html = `<li data-id='${id}'>
+      
+      <div>brand: ${data.brand}</div>
+      <div>model: ${data.model}</div>
+      <div>constructionYear: ${data.constructionYear}</div>
+      <div>fuelType: ${data.fuelType}</div>
+      <button class="dugmeDelete">Delete</button>
+      <button class="dugmeUpdate">Update</button>
+      </li>`;
+  
+    ispis.innerHTML += html;
+  };
+
+
 btnShowCar.addEventListener('click',(e)=>{
     e.preventDefault()
 
@@ -60,7 +76,11 @@ btnShowCar.addEventListener('click',(e)=>{
         snapshot.docChanges().forEach((change) => {
          
           let doc = change.doc.data();
-            console.log(doc)
+            console.log(doc.constructionYear)
+
+            if(change.type === 'added'){
+                preuzmi(doc, doc.id)
+            }
         });
       });
 })
