@@ -54,7 +54,7 @@ let btnShowCustomer = document.querySelector("#btnShowCustomer");
 
 showList.addEventListener("click", (e) => {
   e.preventDefault();
-  if (e.target.classList.contains("dugmeDelete")) {
+  if (e.target.classList.contains("dugmeDeleteCustomer")) {
     console.log("haj");
 
     let id = e.target.parentElement.getAttribute("data-id");
@@ -78,8 +78,8 @@ let preuzmi = (data, id) => {
       <div>Email address: ${data.emailAddress}</div>
       <div>Phone number: ${data.phoneNumber}</div>
       
-      <button class="dugmeDelete">Delete</button>
-      <button class="dugmeUpdate">Update</button>
+      <button class="dugmeDeleteCustomer">Delete</button>
+      <button class="dugmeUpdateCustomer">Update</button>
       </li>`;
 
       showList.innerHTML += html;
@@ -116,4 +116,42 @@ btnShowCustomer.addEventListener("click", (e) => {
       }
     });
   });
+});
+
+
+//update customer
+let submitUpdateCustomer = document.querySelector("#submitUpdateCustomer");
+
+showList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("dugmeUpdateCustomer")) {
+    console.log("haj");
+    formAddCustomer.style.display = "flex";
+    formAddCar.style.display = 'none';
+    let id = e.target.parentElement.getAttribute("data-id");
+    console.log(id);
+    submitUpdateCustomer.style.display = "block";
+    submitAddCustomer.style.display = "none";
+    db.collection("customers")
+      .doc(id)
+      .onSnapshot((snapshot) => {
+        console.log(snapshot.data());
+         document.querySelector("#fullName").value= snapshot.data().fullName;
+        document.querySelector("#emailAddress").value= snapshot.data().emailAddress;
+         document.querySelector("#phoneNumber").value= snapshot.data().phoneNumber;
+
+           
+      });
+
+    submitUpdateCustomer.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      db.collection("customers").doc(id).update({
+        fullName:   document.querySelector("#fullName").value,
+        emailAddress: document.querySelector("#emailAddress").value,
+        phoneNumber: document.querySelector("#phoneNumber").value,
+        
+      })
+      formAddCustomer.style.display = "none";
+    });
+  }
 });

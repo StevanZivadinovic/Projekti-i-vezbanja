@@ -134,12 +134,15 @@ btnShowCar.addEventListener("click", (e) => {
     });
   });
 });
+//update car
 let submitUpdateCar = document.querySelector("#submitUpdateCar");
+
 
 showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdate")) {
     console.log("haj");
     formAddCar.style.display = "flex";
+   
     let id = e.target.parentElement.getAttribute("data-id");
     console.log(id);
     submitUpdateCar.style.display = "block";
