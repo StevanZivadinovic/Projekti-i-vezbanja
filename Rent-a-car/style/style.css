@@ -7,11 +7,14 @@
     margin: 0 auto;
     display: none;
 }
-.listaIspis{
+.listShowCars, .listShowCustomers{
     display: flex;
     width: 100%;
     list-style-type: none;
-    border-bottom:2px solid black
+    border-bottom:2px solid black;
+    height: 10vh;
+    justify-content: space-around;
+    
 }
 ul{
     padding: 0;

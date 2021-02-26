@@ -23,21 +23,21 @@
     <hr>
     <!-- addCar -->
     <form class="addCar">
-        <input type="text" placeholder="Brand" id="brand">
-        <input type="text" placeholder="Model" id="model">
-        <input type="text" placeholder="Construction year" id="constructionYear">
-        <select name="Fuel type" id="fuelType">
+        <input type="text" placeholder="Brand" id="brand" required>
+        <input type="text" placeholder="Model" id="model" required>
+        <input type="text" placeholder="Construction year" id="constructionYear" required>
+        <select name="Fuel type" id="fuelType" >
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel</option>
             <option value="hybrid">Hybrid</option>
             <option value="electric">Electric</option>
         </select>
-        <input type="number" placeholder="Number of seats" id="numberOfSeats">
-        <input type="text" placeholder="Picture link" id="pictureLink">
-        <input type="text" placeholder="Price per day" id="pricePerDay">
-        <input type="number" placeholder="Number of free cars" id="numberOfFreeCars">
+        <input type="number" placeholder="Number of seats" id="numberOfSeats" required>
+        <input type="text" placeholder="Picture link" id="pictureLink" required>
+        <input type="text" placeholder="Price per day" id="pricePerDay" required>
+        <input type="number" placeholder="Number of free cars" id="numberOfFreeCars" required>
 
-        <select name="Car type" id="carType">
+        <select name="Car type" id="carType" >
             <option value="economy">Economy</option>
             <option value="estate">Estate</option>
             <option value="luxury">Luxury</option>
@@ -51,17 +51,16 @@
     <!-- addCustomer -->
 
     <form  class="addCustomer">
-        <input type="text" placeholder="Full name">
-        <input type="text" placeholder="Email address">
-        <input type="number" placeholder="Phone number">
+        <input type="text" placeholder="Full name" id="fullName" required>
+        <input type="text" placeholder="Email address" id="emailAddress" required>
+        <input type="tel" pattern="[0-9]{3}/[0-9]{7}" placeholder="Phone number" id="phoneNumber" required>
 
-        <input type="submit" value="Add customer" id="submitAddCustomer">
+        <input type="submit" value="Add customer" id="submitAddCustomer" >
         <input type="submit" value="Update customer" id="submitUpdateCustomer" style="display: none;">
     </form>
-    <div class="ispisForme"></div>
+    <!-- <div class="ispisForme"></div> -->
     <div>
-
-        <ul class="ispis"></ul>
+        <ul class="showList"></ul>
     </div>
 
 

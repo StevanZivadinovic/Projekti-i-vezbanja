@@ -1,7 +1,8 @@
 //DOM
 let addCar = document.querySelector("input#addCar");
 let formAddCar = document.querySelector("form.addCar");
-
+let formAddCustomer = document.querySelector("form.addCustomer");
+let addCustomer = document.querySelector("input#addCustomer");
 let submitAddCar = document.querySelector("#submitAddCar");
 
 //Add car
@@ -12,6 +13,8 @@ addCar.addEventListener("click", (e) => {
 
   formAddCar.style.display = "flex";
   addCar.style.display = "none";
+  formAddCustomer.style.display='none';
+  addCustomer.style.display = 'inline-block';
 });
 
 //add Car to firebase
@@ -28,31 +31,38 @@ submitAddCar.addEventListener("click", (e) => {
   let numberOfFreeCars = document.querySelector("#numberOfFreeCars").value;
   let carType = document.querySelector("#carType").value;
   e.preventDefault();
-  db.collection("cars")
-    .add({
-      brand: brand,
-      model: model,
-      constructionYear: constructionYear,
-      fuelType: fuelType,
-      numberOfSeats: numberOfSeats,
-      pictureLink: pictureLink,
-      pricePerDay: pricePerDay,
-      numberOfFreeCars: numberOfFreeCars,
-      carType: carType,
-    })
-    .then((data) => {
-      console.log("Car is added");
-      formAddCar.style.display = "none";
-      addCar.style.display = "flex";
-    });
+
+  if(brand.length>0 && model.length>0 && constructionYear.length>0 && fuelType.length>0 && numberOfSeats.length>0 && pictureLink.length>0
+    && pricePerDay.length>0 && numberOfFreeCars.length>0 && carType.length>0 ){
+
+      db.collection("cars")
+        .add({
+          brand: brand,
+          model: model,
+          constructionYear: constructionYear,
+          fuelType: fuelType,
+          numberOfSeats: numberOfSeats,
+          pictureLink: pictureLink,
+          pricePerDay: pricePerDay,
+          numberOfFreeCars: numberOfFreeCars,
+          carType: carType,
+        })
+        .then((data) => {
+          console.log("Car is added");
+          formAddCar.style.display = "none";
+          addCar.style.display = "flex";
+        });
+  }else{
+    alert('Fill all fields')
+  }
 });
 
-//prikaz automobila
+//show cars
 
-let ispis = document.querySelector(".ispis");
+let showList = document.querySelector(".showList");
 let btnShowCar = document.querySelector("#btnShowCar");
 
-ispis.addEventListener("click", (e) => {
+showList.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.classList.contains("dugmeDelete")) {
     console.log("haj");
@@ -64,32 +74,32 @@ ispis.addEventListener("click", (e) => {
       .doc(id)
       .delete()
       .then(() => {
-        console.log("Client is deleted");
+        console.log("Car is deleted");
       });
   }
 });
 
 let preuzmi = (data, id) => {
+  
   console.log(id);
-  let html = `<li class='listaIspis' data-id='${id}'>
+  let html = `<li class='listShowCars' data-id='${id}'>
       
       <img src=${data.pictureLink} style="width:100px;">
-      <div>brand: ${data.brand}</div>
-      <div>model: ${data.model}</div>
-      <div>constructionYear: ${data.constructionYear}</div>
-      <div>fuelType: ${data.fuelType}</div>
-      <div>numberOfSeats: ${data.numberOfSeats}</div>
-      <div>fuelType: ${data.fuelType}</div>
-      <div>pricePerDay: ${data.pricePerDay}</div>
-      <div>numberOfFreeCars: ${data.numberOfFreeCars}</div>
-      <div>carType: ${data.carType}</div>
+      <div>Brand: ${data.brand}</div>
+      <div>Model: ${data.model}</div>
+      <div>Construction year: ${data.constructionYear}</div>
+      <div>Fuel type: ${data.fuelType}</div>
+      <div>Number of seats: ${data.numberOfSeats}</div>
+      <div>Price per day: ${data.pricePerDay}</div>
+      <div>Number of free cars: ${data.numberOfFreeCars}</div>
+      <div>Car type: ${data.carType}</div>
 
 
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
       </li>`;
 
-  ispis.innerHTML += html;
+      showList.innerHTML += html;
 };
 
 let obrisati = (id) => {
@@ -103,6 +113,7 @@ let obrisati = (id) => {
 };
 
 btnShowCar.addEventListener("click", (e) => {
+  showList.innerHTML = '';
   db.collection("cars").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
@@ -125,7 +136,7 @@ btnShowCar.addEventListener("click", (e) => {
 });
 let submitUpdateCar = document.querySelector("#submitUpdateCar");
 
-ispis.addEventListener("click", (e) => {
+showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdate")) {
     console.log("haj");
     formAddCar.style.display = "flex";
