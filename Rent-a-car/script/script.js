@@ -100,12 +100,13 @@ btnShowCar.addEventListener("click", (e) => {
   db.collection("cars").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
-      console.log(doc.constructionYear);
+      
 
       if (change.type === "added") {
         preuzmi(doc, change.doc.id);
       } else if (change.type === "modified") {
-        obrisati(doc.id);
+        console.log(change.doc.id, `update`)
+        obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "removed") {
         if (confirm("Da li zelite da obrisete korisnika?")) {
@@ -115,6 +116,7 @@ btnShowCar.addEventListener("click", (e) => {
     });
   });
 });
+let submitUpdateCar = document.querySelector("#submitUpdateCar");
 
 ispis.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdate")) {
@@ -122,20 +124,48 @@ ispis.addEventListener("click", (e) => {
     formAddCar.style.display = "flex";
     let id = e.target.parentElement.getAttribute("data-id");
     console.log(id);
-
+    submitUpdateCar.style.display = "block";
+    submitAddCar.style.display = "none";
     db.collection("cars")
       .doc(id)
       .onSnapshot((snapshot) => {
         console.log(snapshot.data());
         document.querySelector("#brand").value = snapshot.data().brand;
         document.querySelector("#model").value = snapshot.data().model;
-        document.querySelector("#constructionYear").value = snapshot.data().constructionYear;
+        document.querySelector(
+          "#constructionYear"
+        ).value = snapshot.data().constructionYear;
         document.querySelector("#fuelType").value = snapshot.data().fuelType;
-        document.querySelector("#numberOfSeats").value = snapshot.data().numberOfSeats;
-        document.querySelector("#pictureLink").value = snapshot.data().pictureLink;
-        document.querySelector("#pricePerDay").value = snapshot.data().pricePerDay;
-        document.querySelector("#numberOfFreeCars").value = snapshot.data().numberOfFreeCars;
+        document.querySelector(
+          "#numberOfSeats"
+        ).value = snapshot.data().numberOfSeats;
+        document.querySelector(
+          "#pictureLink"
+        ).value = snapshot.data().pictureLink;
+        document.querySelector(
+          "#pricePerDay"
+        ).value = snapshot.data().pricePerDay;
+        document.querySelector(
+          "#numberOfFreeCars"
+        ).value = snapshot.data().numberOfFreeCars;
         document.querySelector("#carType").value = snapshot.data().carType;
       });
+
+    submitUpdateCar.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      db.collection("cars").doc(id).update({
+        brand:   document.querySelector("#brand").value,
+        model: document.querySelector("#model").value,
+        constructionYear: document.querySelector("#constructionYear").value,
+        fuelType: document.querySelector("#fuelType").value,
+        numberOfSeats: document.querySelector("#numberOfSeats").value,
+        pictureLink: document.querySelector("#pictureLink").value,
+        pricePerDay: document.querySelector("#pricePerDay").value,
+        numberOfFreeCars: document.querySelector("#numberOfFreeCars").value,
+        carType: document.querySelector("#carType").value
+      })
+      formAddCar.style.display = "none";
+    });
   }
 });
