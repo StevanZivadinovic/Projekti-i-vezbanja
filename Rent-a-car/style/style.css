@@ -20,7 +20,7 @@ ul{
     padding: 0;
 }
 
-.dugmeDelete, .dugmeUpdate{
+.dugmeDelete, .dugmeUpdate, .dugmeDeleteCustomer, .dugmeUpdateCustomer{
     height: 4vh;
 }
 nav{
