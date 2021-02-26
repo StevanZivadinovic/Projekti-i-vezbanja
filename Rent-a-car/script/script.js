@@ -70,15 +70,20 @@ ispis.addEventListener("click", (e) => {
 
 let preuzmi = (data, id) => {
   console.log(id);
-  let html = `<li data-id='${id}'>
+  let html = `<li class='listaIspis' data-id='${id}'>
       
       <div>brand: ${data.brand}</div>
       <div>model: ${data.model}</div>
       <div>constructionYear: ${data.constructionYear}</div>
       <div>fuelType: ${data.fuelType}</div>
       <div>numberOfSeats: ${data.numberOfSeats}</div>
-      <img src=${data.pictureLink} style="width:200px">
       <div>fuelType: ${data.fuelType}</div>
+      <div>pricePerDay: ${data.pricePerDay}</div>
+      <div>numberOfFreeCars: ${data.numberOfFreeCars}</div>
+      <div>carType: ${data.carType}</div>
+
+
+      <img src=${data.pictureLink} style="width:100px">
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
       </li>`;
