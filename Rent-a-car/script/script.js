@@ -72,6 +72,7 @@ let preuzmi = (data, id) => {
   console.log(id);
   let html = `<li class='listaIspis' data-id='${id}'>
       
+      <img src=${data.pictureLink} style="width:100px;">
       <div>brand: ${data.brand}</div>
       <div>model: ${data.model}</div>
       <div>constructionYear: ${data.constructionYear}</div>
@@ -83,7 +84,6 @@ let preuzmi = (data, id) => {
       <div>carType: ${data.carType}</div>
 
 
-      <img src=${data.pictureLink} style="width:100px">
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
       </li>`;
@@ -108,6 +108,7 @@ btnShowCar.addEventListener("click", (e) => {
       
 
       if (change.type === "added") {
+        obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "modified") {
         console.log(change.doc.id, `update`)
