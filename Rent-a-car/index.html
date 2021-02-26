@@ -10,11 +10,18 @@
 </head>
 
 <body>
-    <div>
-        <input type="button" value="Add car" id='addCar'>
-        <input type="button" value="Show car" id='btnShowCar'>
-    </div>
+    <nav>
+        <div class="carsNav">
+            <input type="button" value="Add car" id='addCar'>
+            <input type="button" value="Show car" id='btnShowCar'>
+        </div>
+        <div class="customerNav">
+            <input type="button" value="Add customer" id='addCustomer'>
+            <input type="button" value="Show customer" id='btnShowCustomer'>
+        </div>
+    </nav>
     <hr>
+    <!-- addCar -->
     <form class="addCar">
         <input type="text" placeholder="Brand" id="brand">
         <input type="text" placeholder="Model" id="model">
@@ -41,6 +48,17 @@
         <input type="submit" value="Add car" id="submitAddCar">
         <input type="submit" value="Update car" id="submitUpdateCar" style="display: none;">
     </form>
+    <!-- addCustomer -->
+
+    <form  class="addCustomer">
+        <input type="text" placeholder="Full name">
+        <input type="text" placeholder="Email address">
+        <input type="number" placeholder="Phone number">
+
+        <input type="submit" value="Add customer" id="submitAddCustomer">
+        <input type="submit" value="Update customer" id="submitUpdateCustomer" style="display: none;">
+    </form>
+    <div class="ispisForme"></div>
     <div>
 
         <ul class="ispis"></ul>
@@ -67,7 +85,9 @@
         let db = firebase.firestore()
     </script>
 
-    <script src="./script/script.js"></script>
+    <script src="./script/script.js" type="module"></script>
+    <script src="./script/customer.js" type="module"></script>
+
 </body>
 
 </html>

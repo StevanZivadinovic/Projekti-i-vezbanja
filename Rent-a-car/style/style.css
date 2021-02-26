@@ -1,5 +1,5 @@
 
-.addCar{
+.addCar, .addCustomer{
     /* display: flex; */
     flex-direction: column;
     justify-content: center;
@@ -15,5 +15,13 @@
 }
 ul{
     padding: 0;
+}
+
+.dugmeDelete, .dugmeUpdate{
+    height: 4vh;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
 }
 

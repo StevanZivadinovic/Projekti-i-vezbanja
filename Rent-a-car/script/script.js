@@ -5,10 +5,11 @@ let formAddCar = document.querySelector("form.addCar");
 let submitAddCar = document.querySelector("#submitAddCar");
 
 //Add car
-console.log(addCar, formAddCar);
+
 addCar.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("hay");
+
   formAddCar.style.display = "flex";
   addCar.style.display = "none";
 });
@@ -115,7 +116,7 @@ btnShowCar.addEventListener("click", (e) => {
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "removed") {
-        if (confirm("Da li zelite da obrisete korisnika?")) {
+        if (confirm("Delete car?")) {
           obrisati(change.doc.id);
         }
       }
