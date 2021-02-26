@@ -116,4 +116,26 @@ btnShowCar.addEventListener("click", (e) => {
   });
 });
 
-ispis.addEventListener("click", (e) => {});
+ispis.addEventListener("click", (e) => {
+  if (e.target.classList.contains("dugmeUpdate")) {
+    console.log("haj");
+    formAddCar.style.display = "flex";
+    let id = e.target.parentElement.getAttribute("data-id");
+    console.log(id);
+
+    db.collection("cars")
+      .doc(id)
+      .onSnapshot((snapshot) => {
+        console.log(snapshot.data());
+        document.querySelector("#brand").value = snapshot.data().brand;
+        document.querySelector("#model").value = snapshot.data().model;
+        document.querySelector("#constructionYear").value = snapshot.data().constructionYear;
+        document.querySelector("#fuelType").value = snapshot.data().fuelType;
+        document.querySelector("#numberOfSeats").value = snapshot.data().numberOfSeats;
+        document.querySelector("#pictureLink").value = snapshot.data().pictureLink;
+        document.querySelector("#pricePerDay").value = snapshot.data().pricePerDay;
+        document.querySelector("#numberOfFreeCars").value = snapshot.data().numberOfFreeCars;
+        document.querySelector("#carType").value = snapshot.data().carType;
+      });
+  }
+});
