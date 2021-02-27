@@ -107,11 +107,16 @@ submitRentalEvent.addEventListener('click',e=>{
             console.log(price, startDate, endDate);
             let diference = endDate - startDate;
             let daysDiference = diference/ (1000 * 3600 * 24);
-
-            if(daysDiference>3){
+            console.log(daysDiference)
+            if(daysDiference>3 && daysDiference<5){
               let totalAmount = price*(95/100)
               console.log(totalAmount)
-              priceShow.innerHTML =`Your bill is:${totalAmount}$ ` ;
+              priceShow.innerHTML =`Your bill is:${totalAmount}$, you get 5% discount` ;
+            }
+            else if(daysDiference>5 && daysDiference<10){
+              let totalAmount = price*(93/100)
+              console.log(totalAmount)
+              priceShow.innerHTML =`Your bill is:${totalAmount.toFixed(2)}$, you get 7% discount` ;
             }
           })
 
