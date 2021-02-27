@@ -106,7 +106,13 @@ submitRentalEvent.addEventListener('click',e=>{
             priceShow.innerHTML =`Your bill is:${price}$ ` ;
             console.log(price, startDate, endDate);
             let diference = endDate - startDate;
-            console.log(diference.getHours())
+            let daysDiference = diference/ (1000 * 3600 * 24);
+
+            if(daysDiference>3){
+              let totalAmount = price*(95/100)
+              console.log(totalAmount)
+              priceShow.innerHTML =`Your bill is:${totalAmount}$ ` ;
+            }
           })
 
         }
