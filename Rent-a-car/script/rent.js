@@ -87,10 +87,10 @@ submitRentalEvent.addEventListener('click',e=>{
       snapshot.docChanges().forEach((change) => {
 
         if(change.doc.id === eventId){
-        let start =   change.doc.data().startDateAndTime;
-        let end =    change.doc.data().endDateAndTime;
-        let startDate = new Date(start).getTime();
-        let endDate = new Date(end).getTime()
+          let start =   change.doc.data().startDateAndTime;
+          let end =    change.doc.data().endDateAndTime;
+          let startDate = new Date(start).getTime();
+          let endDate = new Date(end).getTime()
 
 
 
@@ -125,6 +125,16 @@ submitRentalEvent.addEventListener('click',e=>{
             }
           })
 
+        }
+      })
+    })
+
+    eventId = docRef.id;//get id of doc witch is added now
+    db.collection('events').onSnapshot(snapshot=>{
+      snapshot.docChanges().forEach(change=>{
+        if(change.doc.id === eventId){
+          let customer =   change.doc.data().selectCustomer;
+          console.log(customer);
         }
       })
     })
