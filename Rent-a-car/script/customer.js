@@ -2,6 +2,8 @@
 let addCustomer = document.querySelector("input#addCustomer");
 let formAddCustomer = document.querySelector("form.addCustomer");
 let formAddCar = document.querySelector("form.addCar");
+let addRentalEventForm = document.querySelector('.addRentalEvent');
+let addRentalEvent = document.querySelector('#addRentalEvent');
 let addCar = document.querySelector("input#addCar");
 
 let submitAddCustomer = document.querySelector("#submitAddCustomer");
@@ -15,8 +17,10 @@ addCustomer.addEventListener("click", (e) => {
  
   formAddCustomer.style.display = "flex";
   addCustomer.style.display = "none";
-  formAddCar.style.display='none'
-  addCar.style.display='inline-block'
+  formAddCar.style.display='none';
+  addRentalEventForm.style.display = 'none';
+  addCar.style.display='inline-block';
+  addRentalEvent.style.display = 'inline-block';
 });
 
 //add Customer to firebase
@@ -26,6 +30,8 @@ submitAddCustomer.addEventListener("click", (e) => {
   let fullName = document.querySelector("#fullName").value;
   let emailAddress = document.querySelector("#emailAddress").value;
   let phoneNumber = document.querySelector("#phoneNumber").value;
+  let fullNameConnected = fullName.replace(' ','');
+  
   
   e.preventDefault();
   if(fullName.length>0 && emailAddress.length>0 && phoneNumber.length>0){
@@ -33,6 +39,7 @@ submitAddCustomer.addEventListener("click", (e) => {
     db.collection("customers")
       .add({
         fullName: fullName,
+        fullNameConnected:fullNameConnected,
         emailAddress: emailAddress,
         phoneNumber: phoneNumber,
       

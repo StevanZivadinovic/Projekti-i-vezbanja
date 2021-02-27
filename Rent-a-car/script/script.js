@@ -3,6 +3,8 @@ let addCar = document.querySelector("input#addCar");
 let formAddCar = document.querySelector("form.addCar");
 let formAddCustomer = document.querySelector("form.addCustomer");
 let addCustomer = document.querySelector("input#addCustomer");
+let addRentalEvent = document.querySelector('#addRentalEvent');
+let addRentalEventForm = document.querySelector('.addRentalEvent');
 let submitAddCar = document.querySelector("#submitAddCar");
 
 //Add car
@@ -14,7 +16,9 @@ addCar.addEventListener("click", (e) => {
   formAddCar.style.display = "flex";
   addCar.style.display = "none";
   formAddCustomer.style.display='none';
+  addRentalEventForm.style.display='none';
   addCustomer.style.display = 'inline-block';
+  addRentalEvent.style.display = 'inline-block';
 });
 
 //add Car to firebase
@@ -23,6 +27,7 @@ submitAddCar.addEventListener("click", (e) => {
 
   let brand = document.querySelector("#brand").value;
   let model = document.querySelector("#model").value;
+  let brandModel = `${brand}-${model}`;
   let constructionYear = document.querySelector("#constructionYear").value;
   let fuelType = document.querySelector("#fuelType").value;
   let numberOfSeats = document.querySelector("#numberOfSeats").value;
@@ -30,6 +35,7 @@ submitAddCar.addEventListener("click", (e) => {
   let pricePerDay = document.querySelector("#pricePerDay").value;
   let numberOfFreeCars = document.querySelector("#numberOfFreeCars").value;
   let carType = document.querySelector("#carType").value;
+   
   e.preventDefault();
 
   if(brand.length>0 && model.length>0 && constructionYear.length>0 && fuelType.length>0 && numberOfSeats.length>0 && pictureLink.length>0
@@ -39,6 +45,7 @@ submitAddCar.addEventListener("click", (e) => {
         .add({
           brand: brand,
           model: model,
+          brandModel:brandModel,
           constructionYear: constructionYear,
           fuelType: fuelType,
           numberOfSeats: numberOfSeats,
