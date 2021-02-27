@@ -134,17 +134,41 @@ submitRentalEvent.addEventListener('click',e=>{
     eventId = docRef.id;//get id of doc witch is added now
     db.collection('events').onSnapshot(snapshot=>{
       snapshot.docChanges().forEach(change=>{
-        // if(change.doc.id === eventId){
-          let dateOfRent =   change.doc.data().dateOfRent;
-          let DateOfRentTimestamp = new Date(dateOfRent).getTime();
+        if(change.doc.id === eventId){
+          // let dateOfRent =   change.doc.data().dateOfRent;
+          // let DateOfRentTimestamp = new Date(dateOfRent).getTime();
+          let nameCustomer =change.doc.data().selectCustomer; 
           let nowday = new Date().getTime()
-          let dif = nowday-dateOfRent;
-          console.log(dif)
-          db.collection('events').where('dateOfRent', '<=' ,``)
+         
+         
+          db.collection('events').where('selectCustomer', '==' ,nameCustomer)
           .get()
+          .then(data=>{
+            let count=0
+          let a=  data.docs;
+
+          for(let i= 0; i<a.length; i++){
+           
+            let dif = nowday-a[i].data().dateOfRent/(1000 * 3600 * 24);
+              if(dif<60){
+                count+=1;
+                
+              }
+              console.log(count)
+          }
+      
+            // .forEach(a=>{
+            //   let dif = nowday-a.data().dateOfRent/(1000 * 3600 * 24);
+            //   if(dif<60){
+            //    return count+=1;
+                
+            //   }
+            // })
+            // console.log(count)
+          })
 
         
-        // }
+        }
       })
     })
     
