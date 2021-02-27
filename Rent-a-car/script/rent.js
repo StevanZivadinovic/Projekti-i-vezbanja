@@ -68,13 +68,15 @@ let endDateAndTime = document.querySelector('#endDateAndTime');
 // let selectCustomer = document.querySelector('#selectCustomer');
 
 let submitRentalEvent = document.querySelector('#submitRentalEvent');
+
 submitRentalEvent.addEventListener('click',e=>{
   e.preventDefault();
   db.collection('events').add({
     startDateAndTime:startDateAndTime.value,
     endDateAndTime:endDateAndTime.value,
     selectCar:selectCar.value,
-    selectCustomer:selectCustomer.value
+    selectCustomer:selectCustomer.value,
+    dateOfRent:new Date().getTime()
   })
   .then((docRef)=>{
    let eventId = docRef.id;//get id of doc witch is added now
@@ -132,12 +134,20 @@ submitRentalEvent.addEventListener('click',e=>{
     eventId = docRef.id;//get id of doc witch is added now
     db.collection('events').onSnapshot(snapshot=>{
       snapshot.docChanges().forEach(change=>{
-        if(change.doc.id === eventId){
-          let customer =   change.doc.data().selectCustomer;
-          console.log(customer);
-        }
+        // if(change.doc.id === eventId){
+          let dateOfRent =   change.doc.data().dateOfRent;
+          let DateOfRentTimestamp = new Date(dateOfRent).getTime();
+          let nowday = new Date().getTime()
+          let dif = nowday-dateOfRent;
+          console.log(dif)
+          db.collection('events').where('dateOfRent', '<=' ,``)
+          .get()
+
+        
+        // }
       })
     })
+    
   })
 })
 

@@ -33,6 +33,7 @@ submitAddCustomer.addEventListener("click", (e) => {
   let fullNameConnected = fullName.replace(' ','');
   
   
+  
   e.preventDefault();
   if(fullName.length>0 && emailAddress.length>0 && phoneNumber.length>0){
 
