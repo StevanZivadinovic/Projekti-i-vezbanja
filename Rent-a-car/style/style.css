@@ -1,5 +1,5 @@
 
-.addCar, .addCustomer{
+.addCar, .addCustomer, .addRentalEvent{
     /* display: flex; */
     flex-direction: column;
     justify-content: center;
@@ -26,5 +26,12 @@ ul{
 nav{
     display: flex;
     justify-content: space-around;
+}
+
+.eventLi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 

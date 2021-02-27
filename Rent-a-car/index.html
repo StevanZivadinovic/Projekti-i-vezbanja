@@ -20,8 +20,8 @@
             <input type="button" value="Show customer" id='btnShowCustomer'>
         </div>
         <div class="rentNav">
-            <input type="button" value="Add rent" id='addRent'>
-            <input type="button" value="Show rent" id='btnShowRent'>
+            <input type="button" value="Add rental event" id='addRentalEvent'>
+            <input type="button" value="Show rental event" id='btnShowRentalEvent'>
         </div>
     </nav>
     <hr>
@@ -30,7 +30,7 @@
         <input type="text" placeholder="Brand" id="brand" required>
         <input type="text" placeholder="Model" id="model" required>
         <input type="text" placeholder="Construction year" id="constructionYear" required>
-        <select name="Fuel type" id="fuelType" >
+        <select name="Fuel type" id="fuelType">
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel</option>
             <option value="hybrid">Hybrid</option>
@@ -41,7 +41,7 @@
         <input type="text" placeholder="Price per day" id="pricePerDay" required>
         <input type="number" placeholder="Number of free cars" id="numberOfFreeCars" required>
 
-        <select name="Car type" id="carType" >
+        <select name="Car type" id="carType">
             <option value="economy">Economy</option>
             <option value="estate">Estate</option>
             <option value="luxury">Luxury</option>
@@ -54,15 +54,33 @@
     </form>
     <!-- addCustomer -->
 
-    <form  class="addCustomer">
+    <form class="addCustomer">
         <input type="text" placeholder="Full name" id="fullName" required>
         <input type="text" placeholder="Email address" id="emailAddress" required>
-        <input type="tel" pattern="[0-9]{3}/[0-9]{7}" placeholder="Phone number" id="phoneNumber" required>
+        <input type="tel" placeholder="Phone number" id="phoneNumber" required>
 
-        <input type="submit" value="Add customer" id="submitAddCustomer" >
+        <input type="submit" value="Add customer" id="submitAddCustomer">
         <input type="submit" value="Update customer" id="submitUpdateCustomer" style="display: none;">
     </form>
-    <!-- <div class="ispisForme"></div> -->
+
+    <!-- addRentalEvent -->
+    <form class='addRentalEvent'>
+
+        <div class="eventLi">
+            <label for="startDateAndTime">Start date:</label>
+            <input type="datetime-local" id="startDateAndTime">
+        </div>
+        <div class="eventLi">
+            <label for="endDateAndTime">End date:</label>
+            <input type="datetime-local" id="endDateAndTime">
+        </div>
+        <div class="eventLi">
+            <label for="selectCar">Car:</label>
+            <select name="selectCar" id="selectCar"></select>
+        </div>
+    </form>
+
+
     <div>
         <ul class="showList"></ul>
     </div>
@@ -90,6 +108,7 @@
 
     <script src="./script/script.js" type="module"></script>
     <script src="./script/customer.js" type="module"></script>
+    <script src="./script/rent.js" type="module"></script>
 
 </body>
 
