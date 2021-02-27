@@ -73,11 +73,33 @@ submitRentalEvent.addEventListener('click',e=>{
     selectCar:selectCar.value,
     selectCustomer:selectCustomer.value
   })
-  .then((data)=>{
-    console.log('haj')
-    console.log(data)
+  .then((docRef)=>{
+   let eventId = docRef.id;//get id of doc witch is added now
+     
+    console.log("Event is added");
+    addRentalEventForm.style.display = 'none';
+    addRentalEvent.style.display = 'inline-block'
+
+    db.collection('events').onSnapshot((snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+
+        if(change.doc.id === eventId){
+          console.log(change.doc.data().selectCar);
+
+          db.collection('cars').where('brandModel', '==' ,`${change.doc.data().selectCar}`)
+          .get()
+          .then(data=>{
+            data.docs.forEach(a=>{
+              console.log(a.data())
+            })
+          })
+
+        }
+      })
+    })
   })
 })
+
 
 
 
