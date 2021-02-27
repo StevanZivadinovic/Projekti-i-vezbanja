@@ -27,19 +27,61 @@ db.collection("cars").onSnapshot((snapshot) => {
   snapshot.docChanges().forEach((change) => {
     let doc = change.doc.data();
     console.log(doc.brandModel)
-    selectCar.innerHTML+=`<option> ${doc.brandModel} </option>`
+    selectCar.innerHTML+=`<option value=${doc.brandModel}> ${doc.brandModel} </option>`
 
-  });
-});
+  })
+
+  // addRentalEventForm.addEventListener('onchange',e=>{
+  //   console.log('haj')
+  //   let selectCarValue = selectCar.value;
+  //   console.log(selectCarValue)
+  // })
+   
+  
+    // snapshot.docChanges().forEach((change) => {
+    //   let doc = change.doc.data();
+    //   console.log('uspeh',doc);
+     
+    // });
+})
+  
+
+
 
 db.collection("customers").onSnapshot((snapshot) => {
   snapshot.docChanges().forEach((change) => {
     let doc = change.doc.data();
     console.log(doc.fullNameConnected)
-    selectCustomer.innerHTML+=`<option> ${doc.fullNameConnected} </option>`
+    selectCustomer.innerHTML+=`<option > ${doc.fullNameConnected} </option>`
 
   });
 });
+
+})
+
+let startDateAndTime = document.querySelector('#startDateAndTime');
+let endDateAndTime = document.querySelector('#endDateAndTime');
+// let selectCar = document.querySelector('#selectCar');
+// let selectCustomer = document.querySelector('#selectCustomer');
+
+let submitRentalEvent = document.querySelector('#submitRentalEvent');
+submitRentalEvent.addEventListener('click',e=>{
+  e.preventDefault();
+  db.collection('events').add({
+    startDateAndTime:startDateAndTime.value,
+    endDateAndTime:endDateAndTime.value,
+    selectCar:selectCar.value,
+    selectCustomer:selectCustomer.value
+  })
+  .then((data)=>{
+    console.log('haj')
+    console.log(data)
+  })
 })
 
 
+
+
+
+
+ 
