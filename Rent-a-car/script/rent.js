@@ -89,9 +89,12 @@ submitRentalEvent.addEventListener('click',e=>{
           db.collection('cars').where('brandModel', '==' ,`${change.doc.data().selectCar}`)
           .get()
           .then(data=>{
+            let price;
             data.docs.forEach(a=>{
               console.log(a.data())
+              price = a.data().pricePerDay;
             })
+            console.log(price)
           })
 
         }
