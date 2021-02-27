@@ -24,13 +24,16 @@ let selectCustomer = document.querySelector('#selectCustomer');
 addRentalEvent.addEventListener('click',e=>{
 console.log('bla')
 db.collection("cars").onSnapshot((snapshot) => {
+  let a;
   snapshot.docChanges().forEach((change) => {
     let doc = change.doc.data();
     console.log(doc.brandModel)
-    selectCar.innerHTML+=`<option value=${doc.brandModel}> ${doc.brandModel} </option>`
-
+    
+    a+=`<option value=${doc.brandModel}> ${doc.brandModel} </option>`
+    
+    
   })
-
+  selectCar.innerHTML=a
   // addRentalEventForm.addEventListener('onchange',e=>{
   //   console.log('haj')
   //   let selectCarValue = selectCar.value;
@@ -94,6 +97,8 @@ submitRentalEvent.addEventListener('click',e=>{
               console.log(a.data())
               price = a.data().pricePerDay;
             })
+            let priceShow = document.querySelector('.priceShow');
+            priceShow.innerHTML = price;
             console.log(price)
           })
 
