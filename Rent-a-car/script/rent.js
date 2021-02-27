@@ -87,7 +87,12 @@ submitRentalEvent.addEventListener('click',e=>{
       snapshot.docChanges().forEach((change) => {
 
         if(change.doc.id === eventId){
-          console.log(change.doc.data().selectCar);
+        let start =   change.doc.data().startDateAndTime;
+        let end =    change.doc.data().endDateAndTime;
+        let startDate = new Date(start).getTime();
+        let endDate = new Date(end).getTime()
+
+
 
           db.collection('cars').where('brandModel', '==' ,`${change.doc.data().selectCar}`)
           .get()
@@ -98,8 +103,10 @@ submitRentalEvent.addEventListener('click',e=>{
               price = a.data().pricePerDay;
             })
             let priceShow = document.querySelector('.priceShow');
-            priceShow.innerHTML = price;
-            console.log(price)
+            priceShow.innerHTML =`Your bill is:${price}$ ` ;
+            console.log(price, startDate, endDate);
+            let diference = endDate - startDate;
+            console.log(diference.getHours())
           })
 
         }
