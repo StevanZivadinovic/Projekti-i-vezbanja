@@ -92,13 +92,11 @@ showList.addEventListener("click", (e) => {
         console.log("Car is deleted");
       });
   }
-
-  
 });
 
 let preuzmi = (data, id) => {
   console.log(id);
-  
+
   let html = `<li class='listShowCars' data-id='${id}'>
       
       <img src=${data.pictureLink} style="width:100px;">
@@ -115,7 +113,7 @@ let preuzmi = (data, id) => {
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
       </li>`;
-  
+
   showList.innerHTML += html;
 };
 
@@ -206,77 +204,74 @@ showList.addEventListener("click", (e) => {
       formAddCar.style.display = "none";
     });
   }
-
-
 });
 
-
 let search = document.querySelector(".search");
-let btnSearch1 = document.querySelector('.search1');
-search.style.display = 'none'
-btnSearch1.style.display = 'none'
+let btnSearch1 = document.querySelector(".search1");
+search.style.display = "none";
+btnSearch1.style.display = "none";
 //Browse cars
-btnShowCar.addEventListener('click',e=>{
-  search.style.display = 'inline-block';
-  btnSearch1.style.display = 'inline-block';
+btnShowCar.addEventListener("click", (e) => {
+  search.style.display = "inline-block";
+  btnSearch1.style.display = "inline-block";
   btnSearch1.addEventListener("click", (e) => {
+    let result = search.value.trim().toLowerCase();
+    console.log(result.length);
   
-  let result = search.value.trim().toLowerCase();
-  console.log(result.length);
-  let showList = document.querySelector(".showList").children;
-  let showList1 = Array.from(showList);
-  console.log(showList1);
-  db.collection('cars')
-  .get()
-  .then(data=>{
-    data.docs.forEach(a=>{
-      let c = a.data().carType;
-      console.log(c);
-      
+    db.collection("cars")
+      .get()
+      .then((data) => {
+        data.docs.forEach((a) => {
+          let c = a.data().carType;
+          console.log(c);
 
-      if (c.includes(result) && result.length>0) {
-        console.log("haj haj");
-        console.log(c); 
+          if (c.includes(result) && result.length > 0) {
+            console.log("haj haj");
+            console.log(c);
 
-        db.collection('cars')
-        .get()
-        .then(data=>{
-          data.docs.forEach(a=>{
-            obrisati(a.id)
-          })
-        })
+            db.collection("cars")
+              .get()
+              .then((data) => {
+                data.docs.forEach((a) => {
+                  obrisati(a.id);
+                });
+              });
+              let ab = true;
+              if(true){
+                db.collection("cars")
+                .where("carType", "==", `${c}`)
+                .get()
+                .then((data) => {
+                  ab=false;
+                  let array = [];
+                  data.docs.forEach((a) => {
+                    console.log(a.data());
+  
+                    array.push(a.data());
+                    obrisati(a.id);
+                    preuzmi(a.data(), a.id);
+                   
+                  });
+              
+                });
+              }
 
-        
-        db.collection('cars').where('carType','==',`${c}`)
-        .get()
-        .then((data)=>{
-          let array =[]
-          data.docs.forEach(a=>{
-            console.log(a.data())
-            
-            array.push(a.data())
-            preuzmi(a.data(),a.id)
-          })
-          console.log(array)
-          array.forEach(a=>{
-            console.log(a.brand)
-          })
-        })
-      }
+         
+          }
 
-      // return !a.firstChild.textContent.includes(result);
-    })
-  })
+          // return !a.firstChild.textContent.includes(result);
+        });
+      });
     // .forEach((a) => {
     //   a.style.display = "none";
     // });
 
-  // todos1
-  //   .filter((a) => {
-  //     return a.firstChild.textContent.includes(result);
-  //   })
-  //   .forEach((a) => {
-  //     a.style.display = "flex";
-  //   });
+    // todos1
+    //   .filter((a) => {
+    //     return a.firstChild.textContent.includes(result);
+    //   })
+    //   .forEach((a) => {
+    //     a.style.display = "flex";
+    //   });
+  });
 });
-})
