@@ -136,6 +136,27 @@ submitRentalEvent.addEventListener("click", (e) => {
                   }
                 });
                 console.log(countNum)
+                if(countNum>3){
+                  console.log('uspehic', change.doc.data().selectCar)
+
+                db.collection("cars")
+              .where("brandModel", "==", `${change.doc.data().selectCar}`)
+              .get()
+              .then((data) => {
+                let price;
+                data.docs.forEach((a) => {
+                  console.log(a.data());
+                  price = a.data().pricePerDay;
+                  console.log(price)
+                });
+                let priceShow = document.querySelector(".priceShow");
+                priceShow.innerHTML =``;
+                let totalAmount = price * (85 / 100);
+                priceShow.innerHTML = `Your bill is:${totalAmount}$, you get discount 15%
+                ,and you are now VIP customer `;
+              });
+               
+                }
               });
           }
         });
