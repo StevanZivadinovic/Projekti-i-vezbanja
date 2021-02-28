@@ -1,3 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 .addCar, .addCustomer, .addRentalEvent{
     /* display: flex; */
@@ -21,6 +27,7 @@
 }
 ul{
     padding: 0;
+    background-color: honeydew;
 }
 
 .dugmeDelete, .dugmeUpdate, .dugmeDeleteCustomer, .dugmeUpdateCustomer{
@@ -29,6 +36,8 @@ ul{
 nav{
     display: flex;
     justify-content: space-around;
+    background-image:linear-gradient(to right, rgb(146, 85, 85), rgb(216, 49, 49));
+    padding: 5vh 0;
 }
 
 .eventLi{
@@ -38,3 +47,6 @@ nav{
     text-align: center;
 }
 
+hr{
+    margin: 0;
+}
