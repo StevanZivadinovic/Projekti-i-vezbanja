@@ -87,13 +87,47 @@ hr {
   transition: all 2s;
 }
 
-input[type='button'], input[type='submit']{
+input[type='button'], input[type='submit'], .search1{
     border-radius: 5px;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
 
-input[type='button']:hover, input[type='submit']:hover{
+input[type='button']:hover, input[type='submit']:hover, .search1:hover{
     background-color: rgb(107, 90, 90);
+}
+.heading ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    
+}
+.heading ul li{
+    width: 11%;
+}
+
+.listShowCars .dataCar div, .listShowCars .dataCar img{
+
+    width: 11%;
+}
+.searchMain{
+    display: flex;
+    justify-content: center;
+    border: none;
+    
+    
+}
+.search{
+    background-color: rgba(153, 52, 52, 0.3);
+    font-size: 20px;
+    border-radius: 5px;
+}
+.search:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(190, 88, 88);
+    background-color: rgba(153, 52, 52, 0.1);
+    
+
 }

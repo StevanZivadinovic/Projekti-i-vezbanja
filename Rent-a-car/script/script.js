@@ -108,12 +108,14 @@ let preuzmi = (data, id) => {
       <div>${data.pricePerDay}</div>
       <div>${data.numberOfFreeCars}</div>
       <div>${data.carType}</div>
-
-
+     
+     
+     
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
+     
       </li>`;
-
+  
   showList.innerHTML += html;
 };
 
@@ -129,6 +131,7 @@ let obrisati = (id) => {
 
 btnShowCar.addEventListener("click", (e) => {
   showList.innerHTML = "";
+  
   db.collection("cars").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
