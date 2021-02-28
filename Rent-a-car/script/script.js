@@ -3,8 +3,8 @@ let addCar = document.querySelector("input#addCar");
 let formAddCar = document.querySelector("form.addCar");
 let formAddCustomer = document.querySelector("form.addCustomer");
 let addCustomer = document.querySelector("input#addCustomer");
-let addRentalEvent = document.querySelector('#addRentalEvent');
-let addRentalEventForm = document.querySelector('.addRentalEvent');
+let addRentalEvent = document.querySelector("#addRentalEvent");
+let addRentalEventForm = document.querySelector(".addRentalEvent");
 let submitAddCar = document.querySelector("#submitAddCar");
 
 //Add car
@@ -15,10 +15,10 @@ addCar.addEventListener("click", (e) => {
 
   formAddCar.style.display = "flex";
   addCar.style.display = "none";
-  formAddCustomer.style.display='none';
-  addRentalEventForm.style.display='none';
-  addCustomer.style.display = 'inline-block';
-  addRentalEvent.style.display = 'inline-block';
+  formAddCustomer.style.display = "none";
+  addRentalEventForm.style.display = "none";
+  addCustomer.style.display = "inline-block";
+  addRentalEvent.style.display = "inline-block";
 });
 
 //add Car to firebase
@@ -35,32 +35,40 @@ submitAddCar.addEventListener("click", (e) => {
   let pricePerDay = document.querySelector("#pricePerDay").value;
   let numberOfFreeCars = document.querySelector("#numberOfFreeCars").value;
   let carType = document.querySelector("#carType").value;
-   
+
   e.preventDefault();
 
-  if(brand.length>0 && model.length>0 && constructionYear.length>0 && fuelType.length>0 && numberOfSeats.length>0 && pictureLink.length>0
-    && pricePerDay.length>0 && numberOfFreeCars.length>0 && carType.length>0 ){
-
-      db.collection("cars")
-        .add({
-          brand: brand,
-          model: model,
-          brandModel:brandModel,
-          constructionYear: constructionYear,
-          fuelType: fuelType,
-          numberOfSeats: numberOfSeats,
-          pictureLink: pictureLink,
-          pricePerDay: pricePerDay,
-          numberOfFreeCars: numberOfFreeCars,
-          carType: carType,
-        })
-        .then((data) => {
-          console.log("Car is added");
-          formAddCar.style.display = "none";
-          addCar.style.display = "flex";
-        });
-  }else{
-    alert('Fill all fields')
+  if (
+    brand.length > 0 &&
+    model.length > 0 &&
+    constructionYear.length > 0 &&
+    fuelType.length > 0 &&
+    numberOfSeats.length > 0 &&
+    pictureLink.length > 0 &&
+    pricePerDay.length > 0 &&
+    numberOfFreeCars.length > 0 &&
+    carType.length > 0
+  ) {
+    db.collection("cars")
+      .add({
+        brand: brand,
+        model: model,
+        brandModel: brandModel,
+        constructionYear: constructionYear,
+        fuelType: fuelType,
+        numberOfSeats: numberOfSeats,
+        pictureLink: pictureLink,
+        pricePerDay: pricePerDay,
+        numberOfFreeCars: numberOfFreeCars,
+        carType: carType,
+      })
+      .then((data) => {
+        console.log("Car is added");
+        formAddCar.style.display = "none";
+        addCar.style.display = "flex";
+      });
+  } else {
+    alert("Fill all fields");
   }
 });
 
@@ -87,7 +95,6 @@ showList.addEventListener("click", (e) => {
 });
 
 let preuzmi = (data, id) => {
-  
   console.log(id);
   let html = `<li class='listShowCars' data-id='${id}'>
       
@@ -106,7 +113,7 @@ let preuzmi = (data, id) => {
       <button class="dugmeUpdate">Update</button>
       </li>`;
 
-      showList.innerHTML += html;
+  showList.innerHTML += html;
 };
 
 let obrisati = (id) => {
@@ -120,17 +127,16 @@ let obrisati = (id) => {
 };
 
 btnShowCar.addEventListener("click", (e) => {
-  showList.innerHTML = '';
+  showList.innerHTML = "";
   db.collection("cars").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
-      
 
       if (change.type === "added") {
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "modified") {
-        console.log(change.doc.id, `update`)
+        console.log(change.doc.id, `update`);
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "removed") {
@@ -144,12 +150,11 @@ btnShowCar.addEventListener("click", (e) => {
 //update car
 let submitUpdateCar = document.querySelector("#submitUpdateCar");
 
-
 showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdate")) {
     console.log("haj");
     formAddCar.style.display = "flex";
-   
+
     let id = e.target.parentElement.getAttribute("data-id");
     console.log(id);
     submitUpdateCar.style.display = "block";
@@ -182,17 +187,19 @@ showList.addEventListener("click", (e) => {
     submitUpdateCar.addEventListener("click", (e) => {
       e.preventDefault();
 
-      db.collection("cars").doc(id).update({
-        brand:   document.querySelector("#brand").value,
-        model: document.querySelector("#model").value,
-        constructionYear: document.querySelector("#constructionYear").value,
-        fuelType: document.querySelector("#fuelType").value,
-        numberOfSeats: document.querySelector("#numberOfSeats").value,
-        pictureLink: document.querySelector("#pictureLink").value,
-        pricePerDay: document.querySelector("#pricePerDay").value,
-        numberOfFreeCars: document.querySelector("#numberOfFreeCars").value,
-        carType: document.querySelector("#carType").value
-      })
+      db.collection("cars")
+        .doc(id)
+        .update({
+          brand: document.querySelector("#brand").value,
+          model: document.querySelector("#model").value,
+          constructionYear: document.querySelector("#constructionYear").value,
+          fuelType: document.querySelector("#fuelType").value,
+          numberOfSeats: document.querySelector("#numberOfSeats").value,
+          pictureLink: document.querySelector("#pictureLink").value,
+          pricePerDay: document.querySelector("#pricePerDay").value,
+          numberOfFreeCars: document.querySelector("#numberOfFreeCars").value,
+          carType: document.querySelector("#carType").value,
+        });
       formAddCar.style.display = "none";
     });
   }

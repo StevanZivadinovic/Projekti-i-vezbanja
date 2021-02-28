@@ -2,25 +2,25 @@
 let addCustomer = document.querySelector("input#addCustomer");
 let formAddCustomer = document.querySelector("form.addCustomer");
 let formAddCar = document.querySelector("form.addCar");
-let addRentalEventForm = document.querySelector('.addRentalEvent');
-let addRentalEvent = document.querySelector('#addRentalEvent');
+let addRentalEventForm = document.querySelector(".addRentalEvent");
+let addRentalEvent = document.querySelector("#addRentalEvent");
 let addCar = document.querySelector("input#addCar");
 
 let submitAddCustomer = document.querySelector("#submitAddCustomer");
-let ispisForme  = document.querySelector('.ispisForme');
+let ispisForme = document.querySelector(".ispisForme");
 
 //Add customer
 
 addCustomer.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("hay");
- 
+
   formAddCustomer.style.display = "flex";
   addCustomer.style.display = "none";
-  formAddCar.style.display='none';
-  addRentalEventForm.style.display = 'none';
-  addCar.style.display='inline-block';
-  addRentalEvent.style.display = 'inline-block';
+  formAddCar.style.display = "none";
+  addRentalEventForm.style.display = "none";
+  addCar.style.display = "inline-block";
+  addRentalEvent.style.display = "inline-block";
 });
 
 //add Customer to firebase
@@ -30,28 +30,28 @@ submitAddCustomer.addEventListener("click", (e) => {
   let fullName = document.querySelector("#fullName").value;
   let emailAddress = document.querySelector("#emailAddress").value;
   let phoneNumber = document.querySelector("#phoneNumber").value;
-  let fullNameConnected = fullName.replace(' ','');
-  
-  
-  
-  e.preventDefault();
-  if(fullName.length>0 && emailAddress.length>0 && phoneNumber.length>0){
+  let fullNameConnected = fullName.replace(" ", "");
 
+  e.preventDefault();
+  if (
+    fullName.length > 0 &&
+    emailAddress.length > 0 &&
+    phoneNumber.length > 0
+  ) {
     db.collection("customers")
       .add({
         fullName: fullName,
-        fullNameConnected:fullNameConnected,
+        fullNameConnected: fullNameConnected,
         emailAddress: emailAddress,
         phoneNumber: phoneNumber,
-      
       })
       .then((data) => {
         console.log("Customer is added");
         formAddCustomer.style.display = "none";
         addCustomer.style.display = "flex";
       });
-  }else{
-    alert('Fill all fields')
+  } else {
+    alert("Fill all fields");
   }
 });
 
@@ -90,7 +90,7 @@ let preuzmi = (data, id) => {
       <button class="dugmeUpdateCustomer">Update</button>
       </li>`;
 
-      showList.innerHTML += html;
+  showList.innerHTML += html;
 };
 
 let obrisati = (id) => {
@@ -104,17 +104,16 @@ let obrisati = (id) => {
 };
 
 btnShowCustomer.addEventListener("click", (e) => {
-  showList.innerHTML = '';
+  showList.innerHTML = "";
   db.collection("customers").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
-      
 
       if (change.type === "added") {
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "modified") {
-        console.log(change.doc.id, `update`)
+        console.log(change.doc.id, `update`);
         obrisati(change.doc.id);
         preuzmi(doc, change.doc.id);
       } else if (change.type === "removed") {
@@ -126,7 +125,6 @@ btnShowCustomer.addEventListener("click", (e) => {
   });
 });
 
-
 //update customer
 let submitUpdateCustomer = document.querySelector("#submitUpdateCustomer");
 
@@ -134,7 +132,7 @@ showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdateCustomer")) {
     console.log("haj");
     formAddCustomer.style.display = "flex";
-    formAddCar.style.display = 'none';
+    formAddCar.style.display = "none";
     let id = e.target.parentElement.getAttribute("data-id");
     console.log(id);
     submitUpdateCustomer.style.display = "block";
@@ -143,22 +141,25 @@ showList.addEventListener("click", (e) => {
       .doc(id)
       .onSnapshot((snapshot) => {
         console.log(snapshot.data());
-         document.querySelector("#fullName").value= snapshot.data().fullName;
-        document.querySelector("#emailAddress").value= snapshot.data().emailAddress;
-         document.querySelector("#phoneNumber").value= snapshot.data().phoneNumber;
-
-           
+        document.querySelector("#fullName").value = snapshot.data().fullName;
+        document.querySelector(
+          "#emailAddress"
+        ).value = snapshot.data().emailAddress;
+        document.querySelector(
+          "#phoneNumber"
+        ).value = snapshot.data().phoneNumber;
       });
 
     submitUpdateCustomer.addEventListener("click", (e) => {
       e.preventDefault();
 
-      db.collection("customers").doc(id).update({
-        fullName:   document.querySelector("#fullName").value,
-        emailAddress: document.querySelector("#emailAddress").value,
-        phoneNumber: document.querySelector("#phoneNumber").value,
-        
-      })
+      db.collection("customers")
+        .doc(id)
+        .update({
+          fullName: document.querySelector("#fullName").value,
+          emailAddress: document.querySelector("#emailAddress").value,
+          phoneNumber: document.querySelector("#phoneNumber").value,
+        });
       formAddCustomer.style.display = "none";
     });
   }

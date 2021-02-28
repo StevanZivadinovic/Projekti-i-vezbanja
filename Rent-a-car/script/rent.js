@@ -28,24 +28,16 @@ addRentalEvent.addEventListener("click", (e) => {
       a += `<option value=${doc.brandModel}> ${doc.brandModel} </option>`;
     });
     selectCar.innerHTML = a;
-    // addRentalEventForm.addEventListener('onchange',e=>{
-    //   console.log('haj')
-    //   let selectCarValue = selectCar.value;
-    //   console.log(selectCarValue)
-    // })
-
-    // snapshot.docChanges().forEach((change) => {
-    //   let doc = change.doc.data();
-    //   console.log('uspeh',doc);
-
-    // });
+   
   });
 
   db.collection("customers").onSnapshot((snapshot) => {
+    let a;
     snapshot.docChanges().forEach((change) => {
       let doc = change.doc.data();
       console.log(doc.fullNameConnected);
-      selectCustomer.innerHTML += `<option > ${doc.fullNameConnected} </option>`;
+      a += `<option > ${doc.fullNameConnected} </option>`;
+       selectCustomer.innerHTML = a;
     });
   });
 });
@@ -88,8 +80,16 @@ submitRentalEvent.addEventListener("click", (e) => {
               .then((data) => {
                 let price;
                 data.docs.forEach((a) => {
-                  console.log(a.data());
+                  console.log(a.data(), a.id);
                   price = a.data().pricePerDay;
+                  let numberOfFreeCars = parseInt(a.data().numberOfFreeCars)-1;
+                  console.log(numberOfFreeCars)
+                  db.collection("cars")
+                  .doc(a.id)
+                  .update({
+                    numberOfFreeCars: numberOfFreeCars,
+                  });
+
                 });
                 let priceShow = document.querySelector(".priceShow");
                 priceShow.innerHTML = `Your bill is:${price}$ `;
@@ -128,34 +128,35 @@ submitRentalEvent.addEventListener("click", (e) => {
                 let countNum = 0;
                 snapshot.docChanges().forEach((change) => {
                   // console.log(change.doc.data().dateOfRent)
-                  
-                  let dif =(nowday - change.doc.data().dateOfRent) / (1000 * 3600 * 24);
+
+                  let dif =
+                    (nowday - change.doc.data().dateOfRent) /
+                    (1000 * 3600 * 24);
                   console.log(dif);
                   if (dif < 60) {
-                    countNum += 1
+                    countNum += 1;
                   }
                 });
-                console.log(countNum)
-                if(countNum>3){
-                  console.log('uspehic', change.doc.data().selectCar)
+                console.log(countNum);
+                if (countNum > 3) {
+                  console.log("uspehic", change.doc.data().selectCar);
 
-                db.collection("cars")
-              .where("brandModel", "==", `${change.doc.data().selectCar}`)
-              .get()
-              .then((data) => {
-                let price;
-                data.docs.forEach((a) => {
-                  console.log(a.data());
-                  price = a.data().pricePerDay;
-                  console.log(price)
-                });
-                let priceShow = document.querySelector(".priceShow");
-                priceShow.innerHTML =``;
-                let totalAmount = price * (85 / 100);
-                priceShow.innerHTML = `Your bill is:${totalAmount}$, you get discount 15%
+                  db.collection("cars")
+                    .where("brandModel", "==", `${change.doc.data().selectCar}`)
+                    .get()
+                    .then((data) => {
+                      let price;
+                      data.docs.forEach((a) => {
+                        console.log(a.data());
+                        price = a.data().pricePerDay;
+                        console.log(price);
+                      });
+                      let priceShow = document.querySelector(".priceShow");
+                      priceShow.innerHTML = ``;
+                      let totalAmount = price * (85 / 100);
+                      priceShow.innerHTML = `Your bill is:${totalAmount}$, you get discount 15%
                 ,and you are now VIP customer `;
-              });
-               
+                    });
                 }
               });
           }
