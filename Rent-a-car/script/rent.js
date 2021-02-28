@@ -51,7 +51,9 @@ let submitRentalEvent = document.querySelector("#submitRentalEvent");
 
 submitRentalEvent.addEventListener("click", (e) => {
   e.preventDefault();
-  db.collection("events")
+  if(startDateAndTime.value.length>0 &&endDateAndTime.value.length>0 &&  selectCar.value.length>0 && selectCustomer.value.length  )
+  {
+    db.collection("events")
     .add({
       startDateAndTime: startDateAndTime.value,
       endDateAndTime: endDateAndTime.value,
@@ -163,4 +165,11 @@ submitRentalEvent.addEventListener("click", (e) => {
         });
       });
     });
+  }else{
+    alert('Fill all fields')
+  }
+ 
 });
+
+let a = new Date();
+console.log(a)
