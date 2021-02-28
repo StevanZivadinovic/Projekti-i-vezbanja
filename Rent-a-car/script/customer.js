@@ -104,6 +104,10 @@ let obrisati = (id) => {
 };
 
 btnShowCustomer.addEventListener("click", (e) => {
+  let search = document.querySelector(".search");
+  let btnSearch1 = document.querySelector(".search1");
+  search.style.display = 'none';
+  btnSearch1.style.display = 'none';
   showList.innerHTML = "";
   db.collection("customers").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {

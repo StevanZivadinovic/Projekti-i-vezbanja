@@ -6,6 +6,9 @@
     width: 400px;
     margin: 0 auto;
     display: none;
+    padding: 3vh;
+    background-color: grey;
+    border-radius: 5px;
 }
 .listShowCars, .listShowCustomers{
     display: flex;
