@@ -92,10 +92,13 @@ showList.addEventListener("click", (e) => {
         console.log("Car is deleted");
       });
   }
+
+  
 });
 
 let preuzmi = (data, id) => {
   console.log(id);
+  
   let html = `<li class='listShowCars' data-id='${id}'>
       
       <img src=${data.pictureLink} style="width:100px;">
@@ -112,7 +115,7 @@ let preuzmi = (data, id) => {
       <button class="dugmeDelete">Delete</button>
       <button class="dugmeUpdate">Update</button>
       </li>`;
-
+  
   showList.innerHTML += html;
 };
 
@@ -203,13 +206,23 @@ showList.addEventListener("click", (e) => {
       formAddCar.style.display = "none";
     });
   }
+
+
 });
-//Browse cars
+
+
 let search = document.querySelector(".search");
-search.addEventListener("keyup", (e) => {
+let btnSearch1 = document.querySelector('.search1');
+search.style.display = 'none'
+btnSearch1.style.display = 'none'
+//Browse cars
+btnShowCar.addEventListener('click',e=>{
+  search.style.display = 'inline-block';
+  btnSearch1.style.display = 'inline-block';
+  btnSearch1.addEventListener("click", (e) => {
   
   let result = search.value.trim().toLowerCase();
-  console.log(result);
+  console.log(result.length);
   let showList = document.querySelector(".showList").children;
   let showList1 = Array.from(showList);
   console.log(showList1);
@@ -220,7 +233,8 @@ search.addEventListener("keyup", (e) => {
 
       if (b[8].textContent.includes(result) && result.length>0) {
         console.log("haj haj");
-        console.log(b[8].textContent);  
+        console.log(b[8].textContent); 
+
         db.collection('cars')
         .get()
         .then(data=>{
@@ -229,23 +243,29 @@ search.addEventListener("keyup", (e) => {
           })
         })
 
-
+        
         db.collection('cars').where('carType','==',`${b[8].textContent}`)
         .get()
         .then((data)=>{
+          let array =[]
           data.docs.forEach(a=>{
             console.log(a.data())
-            showList.innerHTML ='';
-            preuzmi(a.data(),a.id)
+            
+            array.push(a.data())
+            // preuzmi(a.data(),a.id)
+          })
+          console.log(array)
+          array.forEach(a=>{
+            console.log(a.brand)
           })
         })
       }
 
       // return !a.firstChild.textContent.includes(result);
     })
-    .forEach((a) => {
-      a.style.display = "none";
-    });
+    // .forEach((a) => {
+    //   a.style.display = "none";
+    // });
 
   // todos1
   //   .filter((a) => {
@@ -255,3 +275,4 @@ search.addEventListener("keyup", (e) => {
   //     a.style.display = "flex";
   //   });
 });
+})
