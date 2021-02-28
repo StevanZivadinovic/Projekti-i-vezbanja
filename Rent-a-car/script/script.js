@@ -207,6 +207,7 @@ showList.addEventListener("click", (e) => {
 //Browse cars
 let search = document.querySelector(".search");
 search.addEventListener("keyup", (e) => {
+  
   let result = search.value.trim().toLowerCase();
   console.log(result);
   let showList = document.querySelector(".showList").children;
@@ -225,7 +226,7 @@ search.addEventListener("keyup", (e) => {
         .then((data)=>{
           data.docs.forEach(a=>{
             console.log(a.data())
-            preuzmi(a,a.id)
+            preuzmi(a.data(),a.id)
           })
         })
       }
