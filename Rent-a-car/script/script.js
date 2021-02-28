@@ -217,7 +217,7 @@ btnShowCar.addEventListener("click", (e) => {
   btnSearch1.addEventListener("click", (e) => {
     let result = search.value.trim().toLowerCase();
     console.log(result.length);
-  
+
     db.collection("cars")
       .get()
       .then((data) => {
@@ -236,42 +236,35 @@ btnShowCar.addEventListener("click", (e) => {
                   obrisati(a.id);
                 });
               });
-              let ab = true;
-              if(true){
-                db.collection("cars")
+            let ab = true;
+            if (true) {
+              db.collection("cars")
                 .where("carType", "==", `${c}`)
                 .get()
                 .then((data) => {
-                  ab=false;
+                  ab = false;
                   let array = [];
                   data.docs.forEach((a) => {
                     console.log(a.data());
-  
+
                     array.push(a.data());
                     obrisati(a.id);
                     preuzmi(a.data(), a.id);
-                   
                   });
-              
                 });
-              }
-
-         
+            }
           }
-
-          // return !a.firstChild.textContent.includes(result);
         });
       });
-    // .forEach((a) => {
-    //   a.style.display = "none";
-    // });
-
-    // todos1
-    //   .filter((a) => {
-    //     return a.firstChild.textContent.includes(result);
-    //   })
-    //   .forEach((a) => {
-    //     a.style.display = "flex";
-    //   });
   });
+});
+
+let x = document.querySelector(".x");
+x.addEventListener("click", (e) => {
+  
+  formAddCar.classList.add('removingForm');
+  setTimeout(()=>{
+    formAddCar.style.display = 'none'
+  },2000)
+
 });

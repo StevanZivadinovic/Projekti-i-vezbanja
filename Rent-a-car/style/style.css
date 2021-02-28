@@ -72,5 +72,11 @@ hr{
     border-radius: 5px;
 }
 .x:hover{
-    background-color: royalblue;
+    background-color: rgb(131, 38, 38);
+}
+.removingForm{
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: all 2s;
+    /* display: none; */
 }
