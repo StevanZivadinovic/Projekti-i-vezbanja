@@ -208,27 +208,20 @@ showList.addEventListener("click", (e) => {
 let search = document.querySelector(".search");
 search.addEventListener("keyup", (e) => {
   let result = search.value.trim().toLowerCase();
-  console.log(result)
+  console.log(result);
   let showList = document.querySelector(".showList").children;
   let showList1 = Array.from(showList);
   console.log(showList1);
   showList1
     .filter((a) => {
-      
-      let c = a.children
+      let c = a.children;
       let b = Array.from(c);
-      console.log(b[8])
-     
-    
-       
 
-        if(b[8].textContent.includes(result)){
-          console.log('haj haj')
-          console.log(b[8].textContent)
-        }
-        
-        
-     
+      if (b[8].textContent.includes(result) && result.length>0) {
+        console.log("haj haj");
+        console.log(b[8].textContent);
+      }
+
       // return !a.firstChild.textContent.includes(result);
     })
     .forEach((a) => {
