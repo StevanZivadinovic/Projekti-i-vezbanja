@@ -6,7 +6,7 @@ let addCustomer = document.querySelector("input#addCustomer");
 let addRentalEvent = document.querySelector("#addRentalEvent");
 let addRentalEventForm = document.querySelector(".addRentalEvent");
 let submitAddCar = document.querySelector("#submitAddCar");
-
+let priceShow = document.querySelector('.priceShow');
 //Add car
 
 addCar.addEventListener("click", (e) => {
@@ -66,6 +66,7 @@ submitAddCar.addEventListener("click", (e) => {
         console.log("Car is added");
         formAddCar.style.display = "none";
         addCar.style.display = "flex";
+        // priceShow.style.display = 'none';
       });
   } else {
     alert("Fill all fields");
