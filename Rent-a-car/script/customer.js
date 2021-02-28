@@ -48,7 +48,7 @@ submitAddCustomer.addEventListener("click", (e) => {
       .then((data) => {
         console.log("Customer is added");
         formAddCustomer.style.display = "none";
-        addCustomer.style.display = "flex";
+        addCustomer.style.display = "inline-block";
       });
   } else {
     alert("Fill all fields");

@@ -131,3 +131,6 @@ input[type='button']:hover, input[type='submit']:hover, .search1:hover{
     
 
 }
+.priceShow{
+    color: rgba(228, 224, 7, 0.835);
+}
