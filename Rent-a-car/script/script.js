@@ -220,12 +220,22 @@ search.addEventListener("keyup", (e) => {
 
       if (b[8].textContent.includes(result) && result.length>0) {
         console.log("haj haj");
-        console.log(b[8].textContent);
+        console.log(b[8].textContent);  
+        db.collection('cars')
+        .get()
+        .then(data=>{
+          data.docs.forEach(a=>{
+            obrisati(a.id)
+          })
+        })
+
+
         db.collection('cars').where('carType','==',`${b[8].textContent}`)
         .get()
         .then((data)=>{
           data.docs.forEach(a=>{
             console.log(a.data())
+            showList.innerHTML ='';
             preuzmi(a.data(),a.id)
           })
         })
