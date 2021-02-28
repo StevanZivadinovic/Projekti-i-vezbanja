@@ -84,13 +84,16 @@ submitRentalEvent.addEventListener("click", (e) => {
                 data.docs.forEach((a) => {
                   console.log(a.data(), a.id);
                   price = a.data().pricePerDay;
-                  let numberOfFreeCars = parseInt(a.data().numberOfFreeCars)-1;
-                  console.log(numberOfFreeCars)
-                  db.collection("cars")
-                  .doc(a.id)
-                  .update({
-                    numberOfFreeCars: numberOfFreeCars,
-                  });
+                  if(parseInt(a.data().numberOfFreeCars)>0){
+
+                    let numberOfFreeCars = parseInt(a.data().numberOfFreeCars)-1;
+                    console.log(numberOfFreeCars)
+                    db.collection("cars")
+                    .doc(a.id)
+                    .update({
+                      numberOfFreeCars: numberOfFreeCars,
+                    });
+                  }
 
                 });
                 let priceShow = document.querySelector(".priceShow");
@@ -173,3 +176,6 @@ submitRentalEvent.addEventListener("click", (e) => {
 
 let a = new Date();
 console.log(a)
+
+
+

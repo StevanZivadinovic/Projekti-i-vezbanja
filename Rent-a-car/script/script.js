@@ -99,14 +99,14 @@ let preuzmi = (data, id) => {
   let html = `<li class='listShowCars' data-id='${id}'>
       
       <img src=${data.pictureLink} style="width:100px;">
-      <div>Brand: ${data.brand}</div>
-      <div>Model: ${data.model}</div>
-      <div>Construction year: ${data.constructionYear}</div>
-      <div>Fuel type: ${data.fuelType}</div>
-      <div>Number of seats: ${data.numberOfSeats}</div>
-      <div>Price per day: ${data.pricePerDay}</div>
-      <div>Number of free cars: ${data.numberOfFreeCars}</div>
-      <div>Car type: ${data.carType}</div>
+      <div>${data.brand}</div>
+      <div>${data.model}</div>
+      <div>${data.constructionYear}</div>
+      <div>${data.fuelType}</div>
+      <div>${data.numberOfSeats}</div>
+      <div>${data.pricePerDay}</div>
+      <div>${data.numberOfFreeCars}</div>
+      <div>${data.carType}</div>
 
 
       <button class="dugmeDelete">Delete</button>
@@ -203,4 +203,43 @@ showList.addEventListener("click", (e) => {
       formAddCar.style.display = "none";
     });
   }
+});
+//Browse cars
+let search = document.querySelector(".search");
+search.addEventListener("keyup", (e) => {
+  let result = search.value.trim().toLowerCase();
+  console.log(result)
+  let showList = document.querySelector(".showList").children;
+  let showList1 = Array.from(showList);
+  console.log(showList1);
+  showList1
+    .filter((a) => {
+      
+      let c = a.children
+      let b = Array.from(c);
+      console.log(b[8])
+     
+    
+       
+
+        if(b[8].textContent.includes(result)){
+          console.log('haj haj')
+          console.log(b[8].textContent)
+        }
+        
+        
+     
+      // return !a.firstChild.textContent.includes(result);
+    })
+    .forEach((a) => {
+      a.style.display = "none";
+    });
+
+  // todos1
+  //   .filter((a) => {
+  //     return a.firstChild.textContent.includes(result);
+  //   })
+  //   .forEach((a) => {
+  //     a.style.display = "flex";
+  //   });
 });
