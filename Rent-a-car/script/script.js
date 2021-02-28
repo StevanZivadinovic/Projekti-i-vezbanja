@@ -264,7 +264,8 @@ x.addEventListener("click", (e) => {
   
   formAddCar.classList.add('removingForm');
   setTimeout(()=>{
-    formAddCar.style.display = 'none'
+    formAddCar.style.display = 'none';
+    addCar.style.display = 'inline-block';
   },2000)
 
 });
