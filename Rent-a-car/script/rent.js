@@ -178,4 +178,14 @@ let a = new Date();
 console.log(a)
 
 
+let x = document.querySelector(".xxx");
+console.log(x)
+x.addEventListener('click',e=>{
 
+  addRentalEventForm.classList.add('removingForm');
+  setTimeout(()=>{
+    addRentalEventForm.style.display = 'none';
+    addRentalEvent.style.display = 'inline-block';
+  },2000)
+  
+})

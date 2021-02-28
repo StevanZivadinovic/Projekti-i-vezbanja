@@ -168,3 +168,15 @@ showList.addEventListener("click", (e) => {
     });
   }
 });
+
+let x = document.querySelector(".xx");
+console.log(x)
+x.addEventListener('click',e=>{
+
+  formAddCustomer.classList.add('removingForm');
+  setTimeout(()=>{
+    formAddCustomer.style.display = 'none';
+    addCustomer.style.display = 'inline-block';
+  },2000)
+  
+})

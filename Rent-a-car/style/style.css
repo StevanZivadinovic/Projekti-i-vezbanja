@@ -68,7 +68,7 @@ nav {
 hr {
   margin: 0;
 }
-.x {
+.x, .xx, .xxx {
   position: absolute;
   top: 0;
   right: 0;
@@ -77,11 +77,23 @@ hr {
   cursor: pointer;
   border-radius: 5px;
 }
-.x:hover {
+.x:hover, .xx:hover, .xxx:hover {/*there is some problem with getting 
+    this div in javaScript, so I have to set different classes to each element*/
   background-color: rgb(95, 45, 45);
 }
 .removingForm {
   transform: translateY(-120%);
   opacity: 0;
   transition: all 2s;
+}
+
+input[type='button'], input[type='submit']{
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type='button']:hover, input[type='submit']:hover{
+    background-color: rgb(107, 90, 90);
 }
