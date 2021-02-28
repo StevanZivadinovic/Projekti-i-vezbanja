@@ -226,14 +226,17 @@ btnShowCar.addEventListener('click',e=>{
   let showList = document.querySelector(".showList").children;
   let showList1 = Array.from(showList);
   console.log(showList1);
-  showList1
-    .filter((a) => {
-      let c = a.children;
-      let b = Array.from(c);
+  db.collection('cars')
+  .get()
+  .then(data=>{
+    data.docs.forEach(a=>{
+      let c = a.data().carType;
+      console.log(c);
+      
 
-      if (b[8].textContent.includes(result) && result.length>0) {
+      if (c.includes(result) && result.length>0) {
         console.log("haj haj");
-        console.log(b[8].textContent); 
+        console.log(c); 
 
         db.collection('cars')
         .get()
@@ -244,7 +247,7 @@ btnShowCar.addEventListener('click',e=>{
         })
 
         
-        db.collection('cars').where('carType','==',`${b[8].textContent}`)
+        db.collection('cars').where('carType','==',`${c}`)
         .get()
         .then((data)=>{
           let array =[]
@@ -252,7 +255,7 @@ btnShowCar.addEventListener('click',e=>{
             console.log(a.data())
             
             array.push(a.data())
-            // preuzmi(a.data(),a.id)
+            preuzmi(a.data(),a.id)
           })
           console.log(array)
           array.forEach(a=>{
@@ -263,6 +266,7 @@ btnShowCar.addEventListener('click',e=>{
 
       // return !a.firstChild.textContent.includes(result);
     })
+  })
     // .forEach((a) => {
     //   a.style.display = "none";
     // });
