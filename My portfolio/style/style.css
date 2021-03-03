@@ -428,6 +428,10 @@ p {
 	margin-bottom: 50px;
 	padding: 10px 20px;
 	font-size: 2rem;
+    cursor: pointer;
+}
+#about .col-right .cta:hover{
+    color: white;
 }
 #about .col-left .about-img {
 	height: 100%;
