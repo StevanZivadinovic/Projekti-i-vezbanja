@@ -67,7 +67,7 @@ submitRentalEvent.addEventListener("click", (e) => {
       console.log("Event is added");
       addRentalEventForm.style.display = "none";
       addRentalEvent.style.display = "inline-block";
-
+      
       db.collection("events").onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
           if (change.doc.id === eventId) {
