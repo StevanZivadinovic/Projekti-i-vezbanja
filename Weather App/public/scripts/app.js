@@ -7,6 +7,7 @@ slika.style.display = "none";
 //1. nacin pozivanja
 let getData = async (grad) => {
   let a = await getApi(grad);
+  console.log(a);
   let b = await getWeather(a.Key);
 
   return { a, b };

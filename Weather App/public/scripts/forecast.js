@@ -4,7 +4,7 @@
 
 let getApi = async (city) => {
   let key = "yQVKeePusHNgflojpG5AfKGm7jMebHub";
-  let base = `http://dataservice.accuweather.com/locations/v1/cities/search`;
+  let base = `https://dataservice.accuweather.com/locations/v1/cities/search`;
   let queres = `?apikey=${key}&q=${city}`;
   let data = await fetch(base + queres);
   let data1 = await data.json();
