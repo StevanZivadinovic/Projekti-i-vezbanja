@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/000000/todo-list.png"/>
+        <!-- <img src="https://img.icons8.com/dusk/64/000000/todo-list.png"/> --> 
+</head>
+<link rel="stylesheet" href="./style/style.css">
+
+<body>
+    <h1>Stevan's Todo List</h1>
+    <ul class="lista"></ul>
+    <div class="inputi">
+        <form>
+            <input type="text" name="pas" placeholder="Enter obligation">
+            <button class="dugme" type="submit" value="Unesi"><i class="fas fa-plus-square"></i></button>
+
+
+        </form>
+
+    </div> 
+    <div class="pretragaMain">
+        <input type="text" class="pretraga">
+        <button class="pretraga1"><i class="fas fa-search"></i>
+    </div>
+   
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCe-Dt-EXB9nHLUiuGjpjCsmvuZ8xNQ1SA",
+    authDomain: "todo-app-5d45e.firebaseapp.com",
+    projectId: "todo-app-5d45e",
+    storageBucket: "todo-app-5d45e.appspot.com",
+    messagingSenderId: "734990109492",
+    appId: "1:734990109492:web:deccfe63f5cc3756647361",
+    measurementId: "G-ED6MS6GQHD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
