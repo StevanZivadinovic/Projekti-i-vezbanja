@@ -53,10 +53,22 @@ body{
           color:red      }
 
         .inputField{
+          
             .amount{
                 width: 100%;
                 padding: 0;
                 margin-right: 2%;
+            }
+
+            input[pattern]:invalid{
+              border:2px solid red;
+              border-radius: 2px;
+              outline: none;
+            }
+            input[pattern]:valid{
+              border:2px solid green;
+              outline: none;
+              border-radius: 2px;
             }
             button{
                 width: 100%;

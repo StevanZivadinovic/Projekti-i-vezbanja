@@ -62,6 +62,16 @@ body .inputField .amount {
   padding: 0;
   margin-right: 2%;
 }
+body .inputField input[pattern]:invalid {
+  border: 2px solid red;
+  border-radius: 2px;
+  outline: none;
+}
+body .inputField input[pattern]:valid {
+  border: 2px solid green;
+  outline: none;
+  border-radius: 2px;
+}
 body .inputField button {
   width: 100%;
 }
