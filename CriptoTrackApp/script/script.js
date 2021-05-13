@@ -2,7 +2,7 @@
 let table = document.querySelector('.tableTopFifty');
 
 
-// setInterval(()=>{
+
    
 let getApi = async (city) => {
     let apiKey = "667a77e6-24eb-4a0a-9aab-db6ac3165140";
@@ -139,8 +139,7 @@ document.querySelectorAll('.link').forEach(a=>{
 
     })
 })
-// let r = Array.from(table.innerHTML.children)
-// r.forEach((a,i)=>{
-//     console.log(a,i)
-// })
-// },30000)
+
+setInterval(()=>{
+location.reload()
+},60000)
