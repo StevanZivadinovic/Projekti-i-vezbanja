@@ -60,8 +60,8 @@ topFifty.forEach(element => {
     <td>${element.symbol}</td>
     <td>${element.quote.USD.price.toFixed(2)}</td>
     <td class='${element.quote.USD.percent_change_24h.toFixed(2)>0 ? 'positive': 'negative'}' >${element.quote.USD.percent_change_24h.toFixed(2)}%</td>
-    <td><form class='inputField'><input pattern='[0-9]+' onkeyup='enable()' value='${JSON.parse(localStorage.getItem(element.symbol))[0]}'  class='amount' type='text'><button class='dugmici' disabled='true'>Submit</button></form></td>
-    <td>${JSON.parse(localStorage.getItem(element.symbol))[1]}</td>
+    <td><form class='inputField'><input pattern='[0-9]+' onkeyup='enable()' value='${localStorage.getItem(element.symbol) && JSON.parse(localStorage.getItem(element.symbol))[0]}'  class='amount' type='text'><button class='dugmici' disabled='true'>Submit</button></form></td>
+    <td>${localStorage.getItem(element.symbol) && JSON.parse(localStorage.getItem(element.symbol))[1]}</td>
     </tr>`
 
     
