@@ -1,5 +1,9 @@
 //preuzimanje podataka
+let table = document.querySelector('.tableTopFifty');
 
+
+// setInterval(()=>{
+   
 let getApi = async (city) => {
     let apiKey = "667a77e6-24eb-4a0a-9aab-db6ac3165140";
     
@@ -7,8 +11,10 @@ let getApi = async (city) => {
     qString = "?CMC_PRO_API_KEY=" + apiKey + "&start=1&limit=5&convert=USD";
     let data = await fetch(url+qString);
     let data1 = await data.json();
+    
     return data1;
 };
+
 
 getApi().then(data=>{
     let niz=[]
@@ -16,8 +22,10 @@ getApi().then(data=>{
     // console.log(niz)
     localStorage.setItem('topFifty', JSON.stringify(niz))
     
-    document.querySelector('.keepLoader').style.display='none'
+    document.querySelector('.keepLoader').style.display='none';
+    
 })
+
 let topFifty=JSON.parse(localStorage.getItem('topFifty'))
 
 // console.log(topFifty);
@@ -42,7 +50,7 @@ let enable = ()=>{
 }
 
 
-let table = document.querySelector('.tableTopFifty');
+
 // let inputValue = document.querySelector('.amount').value;
 let arrayOfSymbols=[];
 topFifty.forEach(element => {
@@ -81,7 +89,7 @@ console.log(sum, parseInt(sumPromena.toFixed(1)))
 let y = sum -parseInt(sumPromena.toFixed(1))
 if(y>0){
     document.querySelector('.diference').innerHTML= `
-    <h1 class='pozitive'>You gain ${y}$ since last time!</h1>
+    <h1 class='positive'>You gain ${y}$ since last time!</h1>
     `
 }else{
     document.querySelector('.diference').innerHTML= `
@@ -131,3 +139,8 @@ document.querySelectorAll('.link').forEach(a=>{
 
     })
 })
+// let r = Array.from(table.innerHTML.children)
+// r.forEach((a,i)=>{
+//     console.log(a,i)
+// })
+// },30000)
