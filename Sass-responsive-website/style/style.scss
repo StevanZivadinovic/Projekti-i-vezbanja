@@ -1,0 +1,28 @@
+// @import url('./header.css');
+// $primaryBtn:green;
+
+// @mixin mojaKombinacija($color, $backgroundColor) {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     background-color: $backgroundColor;
+//     color: $color;
+// }
+
+// .mojStil{
+//     border: 1px solid brown
+// }
+
+// body{
+//     @include mojaKombinacija(red, purple);
+    
+//     p{
+//         color: $primaryBtn;
+//     }
+    
+//     div{
+//         width: 100%-20%;
+//         @extend .mojStil;
+//     }
+// }
+

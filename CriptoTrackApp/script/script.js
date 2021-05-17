@@ -5,6 +5,12 @@ let table = document.querySelector('.tableTopFifty');
 
    
 let getApi = async (city) => {
+
+    // httpNodeCors:{
+    //     origin:'*';
+    //     mode:'no-corse'
+    //     // methods:'GET,PUT,POST,DELETE'
+    // }
     let apiKey = "667a77e6-24eb-4a0a-9aab-db6ac3165140";
     
     let url = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`;
