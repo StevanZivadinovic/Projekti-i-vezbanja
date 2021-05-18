@@ -1,0 +1,22 @@
+.navbar {
+  background-color: #f7f7f7;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem calc((100vw-1200px)/2);
+  z-index: 10;
+  position: relative;
+}
+
+.navbar__logo {
+  color: #222121;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  margin-left: 24px;
+}
+/*# sourceMappingURL=navbar.css.map */
