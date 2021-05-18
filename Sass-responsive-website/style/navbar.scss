@@ -1,5 +1,23 @@
 @import './colors';
 
+%align-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin tablet {
+    @media screen and (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width:280px) {
+        @content;
+    }
+}
+
+
 .navbar{
     background-color: $light;
     height: 80px;
@@ -15,6 +33,31 @@
         text-decoration: none;
         font-size: 2rem;
         margin-left: 24px;
+        @extend %align-center
     }
+    &__bars{
+        opacity: 0;
+
+        @include tablet{
+            color:$dark;
+            opacity: 1;
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            font-size: 2rem;
+        }
+    }
+
+    &__menu{
+        @extend %align-center;
+        list-style: none;
+        text-align: center;
+        margin-right: 24px;
+
+        @include tablet{
+            display: none;
+        }
+    }
+
 }
 
