@@ -57,6 +57,33 @@
         @include tablet{
             display: none;
         }
+
+        &--links{
+            color: $dark;
+            @extend %align-center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+
+            &:hover{
+                color: $line;
+                transition: all 0.9s ease; 
+            }
+        }
+
+        #button{
+            padding: 12px 24px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            background-color: $line;
+            margin-left: 16px;
+            color: $light;
+
+            &:hover{
+                background-color: $orangeRed;
+            }
+        }
     }
 
 }
