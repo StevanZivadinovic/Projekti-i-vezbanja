@@ -26,6 +26,7 @@
     padding: 0.5rem calc((100vw-1200px)/2);
     z-index: 10;
     position: relative;
+    width: 100%;
 
     &__logo{
         color: $dark;
@@ -64,10 +65,10 @@
             justify-content: center;
             text-decoration: none;
             padding: 0 1rem;
+            transition: all 0.9s ease; 
 
             &:hover{
                 color: $line;
-                transition: all 0.9s ease; 
             }
         }
 

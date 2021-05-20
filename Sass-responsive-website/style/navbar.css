@@ -19,6 +19,7 @@
   padding: 0.5rem calc((100vw-1200px)/2);
   z-index: 10;
   position: relative;
+  width: 100%;
 }
 
 .navbar__logo {
@@ -63,12 +64,12 @@
           justify-content: center;
   text-decoration: none;
   padding: 0 1rem;
+  -webkit-transition: all 0.9s ease;
+  transition: all 0.9s ease;
 }
 
 .navbar__menu--links:hover {
   color: #00cc66;
-  -webkit-transition: all 0.9s ease;
-  transition: all 0.9s ease;
 }
 
 .navbar__menu #button {
