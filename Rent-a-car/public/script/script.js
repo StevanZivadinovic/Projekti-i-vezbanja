@@ -7,6 +7,7 @@ let addRentalEvent = document.querySelector("#addRentalEvent");
 let addRentalEventForm = document.querySelector(".addRentalEvent");
 let submitAddCar = document.querySelector("#submitAddCar");
 let priceShow = document.querySelector('.priceShow');
+let submitUpdateCar = document.querySelector("#submitUpdateCar");
 //Add car
 
 addCar.addEventListener("click", (e) => {
@@ -153,19 +154,19 @@ btnShowCar.addEventListener("click", (e) => {
   });
 });
 //update car
-let submitUpdateCar = document.querySelector("#submitUpdateCar");
 
+let id1;
 showList.addEventListener("click", (e) => {
   if (e.target.classList.contains("dugmeUpdate")) {
     console.log("haj");
     formAddCar.style.display = "flex";
 
-    let id = e.target.parentElement.getAttribute("data-id");
-    console.log(id);
+     id1 = e.target.parentElement.getAttribute("data-id");
+    console.log(id1);
     submitUpdateCar.style.display = "block";
     submitAddCar.style.display = "none";
     db.collection("cars")
-      .doc(id)
+      .doc(id1)
       .onSnapshot((snapshot) => {
         console.log(snapshot.data());
         document.querySelector("#brand").value = snapshot.data().brand;
@@ -189,26 +190,30 @@ showList.addEventListener("click", (e) => {
         document.querySelector("#carType").value = snapshot.data().carType;
       });
 
-    submitUpdateCar.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      db.collection("cars")
-        .doc(id)
-        .update({
-          brand: document.querySelector("#brand").value,
-          model: document.querySelector("#model").value,
-          constructionYear: document.querySelector("#constructionYear").value,
-          fuelType: document.querySelector("#fuelType").value,
-          numberOfSeats: document.querySelector("#numberOfSeats").value,
-          pictureLink: document.querySelector("#pictureLink").value,
-          pricePerDay: document.querySelector("#pricePerDay").value,
-          numberOfFreeCars: document.querySelector("#numberOfFreeCars").value,
-          carType: document.querySelector("#carType").value,
-        });
-      formAddCar.style.display = "none";
-    });
+   
   }
 });
+submitUpdateCar.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  db.collection("cars")
+    .doc(id1)
+    .update({
+      brand: document.querySelector("#brand").value,
+      model: document.querySelector("#model").value,
+      constructionYear: document.querySelector("#constructionYear").value,
+      fuelType: document.querySelector("#fuelType").value,
+      numberOfSeats: document.querySelector("#numberOfSeats").value,
+      pictureLink: document.querySelector("#pictureLink").value,
+      pricePerDay: document.querySelector("#pricePerDay").value,
+      numberOfFreeCars: document.querySelector("#numberOfFreeCars").value,
+      carType: document.querySelector("#carType").value,
+    });
+  formAddCar.style.display = "none";
+});
+
+
+// Browse cars
 
 let search = document.querySelector(".search");
 let btnSearch1 = document.querySelector(".search1");
